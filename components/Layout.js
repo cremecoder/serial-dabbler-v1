@@ -1,12 +1,12 @@
 import Meta from "./Meta"
-import Header from "./Header"
+import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   return (
     <>
       <Meta />
-      <Header />
+      <Navbar />
       {children}
       <Footer />
     </>

@@ -1,11 +1,13 @@
-import { Container } from "../styles/Container.styled"
+import Category from "../components/Category"
+
+// getStaticProps - theme vars and contentful categories
 
 export default function Home() {
   return (
     <main>
-      <Container>
-        <h1>Hello</h1>
-      </Container>
+      <Category />
+      <Category />
+      <Category />
     </main>
   )
 }

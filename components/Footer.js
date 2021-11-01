@@ -1,10 +1,13 @@
 import { Container } from "../styles/Container.styled"
+import { StyledFooter, Button } from "../styles/Footer.styled"
 
 const Footer = () => {
   return (
-    <footer>
-      <Container></Container>
-    </footer>
+    <StyledFooter>
+      <Container>
+        <Button>LET'S DABBLE</Button>
+      </Container>
+    </StyledFooter>
   )
 }
 
