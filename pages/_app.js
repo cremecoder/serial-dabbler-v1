@@ -9,17 +9,6 @@ const theme = {
     categoryThree: "#3B4CD1",
     black: "#000000",
     white: "#ffffff"
-  },
-  typography: {
-    family: {
-      boldenRegular: "Bolden Regular",
-      dmSans: "DM Sans"
-    },
-    weights: {
-      regular: 400,
-      medium: 500,
-      bold: 700
-    }
   }
 }
 

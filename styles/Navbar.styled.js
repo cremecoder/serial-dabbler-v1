@@ -9,9 +9,3 @@ export const StyledNav = styled.nav`
     cursor: pointer;
   }
 `
-
-export const Logo = styled.img`
-  width: 20rem;
-  height: 5rem;
-  background-color: red;
-`

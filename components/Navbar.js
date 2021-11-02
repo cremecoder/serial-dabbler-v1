@@ -1,6 +1,6 @@
 import { Container } from "../styles/Container.styled"
 import { Flex } from "../styles/Flex.styled"
-import { StyledNav, Logo } from "../styles/Navbar.styled"
+import { StyledNav } from "../styles/Navbar.styled"
 
 const Navbar = () => {
   return (
@@ -9,8 +9,7 @@ const Navbar = () => {
         <Flex>
           <h1>
             SERIAL
-            <br />
-            DABBLER
+            <br /> DABBLER
           </h1>
           <span>ABOUT</span>
         </Flex>

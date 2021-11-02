@@ -9,21 +9,15 @@ const Meta = ({ title, keywords, description }) => {
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon.ico" />
       <title>{title}</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
-        rel="preload"
-        href="/fonts/Bolden-Display_Hust.otf"
-        as="font"
-        crossOrigin=""
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+        rel="stylesheet"
       />
       <link
         rel="preload"
-        href="/fonts/DMSans-Regular.ttf"
-        as="font"
-        crossOrigin=""
-      />
-      <link
-        rel="preload"
-        href="/fonts/DMSans-Medium.ttf"
+        href="/fonts/BoldenRegularRegular.woff"
         as="font"
         crossOrigin=""
       />
