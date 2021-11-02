@@ -1,6 +1,6 @@
-import { Container } from "../styles/Container.styled"
+import { Container } from "../styles/Containers.styled"
 import { Flex } from "../styles/Flex.styled"
-import { StyledNav } from "../styles/Navbar.styled"
+import StyledNav from "../styles/Navbar.styled"
 
 const Navbar = () => {
   return (

@@ -1,6 +1,6 @@
-import { Container } from "../styles/Container.styled"
-import { StyledFooter } from "../styles/Footer.styled"
-import { Button } from "../styles/Button.styled"
+import { Container } from "../styles/Containers.styled"
+import StyledFooter from "../styles/Footer.styled"
+import { Button } from "../styles/Buttons.styled"
 
 const Footer = () => {
   return (

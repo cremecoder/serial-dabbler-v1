@@ -1,15 +1,14 @@
-import Meta from "./Meta"
+import { Wrapper } from "../styles/Containers.styled"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <Meta />
+    <Wrapper>
       <Navbar />
       {children}
       <Footer />
-    </>
+    </Wrapper>
   )
 }
 

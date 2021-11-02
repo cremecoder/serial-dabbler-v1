@@ -1,6 +1,6 @@
-import { Container } from "../styles/Container.styled"
+import { Container } from "../styles/Containers.styled"
 import { Flex } from "../styles/Flex.styled"
-import { StyledCategory } from "../styles/Category.styled"
+import StyledCategory from "../styles/Category.styled"
 
 const Category = () => {
   return (
@@ -11,9 +11,7 @@ const Category = () => {
             <span>LOOK &amp; FEEL</span>
             <h1>BOLD</h1>
           </div>
-          <div>
-            <span>LOCK</span>
-          </div>
+          <span>LOCK</span>
         </Flex>
       </Container>
     </StyledCategory>

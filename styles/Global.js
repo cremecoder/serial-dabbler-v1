@@ -20,7 +20,6 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: "DM Sans", "sans-serif";
-    min-height: 100vh;
   } 
 
   h1,h2 {
