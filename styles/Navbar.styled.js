@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const StyledNav = styled.nav`
+export const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
 
@@ -9,5 +9,3 @@ const StyledNav = styled.nav`
     cursor: pointer;
   }
 `
-
-export default StyledNav

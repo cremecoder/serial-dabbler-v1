@@ -1,12 +1,11 @@
-import { Container } from "../styles/Containers.styled"
-import { Flex } from "../styles/Flex.styled"
-import StyledNav from "../styles/Navbar.styled"
+import { Container, Flex } from "../styles/Utils.styled"
+import { StyledNav } from "../styles/Navbar.styled"
 
 const Navbar = () => {
   return (
     <StyledNav>
       <Container>
-        <Flex>
+        <Flex direction={"row"} justify={"space-between"} align={"center"}>
           <h1>
             SERIAL
             <br /> DABBLER

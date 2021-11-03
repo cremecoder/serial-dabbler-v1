@@ -1,4 +1,4 @@
-import { Wrapper } from "../styles/Containers.styled"
+import { Wrapper } from "../styles/Utils.styled"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
