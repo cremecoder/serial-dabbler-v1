@@ -1,13 +1,12 @@
 import styled from "styled-components"
 
 const Main = styled.main`
-  /* height: 100%; */
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
 
-  & > section {
+  section {
     border: 2px solid white;
-    /* flex-grow: 1; */
+    flex-grow: 1;
   }
 `
 
