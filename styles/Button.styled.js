@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Button = styled.button`
+const Button = styled.button`
   background: transparent;
   color: ${({ theme }) => theme.colors.white};
   outline: none;
@@ -15,3 +15,5 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.white};
   }
 `
+
+export default Button

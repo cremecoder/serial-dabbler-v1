@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
-const Main = styled.main`
+const Wrapper = styled.div`
+  height: 100vh;
   display: flex;
   flex-direction: column;
 
-  section {
-    border: 2px solid black;
+  main {
     flex-grow: 1;
   }
 
@@ -14,4 +14,4 @@ const Main = styled.main`
   }
 `
 
-export default Main
+export default Wrapper

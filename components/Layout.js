@@ -1,4 +1,4 @@
-import { Wrapper, Flex } from "../styles/Utils.styled"
+import Wrapper from "../styles/Wrapper.styled"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
