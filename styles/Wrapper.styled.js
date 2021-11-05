@@ -8,6 +8,9 @@ const Wrapper = styled.div`
   main {
     flex-grow: 1;
   }
+  footer {
+    margin-top: auto;
+  }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     flex-direction: row;
