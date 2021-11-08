@@ -2,7 +2,12 @@ import styled from "styled-components"
 
 export const StyledCategory = styled.section`
   background-color: ${({ theme }) => theme.colors.one};
-  padding: 0.5em 1.5em;
+  padding: 1em;
+  display: flex;
+
+  & > * {
+    flex-basis: 100%;
+  }
 
   span {
     font-size: 12px;
@@ -13,9 +18,21 @@ export const StyledCategory = styled.section`
     border-bottom: 2px solid ${({ theme }) => theme.colors.black};
   }
 
-  @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
-    padding: 1em 3em;
+  /* Mobile XS - Landscape */
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+    padding: 0em 1em;
+  }
 
+  /* Mobile SM - Portrait */
+  /* @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+  } */
+
+  /* Mobile SM - Landscape */
+  /* @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+  } */
+
+  /* Tablet - Portrait */
+  @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
     span {
       font-size: 16px;
     }
@@ -37,15 +54,17 @@ export const LockIcon = styled.img`
 `
 
 export const GridCategory = styled.div`
+  /* Mobile XS - Portrait */
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
 
-  /* & > * {
-    border: 2px solid black;
-  } */
+  & > * {
+    border: 1px solid black;
+  }
 
   span {
+    place-self: center start;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
@@ -59,5 +78,51 @@ export const GridCategory = styled.div`
     place-self: center end;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+  }
+
+  /* Mobile XS - Landscape */
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+    grid-template-columns: repeat(3, 1fr);
+
+    span {
+      place-self: center start;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    h1 {
+      place-self: center;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    img {
+      place-self: center end;
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+
+    /* Mobile SM - Portrait */
+    /* @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+    } */
+
+    /* Mobile SM - Landscape */
+    @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+      span {
+        grid-row: 2 / 3;
+      }
+
+      h1 {
+        grid-row: 2 / 3;
+      }
+
+      img {
+        grid-row: 2 / 3;
+      }
+    }
+
+    /* Tablet - Portrait */
+    /* @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
+    } */
   }
 `

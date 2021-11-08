@@ -12,7 +12,18 @@ const theme = {
     white: "#ffffff"
   },
   breaks: {
-    tablet: "768px",
+    mobile_xs: {
+      portrait: "320px",
+      landscape: "568px"
+    },
+    mobile_sm: {
+      portrait: "320px",
+      landscape: "568px"
+    },
+    tablet: {
+      portrait: "768px",
+      landscape: "810px"
+    },
     desktop: "1366px"
   }
 }
