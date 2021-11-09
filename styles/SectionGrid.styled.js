@@ -115,7 +115,7 @@ const SectionGrid = styled.div`
     }
 
     h1 {
-      width: 100%;
+      width: 75%;
       grid-column: 1 / 4;
       grid-row: 2 / 3;
     }

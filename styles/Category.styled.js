@@ -17,6 +17,11 @@ export const StyledCategory = styled.section`
   h1 {
     font-size: 55px;
     border-bottom: 2px solid ${({ theme }) => theme.colors.black};
+    line-height: 1;
+  }
+
+  button {
+    display: none;
   }
 
   /* Mobile XS - Landscape */
@@ -40,6 +45,12 @@ export const StyledCategory = styled.section`
   /* Tablet - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     padding: 0 3em;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    button {
+      display: initial;
+    }
   }
 `
 
