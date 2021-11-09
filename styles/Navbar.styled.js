@@ -30,6 +30,10 @@ export const StyledNav = styled.nav`
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     padding: 0.25em 3em;
   }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    padding: 1em 2em;
+  }
 `
 
 export const FlexNav = styled.div`

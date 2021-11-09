@@ -120,7 +120,7 @@ export const GridCategory = styled.div`
   }
 
   /* Tablet - Portrait */
-  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
+  /* @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(3, 1fr);
 
@@ -140,7 +140,7 @@ export const GridCategory = styled.div`
       grid-column: 2 / 3;
       grid-row: 2 / 3;
     }
-  }
+  } */
 
   /* Tablet - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
@@ -160,6 +160,28 @@ export const GridCategory = styled.div`
     img {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    span {
+      place-self: center;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    h1 {
+      text-align: center;
+      width: 50%;
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+    }
+
+    img {
+      place-self: center;
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
     }
   }
 `

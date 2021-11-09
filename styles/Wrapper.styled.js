@@ -7,6 +7,7 @@ const Wrapper = styled.div`
 
   main {
     flex-grow: 1;
+    height: 100%;
   }
   footer {
     margin-top: auto;
