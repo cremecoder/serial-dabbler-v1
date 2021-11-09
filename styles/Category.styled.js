@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const StyledCategory = styled.section`
+  /* Mobile XS - Portrait */
   background-color: ${({ theme }) => theme.colors.one};
   padding: 1em;
   display: flex;
@@ -20,19 +21,13 @@ export const StyledCategory = styled.section`
 
   /* Mobile XS - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-    padding: 0em 1em;
+    padding: 0.25em 1em;
   }
 
-  /* Mobile SM - Portrait */
-  /* @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-  } */
-
-  /* Mobile SM - Landscape */
-  /* @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-  } */
-
   /* Tablet - Portrait */
-  @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
+    padding: 2.5em;
+
     span {
       font-size: 16px;
     }
@@ -44,14 +39,16 @@ export const StyledCategory = styled.section`
 `
 
 export const LockIcon = styled.img`
+  /* Mobile XS - Portrait */
   height: 28px;
   width: 28px;
-
-  @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
+  /* Tablet - Portrait */
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     height: 40px;
     width: 40px;
   }
 `
+// ======================================================================
 
 export const GridCategory = styled.div`
   /* Mobile XS - Portrait */
@@ -59,12 +56,7 @@ export const GridCategory = styled.div`
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
 
-  & > * {
-    border: 1px solid black;
-  }
-
   span {
-    place-self: center start;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
@@ -91,6 +83,8 @@ export const GridCategory = styled.div`
     }
 
     h1 {
+      width: 100%;
+      text-align: center;
       place-self: center;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
@@ -101,28 +95,40 @@ export const GridCategory = styled.div`
       grid-column: 3 / 4;
       grid-row: 1 / 2;
     }
+  }
 
-    /* Mobile SM - Portrait */
-    /* @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-    } */
-
-    /* Mobile SM - Landscape */
-    @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-      span {
-        grid-row: 2 / 3;
-      }
-
-      h1 {
-        grid-row: 2 / 3;
-      }
-
-      img {
-        grid-row: 2 / 3;
-      }
+  /* Mobile SM - Landscape */
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape}) {
+    span {
+      grid-row: 2 / 3;
     }
 
-    /* Tablet - Portrait */
-    /* @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
-    } */
+    h1 {
+      grid-row: 2 / 3;
+    }
+
+    img {
+      grid-row: 2 / 3;
+    }
+  }
+
+  /* Tablet - Portrait */
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
+    grid-template-columns: 2fr 1fr;
+
+    span {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    h1 {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+
+    img {
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+    }
   }
 `

@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
-  padding: 0.5em 1.5em;
+  padding: 0.5em 1em;
 
   h1 {
     font-size: 24px;
@@ -15,7 +15,7 @@ export const StyledNav = styled.nav`
     cursor: pointer;
   }
 
-  @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     padding: 1em 2em;
 
     h1 {
