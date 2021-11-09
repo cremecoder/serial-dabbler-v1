@@ -125,6 +125,12 @@ const SectionGrid = styled.div`
       grid-column: 2 / 3;
       grid-row: 3 / 4;
     }
+
+    button {
+      place-self: center;
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+    }
   }
 `
 export default SectionGrid
