@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const StyledCategory = styled.section`
   /* Mobile XS - Portrait */
   background-color: ${({ theme }) => theme.colors.one};
-  padding: 1em;
+  padding: 1em 1.25em;
   display: flex;
 
   & > * {
@@ -21,12 +21,12 @@ export const StyledCategory = styled.section`
 
   /* Mobile XS - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-    padding: 0.25em 1em;
+    padding: 0em 1.25em;
   }
 
   /* Tablet - Portrait */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
-    padding: 2.5em;
+    padding: 0em 2em;
 
     span {
       font-size: 16px;
@@ -36,7 +36,14 @@ export const StyledCategory = styled.section`
       font-size: 80px;
     }
   }
+
+  /* Tablet - Landscape */
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
+    padding: 0 3em;
+  }
 `
+
+// ======================================================================
 
 export const LockIcon = styled.img`
   /* Mobile XS - Portrait */
@@ -98,7 +105,7 @@ export const GridCategory = styled.div`
   }
 
   /* Mobile SM - Landscape */
-  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape}) {
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape.sm}) {
     span {
       grid-row: 2 / 3;
     }
@@ -115,6 +122,7 @@ export const GridCategory = styled.div`
   /* Tablet - Portrait */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
 
     span {
       grid-column: 1 / 2;
@@ -122,7 +130,30 @@ export const GridCategory = styled.div`
     }
 
     h1 {
-      grid-column: 1 / 3;
+      text-align: left;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    img {
+      place-self: center end;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+  }
+
+  /* Tablet - Landscape */
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
+    grid-template-columns: repeat(3, 1fr);
+
+    span {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    h1 {
+      text-align: center;
+      grid-column: 2 / 3;
       grid-row: 2 / 3;
     }
 

@@ -17,12 +17,15 @@ const theme = {
       landscape: "568px"
     },
     mobile_sm: {
-      portrait: "320px",
-      landscape: "568px"
+      portrait: "375px",
+      landscape: {
+        sm: "568px",
+        lg: "810px"
+      }
     },
     tablet: {
       portrait: "768px",
-      landscape: "810px"
+      landscape: "1024px"
     },
     desktop: "1366px"
   }

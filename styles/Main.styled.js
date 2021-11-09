@@ -7,7 +7,6 @@ const Main = styled.main`
   flex-direction: column;
 
   section {
-    border: 2px solid black;
     flex-grow: 1;
     overflow: hidden;
   }
