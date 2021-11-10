@@ -1,11 +1,17 @@
 import { StyledFooter, FlexFooter } from "../styles/Footer.styled"
 import Button from "../styles/Button.styled"
+import { useTheme } from "styled-components"
 
 const Footer = () => {
+  const theme = useTheme()
+
   return (
     <StyledFooter>
       <FlexFooter>
-        <Button>
+        <Button
+          clrPrimary={theme.colors.secondary}
+          clrSecondary={theme.colors.primary}
+        >
           <span>LET'S DABBLE</span>
         </Button>
       </FlexFooter>

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledFooter = styled.footer`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.primary};
   padding: 0.5em 0;
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet}) {

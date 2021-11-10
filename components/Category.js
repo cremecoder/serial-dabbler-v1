@@ -1,8 +1,10 @@
 import { StyledCategory, LockIcon } from "../styles/Category.styled"
 import SectionGrid from "../styles/SectionGrid.styled"
 import Button from "../styles/Button.styled"
+import { useTheme } from "styled-components"
 
 const Category = ({ isDesktop }) => {
+  const theme = useTheme()
   return (
     <StyledCategory>
       <SectionGrid>
@@ -10,7 +12,10 @@ const Category = ({ isDesktop }) => {
         <h1>BOLD</h1>
         <LockIcon src="/images/lock-open.svg" />
         {isDesktop ? (
-          <Button>
+          <Button
+            clrPrimary={theme.colors.primary}
+            clrSecondary={theme.colors.secondary}
+          >
             <span>LET'S DABBLE</span>
           </Button>
         ) : (
