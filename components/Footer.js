@@ -9,8 +9,8 @@ const Footer = () => {
     <StyledFooter>
       <FlexFooter>
         <Button
-          clrPrimary={theme.colors.secondary}
-          clrSecondary={theme.colors.primary}
+          clrPrimary={theme.colors.white}
+          clrSecondary={theme.colors.black}
         >
           <span>LET'S DABBLE</span>
         </Button>

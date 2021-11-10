@@ -13,8 +13,8 @@ const Category = ({ isDesktop }) => {
         <LockIcon src="/images/lock-open.svg" />
         {isDesktop ? (
           <Button
-            clrPrimary={theme.colors.primary}
-            clrSecondary={theme.colors.secondary}
+            clrPrimary={theme.colors.black}
+            clrSecondary={theme.colors.white}
           >
             <span>LET'S DABBLE</span>
           </Button>

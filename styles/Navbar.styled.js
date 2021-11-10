@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const StyledNav = styled.nav`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
   padding: 0.25em 1.25em;
 
   h1 {
