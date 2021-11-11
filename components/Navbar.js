@@ -1,4 +1,5 @@
 import { StyledNav, FlexNav } from "../styles/Navbar.styled"
+import { Slide } from "../styles/Slide.styled"
 
 const Navbar = () => {
   return (
