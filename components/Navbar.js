@@ -5,7 +5,13 @@ const Navbar = () => {
   return (
     <StyledNav>
       <div className="slide-content">
-        <p>Yo</p>
+        <FlexNav>
+          <h1>
+            SERIAL
+            <br /> DABBLER
+          </h1>
+          <span>X</span>
+        </FlexNav>
       </div>
       <FlexNav>
         <h1>

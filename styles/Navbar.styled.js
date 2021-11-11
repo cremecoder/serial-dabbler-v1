@@ -4,11 +4,9 @@ export const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
   padding: 0.25em 1.25em;
-  position: relative;
-  /* display: inline-block; */
-  /* overflow: hidden; */
 
   .slide-content {
+    padding: 0.25em 1.25em;
     position: absolute;
     top: 0;
     left: 0;
@@ -17,10 +15,10 @@ export const StyledNav = styled.nav`
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: white;
-    padding: 1em;
-    color: black;
-    transform: translate(-100%, 0);
+    padding: 1.25em;
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
+    transform: translate(0, -100%);
     transition: transform 0.3s ease;
   }
 

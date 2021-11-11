@@ -3,6 +3,10 @@ import Layout from "../components/Layout"
 import { ThemeProvider } from "styled-components"
 import GlobalStyles from "../styles/Global"
 
+// App state pass isMobile and isDesktop to components
+// used for navbar transition direction
+// used for footer & button hide/show
+
 const theme = {
   colors: {
     one: "#FF7EC9",
