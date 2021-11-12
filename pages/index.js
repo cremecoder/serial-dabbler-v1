@@ -1,7 +1,8 @@
-import Category from "../components/Category"
-import Main from "../styles/Main.styled"
 import { useState, useEffect } from "react"
 // import { Client } from "@notionhq/client"
+
+import Category from "../components/Category"
+import Main from "../styles/Main.styled"
 
 // const notion = new Client({
 //   auth: process.env.NOTION_TOKEN
