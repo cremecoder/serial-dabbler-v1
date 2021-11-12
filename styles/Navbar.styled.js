@@ -22,9 +22,9 @@ export const StyledNav = styled.nav`
     transition: transform 0.3s ease;
   }
 
-  :hover .slide-content {
+  /* :hover .slide-content {
     transform: translate(0, 0);
-  }
+  } */
 
   h1 {
     font-size: 24px;

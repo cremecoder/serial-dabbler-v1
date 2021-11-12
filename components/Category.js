@@ -11,15 +11,13 @@ const Category = ({ isDesktop }) => {
         <span>LOOK &amp; FEEL</span>
         <h1>BOLD</h1>
         <LockIcon src="/images/lock-open.svg" />
-        {isDesktop ? (
+        {isDesktop && (
           <DabbleButton
             clrPrimary={theme.colors.black}
             clrSecondary={theme.colors.white}
           >
             <span>LET'S DABBLE</span>
           </DabbleButton>
-        ) : (
-          ""
         )}
       </SectionGrid>
     </StyledCategory>
