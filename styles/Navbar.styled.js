@@ -18,13 +18,14 @@ export const StyledNav = styled.nav`
     padding: 1.25em;
     background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
-    transform: translate(0, -100%);
+    transform: ${props =>
+      props.isDesktop ? "translate(-100%, 0)" : "translate(0, -100%)"};
     transition: transform 0.3s ease;
   }
 
-  /* :hover .slide-content {
+  :hover .slide-content {
     transform: translate(0, 0);
-  } */
+  }
 
   h1 {
     font-size: 24px;
