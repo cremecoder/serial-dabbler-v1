@@ -31,10 +31,8 @@ export const StyledNav = styled.nav`
     line-height: 1;
   }
 
-  span {
+  button {
     font-size: 14px;
-    text-decoration: underline;
-    cursor: pointer;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
@@ -44,7 +42,7 @@ export const StyledNav = styled.nav`
       font-size: 34px;
     }
 
-    span {
+    button {
       font-size: 16px;
     }
   }

@@ -1,6 +1,10 @@
 import { StyledNav, FlexNav } from "../styles/Navbar.styled"
+import { AboutButton } from "../styles/Buttons.styled"
+import { useTheme } from "styled-components"
 
 const Navbar = () => {
+  const theme = useTheme()
+
   return (
     <StyledNav>
       <div className="slide-content">
@@ -9,7 +13,7 @@ const Navbar = () => {
             SERIAL
             <br /> DABBLER
           </h1>
-          <span>X</span>
+          <AboutButton>X</AboutButton>
         </FlexNav>
       </div>
       <FlexNav>
@@ -17,7 +21,7 @@ const Navbar = () => {
           SERIAL
           <br /> DABBLER
         </h1>
-        <span>ABOUT</span>
+        <AboutButton clrPrimary={theme.colors.white}>ABOUT</AboutButton>
       </FlexNav>
     </StyledNav>
   )

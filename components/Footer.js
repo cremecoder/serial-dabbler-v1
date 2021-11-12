@@ -1,5 +1,5 @@
 import { StyledFooter, FlexFooter } from "../styles/Footer.styled"
-import Button from "../styles/Button.styled"
+import { DabbleButton } from "../styles/Buttons.styled"
 import { useTheme } from "styled-components"
 
 const Footer = () => {
@@ -8,12 +8,12 @@ const Footer = () => {
   return (
     <StyledFooter>
       <FlexFooter>
-        <Button
+        <DabbleButton
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
         >
           <span>LET'S DABBLE</span>
-        </Button>
+        </DabbleButton>
       </FlexFooter>
     </StyledFooter>
   )

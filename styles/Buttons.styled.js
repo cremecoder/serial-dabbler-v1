@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Button = styled.button`
+export const DabbleButton = styled.button`
   background: transparent;
   color: ${props => props.clrPrimary};
   outline: none;
@@ -16,4 +16,10 @@ const Button = styled.button`
   }
 `
 
-export default Button
+export const AboutButton = styled.button`
+  background: transparent;
+  color: ${props => props.clrPrimary};
+  outline: none;
+  border: none;
+  cursor: pointer;
+`
