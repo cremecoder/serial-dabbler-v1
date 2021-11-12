@@ -10,6 +10,14 @@ export const StyledFooter = styled.footer`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     display: none;
+    /* position: absolute;
+    bottom: 10%;
+    left: 50%;
+    background: transparent;
+    button {
+      color: black;
+      border: 2px solid black;
+    } */
   }
 `
 
