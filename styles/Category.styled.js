@@ -21,7 +21,7 @@ export const StyledCategory = styled.section`
   }
 
   button {
-    display: none;
+    font-size: 14px;
   }
 
   /* Mobile XS - Landscape */
@@ -40,17 +40,15 @@ export const StyledCategory = styled.section`
     h1 {
       font-size: 80px;
     }
+
+    button {
+      font-size: 16px;
+    }
   }
 
   /* Tablet - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     padding: 0 3em;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    button {
-      display: initial;
-    }
   }
 `
 
