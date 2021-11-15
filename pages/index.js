@@ -1,6 +1,4 @@
 // import { Client } from "@notionhq/client"
-import { AppContext } from "./_app"
-import { useContext } from "react"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
 
@@ -26,12 +24,10 @@ import Main from "../styles/Main.styled"
 // }
 
 export default function Home() {
-  const isDesktop = useContext(AppContext)
-
   return (
     <Main>
       <Category />
-      <Category isDesktop={isDesktop} />
+      <Category />
       <Category />
     </Main>
   )

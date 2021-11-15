@@ -19,7 +19,7 @@ export const StyledNav = styled.nav`
     background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
     transform: ${props =>
-      props.isDesktop ? "translate(-100%, 0)" : "translate(0, -100%)"};
+      props.width >= 1366 ? "translate(-100%, 0)" : "translate(0, -100%)"};
     transition: transform 0.3s ease;
   }
 
