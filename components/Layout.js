@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react"
+import { createContext, useState, useEffect } from "react"
 
 import Wrapper from "../styles/Wrapper.styled"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 // Create Layout context?
+export const LayoutContext = createContext()
 
 const Layout = ({ children }) => {
   const [size, setSize] = useState([window.innerHeight, window.innerWidth])
@@ -19,12 +20,13 @@ const Layout = ({ children }) => {
   }, [])
 
   return (
-    <Wrapper>
-      {/* <div>{`height: ${height}, width: ${width}`}</div> */}
-      <Navbar width={width} />
-      {children}
-      <Footer />
-    </Wrapper>
+    <LayoutContext.Provider value={{ height, width }}>
+      <Wrapper>
+        <Navbar />
+        {children}
+        <Footer />
+      </Wrapper>
+    </LayoutContext.Provider>
   )
 }
 

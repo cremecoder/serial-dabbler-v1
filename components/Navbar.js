@@ -1,9 +1,13 @@
+import { useContext } from "react"
+import { LayoutContext } from "../components/Layout"
+
 import { StyledNav, FlexNav } from "../styles/Navbar.styled"
 import { AboutButton } from "../styles/Buttons.styled"
 import { useTheme } from "styled-components"
 
-const Navbar = ({ width }) => {
+const Navbar = () => {
   const theme = useTheme()
+  const { width } = useContext(LayoutContext)
 
   return (
     <StyledNav width={width}>

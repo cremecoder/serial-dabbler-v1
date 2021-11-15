@@ -1,4 +1,6 @@
 // import { Client } from "@notionhq/client"
+import { useContext } from "react"
+import { LayoutContext } from "../components/Layout"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
 
@@ -24,10 +26,12 @@ import Main from "../styles/Main.styled"
 // }
 
 export default function Home() {
+  const { width } = useContext(LayoutContext)
+
   return (
     <Main>
       <Category />
-      <Category />
+      <Category width={width} />
       <Category />
     </Main>
   )

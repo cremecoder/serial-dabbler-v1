@@ -3,7 +3,7 @@ import SectionGrid from "../styles/SectionGrid.styled"
 import { DabbleButton } from "../styles/Buttons.styled"
 import { useTheme } from "styled-components"
 
-const Category = () => {
+const Category = ({ width }) => {
   const theme = useTheme()
   return (
     <StyledCategory>
@@ -11,14 +11,14 @@ const Category = () => {
         <span>LOOK &amp; FEEL</span>
         <h1>BOLD</h1>
         <LockIcon src="/images/lock-open.svg" />
-        {/* {isDesktop && (
+        {width >= 1366 && (
           <DabbleButton
             clrPrimary={theme.colors.black}
             clrSecondary={theme.colors.white}
           >
             <span>LET'S DABBLE</span>
           </DabbleButton>
-        )} */}
+        )}
       </SectionGrid>
     </StyledCategory>
   )
