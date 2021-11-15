@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { LayoutContext } from "../components/Layout"
 
 import { StyledNav, FlexNav } from "../styles/Navbar.styled"
+import Slide from "../styles/Slide.styled"
 import { AboutButton } from "../styles/Buttons.styled"
 import { useTheme } from "styled-components"
 
@@ -10,8 +11,8 @@ const Navbar = () => {
   const { width } = useContext(LayoutContext)
 
   return (
-    <StyledNav width={width}>
-      <div className="slide-content">
+    <StyledNav>
+      <Slide width={width}>
         <FlexNav>
           <h1>
             SERIAL
@@ -21,7 +22,7 @@ const Navbar = () => {
             <span>X</span>
           </AboutButton>
         </FlexNav>
-      </div>
+      </Slide>
       <FlexNav>
         <h1>
           SERIAL

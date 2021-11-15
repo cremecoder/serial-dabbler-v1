@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const Main = styled.main`
   position: relative;
-  height: 80vh;
+  /* height: 80vh; */
   overflow: hidden;
   display: flex;
   flex-direction: column;

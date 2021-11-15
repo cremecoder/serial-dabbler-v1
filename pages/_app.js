@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 
 import Meta from "../components/Meta"
-// import Layout from "../components/Layout"
+
 const Layout = dynamic(() => import("../components/Layout"), { ssr: false })
 
 import Theme from "../styles/Theme"

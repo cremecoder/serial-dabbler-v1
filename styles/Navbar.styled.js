@@ -5,25 +5,7 @@ export const StyledNav = styled.nav`
   color: ${({ theme }) => theme.colors.white};
   padding: 0.25em 1.25em;
 
-  .slide-content {
-    padding: 0.25em 1.25em;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    padding: 1.25em;
-    background-color: ${({ theme }) => theme.colors.black};
-    color: ${({ theme }) => theme.colors.white};
-    transform: ${props =>
-      props.width >= 1366 ? "translate(-100%, 0)" : "translate(0, -100%)"};
-    transition: transform 0.3s ease;
-  }
-
-  :hover .slide-content {
+  :hover div {
     transform: translate(0, 0);
   }
 

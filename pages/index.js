@@ -1,5 +1,6 @@
 // import { Client } from "@notionhq/client"
 import { useContext } from "react"
+
 import { LayoutContext } from "../components/Layout"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
