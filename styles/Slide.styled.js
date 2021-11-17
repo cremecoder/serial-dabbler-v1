@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import styled from "styled-components"
-import { Transition } from "react-transition-group"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 const StyledSlide = styled.div`
   padding: 0.25em 1.25em;
@@ -16,11 +16,29 @@ const StyledSlide = styled.div`
   padding: 1.25em;
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
-  transform: ${props =>
+  /* transform: ${props =>
     props.width >= 1366 ? "translate(-100%, 0)" : "translate(0, -100%)"};
-  transform: ${({ state }) =>
-    state === "entering" || "entered" ? "translate(0, 0)" : ""};
-  transition: transform 300ms ease;
+  transition: transform 300ms ease; */
+
+  .slide-enter {
+    transform: ${props =>
+      props.width >= 1366 ? "translate(-100%, 0)" : "translate(0, -100%)"};
+  }
+
+  .slide-enter-active {
+    transform: translate(0, 0);
+    transition: transform 300ms ease;
+  }
+
+  .slide-exit {
+    transform: translate(0, 0);
+  }
+
+  .slide-exit-active {
+    transform: ${props =>
+      props.width >= 1366 ? "translate(-100%, 0)" : "translate(0, -100%)"};
+    transition: transform 300ms ease;
+  }
 
   /* .slide-top .slide-content {
     transform: translate(0, -100%);
@@ -47,13 +65,11 @@ const Slide = ({ children, width }) => {
   const [toggle, setToggle] = useState(true)
 
   return (
-    <Transition in={toggle} timeout={300}>
-      {state => (
-        <StyledSlide width={width} state={state}>
-          {children}
-        </StyledSlide>
-      )}
-    </Transition>
+    <TransitionGroup component={StyledSlide} width={width}>
+      <CSSTransition in={toggle} timeout={300} classNames="slide">
+        <StyledSlide width={width}>{children}</StyledSlide>
+      </CSSTransition>
+    </TransitionGroup>
   )
 }
 
