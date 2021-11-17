@@ -1,6 +1,9 @@
-import styled from "styled-components"
+import { useState } from "react"
 
-const Slide = styled.div`
+import styled from "styled-components"
+import { Transition } from "react-transition-group"
+
+const StyledSlide = styled.div`
   padding: 0.25em 1.25em;
   position: absolute;
   top: 0;
@@ -15,7 +18,9 @@ const Slide = styled.div`
   color: ${({ theme }) => theme.colors.white};
   transform: ${props =>
     props.width >= 1366 ? "translate(-100%, 0)" : "translate(0, -100%)"};
-  transition: transform 0.3s ease;
+  transform: ${({ state }) =>
+    state === "entering" || "entered" ? "translate(0, 0)" : ""};
+  transition: transform 300ms ease;
 
   /* .slide-top .slide-content {
     transform: translate(0, -100%);
@@ -32,6 +37,24 @@ const Slide = styled.div`
   .slide-right .slide-content {
     transform: translate(-100%, 0);
   }  */
+
+  /* :hover div {
+    transform: translate(0, 0);
+  } */
 `
+
+const Slide = ({ children, width }) => {
+  const [toggle, setToggle] = useState(true)
+
+  return (
+    <Transition in={toggle} timeout={300}>
+      {state => (
+        <StyledSlide width={width} state={state}>
+          {children}
+        </StyledSlide>
+      )}
+    </Transition>
+  )
+}
 
 export default Slide
