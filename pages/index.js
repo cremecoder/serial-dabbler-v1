@@ -7,6 +7,7 @@ import { LayoutContext } from "../components/Layout"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
 import Slide from "../styles/Slide.styled"
+import Footer from "../components/Footer"
 
 // const notion = new Client({
 //   auth: process.env.NOTION_TOKEN
@@ -43,12 +44,73 @@ export default function Home() {
               perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
               doloremque pariatur?
             </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              obcaecati molestiae odio, earum beatae consequatur reiciendis
+              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
+              doloremque pariatur?
+            </p>
           </Slide>
         )}
       </Transition>
       <Category />
       <Category width={width} />
       <Category />
+      <Footer />
     </Main>
   )
 }

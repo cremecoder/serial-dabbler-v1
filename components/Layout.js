@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react"
 
 import Navbar from "./Navbar"
-import Footer from "./Footer"
 import Wrapper from "../styles/Wrapper.styled"
 
 // Create Layout context?
@@ -27,7 +26,6 @@ const Layout = ({ children }) => {
       <Wrapper>
         <Navbar />
         {children}
-        <Footer />
       </Wrapper>
     </LayoutContext.Provider>
   )

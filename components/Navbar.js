@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
@@ -7,7 +7,7 @@ import { AboutButton } from "../styles/Buttons.styled"
 
 const Navbar = () => {
   const theme = useTheme()
-  const { width, isOverlayOpen, setIsOverlayOpen } = useContext(LayoutContext)
+  const { isOverlayOpen, setIsOverlayOpen } = useContext(LayoutContext)
 
   return (
     <StyledNav>

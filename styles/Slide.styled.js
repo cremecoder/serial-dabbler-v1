@@ -3,6 +3,7 @@ import styled from "styled-components"
 const Slide = styled.div`
   /* display: ${({ state }) =>
     state === "entering" || state === "entered" ? "block" : "none"}; */
+  overflow: scroll;
   padding: 0.25em 1.25em;
   position: absolute;
   top: 0;
