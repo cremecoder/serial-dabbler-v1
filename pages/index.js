@@ -7,7 +7,7 @@ import { LayoutContext } from "../components/Layout"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
 import Slide from "../styles/Slide.styled"
-import Footer from "../components/Footer"
+import DabbleBar from "../components/DabbleBar"
 
 // const notion = new Client({
 //   auth: process.env.NOTION_TOKEN
@@ -38,79 +38,21 @@ export default function Home() {
       <Transition in={isOverlayOpen} timeout={300}>
         {state => (
           <Slide width={width} state={state}>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-              obcaecati molestiae odio, earum beatae consequatur reiciendis
-              perspiciatis dolore quisquam vitae tempore nesciunt quibusdam
-              doloremque pariatur?
-            </p>
+            <h1>DABBLE IN IN THINGS</h1>
+            <h1>DABBLE IN OLD SKILLS</h1>
+            <h1>DABBLE WITH FRESH IDEAS OR</h1>
+            <h1>SWIPE THE DUST OFF OLD ONES</h1>
+            <h1>DABBLE EVERYDAY</h1>
+            <h1>OR DABBLE EVERY WEEK</h1>
+            <h1>DABBLE TILL THE SUN COMES UP</h1>
+            <h1>OR DABBLE FOR A BIT.</h1>
           </Slide>
         )}
       </Transition>
       <Category />
       <Category width={width} />
       <Category />
-      <Footer />
+      <DabbleBar />
     </Main>
   )
 }

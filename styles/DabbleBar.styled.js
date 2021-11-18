@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const StyledFooter = styled.footer`
+export const StyledDabbleBar = styled.aside`
   background-color: ${({ theme }) => theme.colors.black};
   padding: 0.5em 0;
 
@@ -13,10 +13,8 @@ export const StyledFooter = styled.footer`
   }
 `
 
-export const FlexFooter = styled.div`
+export const FlexDabbleBar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `
-
-export default StyledFooter

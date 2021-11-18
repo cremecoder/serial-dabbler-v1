@@ -1,23 +1,23 @@
 import { useTheme } from "styled-components"
 
-import { StyledFooter, FlexFooter } from "../styles/Footer.styled"
+import { StyledDabbleBar, FlexDabbleBar } from "../styles/DabbleBar.styled"
 import { DabbleButton } from "../styles/Buttons.styled"
 
-const Footer = () => {
+const DabbleBar = () => {
   const theme = useTheme()
 
   return (
-    <StyledFooter>
-      <FlexFooter>
+    <StyledDabbleBar>
+      <FlexDabbleBar>
         <DabbleButton
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
         >
           <span>LET'S DABBLE</span>
         </DabbleButton>
-      </FlexFooter>
-    </StyledFooter>
+      </FlexDabbleBar>
+    </StyledDabbleBar>
   )
 }
 
-export default Footer
+export default DabbleBar
