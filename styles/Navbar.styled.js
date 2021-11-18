@@ -5,10 +5,6 @@ export const StyledNav = styled.nav`
   color: ${({ theme }) => theme.colors.white};
   padding: 0.25em 1.25em;
 
-  /* :hover div {
-    transform: translate(0, 0);
-  } */
-
   h1 {
     font-size: 24px;
     line-height: 1;

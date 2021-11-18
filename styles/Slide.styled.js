@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 const Slide = styled.div`
+  /* display: ${({ state }) =>
+    state === "entering" || state === "entered" ? "block" : "none"}; */
   padding: 0.25em 1.25em;
   position: absolute;
   top: 0;
@@ -19,8 +21,6 @@ const Slide = styled.div`
       : width >= 1366
       ? "translate(-100%, 0)"
       : "translate(0, -100%)"};
-  /* transform: ${({ width }) =>
-    width >= 1366 ? "translate(-100%, 0)" : "translate(0, -100%)"}; */
   transition: transform 300ms ease;
 `
 

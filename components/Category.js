@@ -1,7 +1,8 @@
+import { useTheme } from "styled-components"
+
 import { StyledCategory, LockIcon } from "../styles/Category.styled"
 import SectionGrid from "../styles/SectionGrid.styled"
 import { DabbleButton } from "../styles/Buttons.styled"
-import { useTheme } from "styled-components"
 
 const Category = ({ width }) => {
   const theme = useTheme()

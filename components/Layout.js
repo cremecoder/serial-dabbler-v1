@@ -1,8 +1,8 @@
 import { createContext, useState, useEffect } from "react"
 
-import Wrapper from "../styles/Wrapper.styled"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
+import Wrapper from "../styles/Wrapper.styled"
 
 // Create Layout context?
 export const LayoutContext = createContext()
@@ -10,6 +10,7 @@ export const LayoutContext = createContext()
 const Layout = ({ children }) => {
   const [size, setSize] = useState([window.innerHeight, window.innerWidth])
   const [height, width] = size
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,7 +21,9 @@ const Layout = ({ children }) => {
   }, [])
 
   return (
-    <LayoutContext.Provider value={{ height, width }}>
+    <LayoutContext.Provider
+      value={{ height, width, isOverlayOpen, setIsOverlayOpen }}
+    >
       <Wrapper>
         <Navbar />
         {children}

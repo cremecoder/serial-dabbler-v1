@@ -1,6 +1,7 @@
+import { useTheme } from "styled-components"
+
 import { StyledFooter, FlexFooter } from "../styles/Footer.styled"
 import { DabbleButton } from "../styles/Buttons.styled"
-import { useTheme } from "styled-components"
 
 const Footer = () => {
   const theme = useTheme()
