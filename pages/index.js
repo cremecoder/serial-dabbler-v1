@@ -1,5 +1,6 @@
 import { Client } from "@notionhq/client"
 import { useContext } from "react"
+import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
 
@@ -25,29 +26,38 @@ export async function getStaticProps() {
       id: obj.id,
       name: obj.properties.Name.title[0].plain_text,
       color: obj.properties.Colour.rich_text[0].plain_text,
-      category: {
-        name: obj.properties.Status.select.name,
-        id: obj.properties.Status.select.id
-      }
+      category: obj.properties.Status.select.name
     }
   })
 
-  let categories = {
-    lookFeel: [],
-    medium: [],
-    focus: []
-  }
+  const categories = [
+    {
+      id: uuid(),
+      name: "Look & Feel",
+      dabbles: []
+    },
+    {
+      id: uuid(),
+      name: "Medium",
+      dabbles: []
+    },
+    {
+      id: uuid(),
+      name: "Focus",
+      dabbles: []
+    }
+  ]
 
   formatObjects.forEach(obj => {
-    switch (obj.category.name) {
+    switch (obj.category) {
       case "Look & Feel":
-        categories.lookFeel.push(obj)
+        categories[0].dabbles.push(obj)
         break
       case "Medium":
-        categories.medium.push(obj)
+        categories[1].dabbles.push(obj)
         break
       case "Focus":
-        categories.focus.push(obj)
+        categories[2].dabbles.push(obj)
         break
     }
   })
@@ -60,10 +70,8 @@ export async function getStaticProps() {
 }
 
 export default function Home({ categories }) {
-  console.log(categories)
   const { width, isOverlayOpen } = useContext(LayoutContext)
-  const { lookFeel, medium, focus } = categories
-
+  console.log(categories)
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={300}>
@@ -144,9 +152,9 @@ export default function Home({ categories }) {
           </Slide>
         )}
       </Transition>
-      <Category />
-      <Category width={width} />
-      <Category />
+      {categories.map(category => (
+        <Category key={category.id} category={category} />
+      ))}
       <DabbleBar />
     </Main>
   )

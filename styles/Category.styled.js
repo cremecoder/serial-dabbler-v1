@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledCategory = styled.section`
   /* Mobile XS - Portrait */
-  background-color: ${({ theme }) => theme.colors.one};
+  background-color: ${({ bgColor }) => bgColor};
   padding: 1em 1.25em;
   display: flex;
 

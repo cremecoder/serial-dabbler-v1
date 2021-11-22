@@ -1,18 +1,24 @@
+import { useContext } from "react"
 import { useTheme } from "styled-components"
 
+import { LayoutContext } from "../components/Layout"
 import { StyledCategory, LockIcon } from "../styles/Category.styled"
 import SectionGrid from "../styles/SectionGrid.styled"
 import { DabbleButton } from "../styles/Buttons.styled"
 
-const Category = ({ width }) => {
+const Category = ({ category }) => {
+  const { width } = useContext(LayoutContext)
   const theme = useTheme()
+  const { name, dabbles } = category
+  let clr = dabbles[0].color
+
   return (
     <StyledCategory>
-      <SectionGrid>
-        <span>LOOK &amp; FEEL</span>
-        <h1>BOLD</h1>
+      <SectionGrid bgColor={clr}>
+        <span>{name}</span>
+        <h1>{dabbles[0].name}</h1>
         <LockIcon src="/images/lock-open.svg" />
-        {width >= 1366 && (
+        {name === "Medium" && width >= 1366 && (
           <DabbleButton
             clrPrimary={theme.colors.black}
             clrSecondary={theme.colors.white}
