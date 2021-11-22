@@ -32,30 +32,29 @@ export async function getStaticProps() {
     }
   })
 
-  const categorize = () => {
-    let lookFeel = []
-    let medium = []
-    let focus = []
-
-    formatObjects.forEach(obj => {
-      switch (obj.category.name) {
-        case "Look & Feel":
-          lookFeel.push(obj)
-          break
-        case "Medium":
-          medium.push(obj)
-          break
-        case "Focus":
-          focus.push(obj)
-          break
-      }
-    })
-    return [lookFeel, medium, focus]
+  let categories = {
+    lookFeel: [],
+    medium: [],
+    focus: []
   }
+
+  formatObjects.forEach(obj => {
+    switch (obj.category.name) {
+      case "Look & Feel":
+        categories.lookFeel.push(obj)
+        break
+      case "Medium":
+        categories.medium.push(obj)
+        break
+      case "Focus":
+        categories.focus.push(obj)
+        break
+    }
+  })
 
   return {
     props: {
-      categories: categorize()
+      categories
     }
   }
 }
@@ -63,6 +62,7 @@ export async function getStaticProps() {
 export default function Home({ categories }) {
   console.log(categories)
   const { width, isOverlayOpen } = useContext(LayoutContext)
+  const { lookFeel, medium, focus } = categories
 
   return (
     <Main>
