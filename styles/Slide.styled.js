@@ -1,8 +1,6 @@
 import styled from "styled-components"
 
 const Slide = styled.div`
-  /* display: ${({ state }) =>
-    state === "entering" || state === "entered" ? "block" : "none"}; */
   overflow: scroll;
   padding: 0.25em 1.25em;
   position: absolute;
@@ -23,6 +21,12 @@ const Slide = styled.div`
       ? "translate(-100%, 0)"
       : "translate(0, -100%)"};
   transition: transform 300ms ease;
+
+  h1 {
+    letter-spacing: 0.5px;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: black;
+  }
 `
 
 export default Slide
