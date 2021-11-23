@@ -71,7 +71,6 @@ export async function getStaticProps() {
 
 export default function Home({ categories }) {
   const { width, isOverlayOpen } = useContext(LayoutContext)
-  console.log(categories)
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={300}>

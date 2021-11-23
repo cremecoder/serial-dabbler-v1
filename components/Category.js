@@ -9,16 +9,16 @@ import { DabbleButton } from "../styles/Buttons.styled"
 const Category = ({ category }) => {
   const { width } = useContext(LayoutContext)
   const theme = useTheme()
+  console.log(category)
   const { name, dabbles } = category
-  let clr = dabbles[0].color
 
   return (
-    <StyledCategory>
-      <SectionGrid bgColor={clr}>
+    <StyledCategory bgColor={dabbles[0].color}>
+      <SectionGrid>
         <span>{name}</span>
         <h1>{dabbles[0].name}</h1>
         <LockIcon src="/images/lock-open.svg" />
-        {name === "Medium" && width >= 1366 && (
+        {category.name === "Medium" && width >= 1366 && (
           <DabbleButton
             clrPrimary={theme.colors.black}
             clrSecondary={theme.colors.white}
