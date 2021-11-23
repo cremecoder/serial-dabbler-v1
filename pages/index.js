@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { useContext } from "react"
+import { useContext, useReducer } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -71,6 +71,32 @@ export async function getStaticProps() {
 
 export default function Home({ categories }) {
   const { width, isOverlayOpen } = useContext(LayoutContext)
+  const [homeState, homeDispatch] = useReducer(homeReducer, initialHomeState)
+
+  const initialHomeState = {
+    [categories[0].name]: {
+      name: categories[0].name,
+      dabbleLength: categories[0].dabbles.length
+    },
+    [categories[1].name]: {
+      name: categories[1].name,
+      dabbleLength: categories[1].dabbles.length
+    },
+    [categories[2].name]: {
+      name: categories[2].name,
+      dabbleLength: categories[2].dabbles.length
+    }
+  }
+  console.log(initialHomeState)
+  const homeReducer = (state, action) => {
+    switch (action.type) {
+      case "Look & Feel":
+        return {
+          ...state
+        }
+    }
+  }
+
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={300}>

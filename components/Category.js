@@ -14,16 +14,6 @@ const Category = ({ category }) => {
     Math.floor(Math.random() * dabbles.length)
   )
 
-  if (name === "Look & Feel") {
-    console.log("Look & Feel rendered")
-  }
-  if (name === "Medium") {
-    console.log("Medium rendered")
-  }
-  if (name === "Focus") {
-    console.log("Focus rendered")
-  }
-
   const handleDabble = () => {
     let newDabble = Math.floor(Math.random() * dabbles.length)
     if (newDabble === currentDabble) {
