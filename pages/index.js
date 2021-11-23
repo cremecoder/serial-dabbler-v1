@@ -87,7 +87,7 @@ export default function Home({ categories }) {
       dabbleLength: categories[2].dabbles.length
     }
   }
-  console.log(initialHomeState)
+  console.log(categories)
   const homeReducer = (state, action) => {
     switch (action.type) {
       case "Look & Feel":

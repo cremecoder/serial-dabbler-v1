@@ -24,7 +24,7 @@ const Slide = styled.div`
 
   h1 {
     letter-spacing: 0.5px;
-    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
   }
 `

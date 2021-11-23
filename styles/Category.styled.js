@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const StyledCategory = styled.section`
   /* Mobile XS - Portrait */
   background-color: ${({ bgColor }) => bgColor};
+  /* background-color: white; */
   padding: 1em 1.25em;
   display: flex;
 
@@ -14,11 +15,13 @@ export const StyledCategory = styled.section`
   span {
     font-size: 12px;
   }
-
+  /* Mobile = border | Desktop = no border */
   h1 {
     font-size: 55px;
     border-bottom: 2px solid ${({ theme }) => theme.colors.black};
     line-height: 1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
   }
 
   button {
