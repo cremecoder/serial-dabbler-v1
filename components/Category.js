@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
@@ -9,19 +9,41 @@ import { DabbleButton } from "../styles/Buttons.styled"
 const Category = ({ category }) => {
   const { width } = useContext(LayoutContext)
   const theme = useTheme()
-  console.log(category)
   const { name, dabbles } = category
+  const [currentDabble, setCurrentDabble] = useState(
+    Math.floor(Math.random() * dabbles.length)
+  )
+
+  if (name === "Look & Feel") {
+    console.log("Look & Feel rendered")
+  }
+  if (name === "Medium") {
+    console.log("Medium rendered")
+  }
+  if (name === "Focus") {
+    console.log("Focus rendered")
+  }
+
+  const handleDabble = () => {
+    let newDabble = Math.floor(Math.random() * dabbles.length)
+    if (newDabble === currentDabble) {
+      handleDabble()
+    } else {
+      setCurrentDabble(newDabble)
+    }
+  }
 
   return (
-    <StyledCategory bgColor={dabbles[0].color}>
+    <StyledCategory bgColor={dabbles[currentDabble].color}>
       <SectionGrid>
         <span>{name}</span>
-        <h1>{dabbles[0].name}</h1>
+        <h1>{dabbles[currentDabble].name}</h1>
         <LockIcon src="/images/lock-open.svg" />
         {category.name === "Medium" && width >= 1366 && (
           <DabbleButton
             clrPrimary={theme.colors.black}
             clrSecondary={theme.colors.white}
+            onClick={() => handleDabble()}
           >
             <span>LET'S DABBLE</span>
           </DabbleButton>
