@@ -75,24 +75,51 @@ export default function Home({ categories }) {
 
   const initialHomeState = {
     [categories[0].name]: {
-      name: categories[0].name,
-      dabbleLength: categories[0].dabbles.length
+      randomizeDabbleNum: Math.floor(
+        Math.random() * categories[0].dabbles.length
+      )
     },
     [categories[1].name]: {
-      name: categories[1].name,
-      dabbleLength: categories[1].dabbles.length
+      randomizeDabbleNum: categories[1].dabbles.length
     },
     [categories[2].name]: {
-      name: categories[2].name,
-      dabbleLength: categories[2].dabbles.length
+      randomizeDabbleNum: categories[2].dabbles.length
     }
   }
-  console.log(categories)
+  //        homeState = pass to Categories as props
+  //     homeDispatch = onClick change component based on length
+  //      homeReducer = change state. Random num based on dabble.length
+  // initialHomeState = holds each categories length
+  // console.log(initialHomeState)
+
   const homeReducer = (state, action) => {
     switch (action.type) {
       case "Look & Feel":
         return {
-          ...state
+          ...state,
+          "Look & Feel": {
+            randomizeDabbleNum: Math.floor(
+              Math.random() * categories[0].dabbles.length
+            )
+          }
+        }
+      case "Medium":
+        return {
+          ...state,
+          Medium: {
+            randomizeDabbleNum: Math.floor(
+              Math.random() * categories[1].dabbles.length
+            )
+          }
+        }
+      case "Focus":
+        return {
+          ...state,
+          Focus: {
+            randomizeDabbleNum: Math.floor(
+              Math.random() * categories[2].dabbles.length
+            )
+          }
         }
     }
   }
@@ -178,7 +205,12 @@ export default function Home({ categories }) {
         )}
       </Transition>
       {categories.map(category => (
-        <Category key={category.id} category={category} />
+        <Category
+          key={category.id}
+          category={category}
+          homeState={homeState}
+          homeDispatch={homeDispatch}
+        />
       ))}
       <DabbleBar />
     </Main>
