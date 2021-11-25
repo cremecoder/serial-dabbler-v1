@@ -12,6 +12,13 @@ const Main = styled.main`
     overflow: hidden;
   }
 
+  & > button {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     flex-direction: row;
   }

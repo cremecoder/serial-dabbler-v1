@@ -1,14 +1,16 @@
 import { Client } from "@notionhq/client"
-import { useContext, useReducer } from "react"
+import { useContext } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
+import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
 import Slide from "../styles/Slide.styled"
 import DabbleBar from "../components/DabbleBar"
+import { DabbleButton } from "../styles/Buttons.styled"
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN
@@ -71,69 +73,7 @@ export async function getStaticProps() {
 
 export default function Home({ categories }) {
   const { width, isOverlayOpen } = useContext(LayoutContext)
-  const [homeState, homeDispatch] = useReducer(homeReducer, initialHomeState)
-
-  function randomizer(length) {
-    return Math.floor(Math.random() * length)
-  }
-
-  const initialHomeState = [
-    {
-      id: categories[0].id,
-      name: categories[0].name,
-      dabbles: categories[0].dabbles,
-      randomDabbleNum: randomizer(categories[0].dabbles.length)
-    },
-    {
-      id: categories[1].id,
-      name: categories[1].name,
-      dabbles: categories[1].dabbles,
-      randomDabbleNum: randomizer(categories[1].dabbles.length)
-    },
-    {
-      id: categories[2].id,
-      name: categories[2].name,
-      dabbles: categories[2].dabbles,
-      randomDabbleNum: randomizer(categories[2].dabbles.length)
-    }
-  ]
-
-  //        homeState = pass to Categories as props
-  //     homeDispatch = onClick change component based on length
-  //      homeReducer = change state. Random num based on dabble.length
-  // initialHomeState = holds each categories length
-
-  const homeReducer = (state, action) => {
-    switch (action.type) {
-      case "Look & Feel":
-        return {
-          ...state,
-          "Look & Feel": {
-            randomizeDabbleNum: Math.floor(
-              Math.random() * categories[0].dabbles.length
-            )
-          }
-        }
-      case "Medium":
-        return {
-          ...state,
-          Medium: {
-            randomizeDabbleNum: Math.floor(
-              Math.random() * categories[1].dabbles.length
-            )
-          }
-        }
-      case "Focus":
-        return {
-          ...state,
-          Focus: {
-            randomizeDabbleNum: Math.floor(
-              Math.random() * categories[2].dabbles.length
-            )
-          }
-        }
-    }
-  }
+  const theme = useTheme()
 
   return (
     <Main>
@@ -215,14 +155,17 @@ export default function Home({ categories }) {
           </Slide>
         )}
       </Transition>
-      {initialHomeState.map(category => (
-        <Category
-          key={category.id}
-          category={category}
-          homeState={homeState}
-          homeDispatch={homeDispatch}
-        />
+      {categories.map(category => (
+        <Category key={category.id} category={category} />
       ))}
+      {width >= 1366 && (
+        <DabbleButton
+          clrPrimary={theme.colors.black}
+          clrSecondary={theme.colors.white}
+        >
+          <span>LET'S DABBLE</span>
+        </DabbleButton>
+      )}
       <DabbleBar />
     </Main>
   )
