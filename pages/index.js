@@ -72,8 +72,19 @@ export async function getStaticProps() {
 }
 
 export default function Home({ categories }) {
+  const [homeState, setHomeState] = useState({
+    trigger: false,
+    isLocked: false
+  })
   const { width, isOverlayOpen } = useContext(LayoutContext)
   const theme = useTheme()
+
+  const handleState = () => {
+    setHomeState(prev => ({
+      ...prev,
+      trigger: !homeState.trigger
+    }))
+  }
 
   return (
     <Main>
@@ -156,12 +167,13 @@ export default function Home({ categories }) {
         )}
       </Transition>
       {categories.map(category => (
-        <Category key={category.id} category={category} />
+        <Category key={category.id} category={category} homeState={homeState} />
       ))}
       {width >= 1366 && (
         <DabbleButton
           clrPrimary={theme.colors.black}
           clrSecondary={theme.colors.white}
+          onClick={handleState}
         >
           <span>LET'S DABBLE</span>
         </DabbleButton>
