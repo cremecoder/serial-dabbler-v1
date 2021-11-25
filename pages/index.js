@@ -178,7 +178,7 @@ export default function Home({ categories }) {
           <span>LET'S DABBLE</span>
         </DabbleButton>
       )}
-      <DabbleBar />
+      <DabbleBar handleState={handleState} />
     </Main>
   )
 }

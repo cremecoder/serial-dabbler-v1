@@ -59,6 +59,16 @@ export const LockIcon = styled.img`
   /* Mobile XS - Portrait */
   height: 28px;
   width: 28px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 300ms ease;
+  &:hover {
+    opacity: 0.5;
+  }
+  /* &:active {
+
+  } */
+
   /* Tablet - Portrait */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     height: 40px;
