@@ -73,24 +73,35 @@ export default function Home({ categories }) {
   const { width, isOverlayOpen } = useContext(LayoutContext)
   const [homeState, homeDispatch] = useReducer(homeReducer, initialHomeState)
 
-  const initialHomeState = {
-    [categories[0].name]: {
-      randomizeDabbleNum: Math.floor(
-        Math.random() * categories[0].dabbles.length
-      )
-    },
-    [categories[1].name]: {
-      randomizeDabbleNum: categories[1].dabbles.length
-    },
-    [categories[2].name]: {
-      randomizeDabbleNum: categories[2].dabbles.length
-    }
+  function randomizer(length) {
+    return Math.floor(Math.random() * length)
   }
+
+  const initialHomeState = [
+    {
+      id: categories[0].id,
+      name: categories[0].name,
+      dabbles: categories[0].dabbles,
+      randomDabbleNum: randomizer(categories[0].dabbles.length)
+    },
+    {
+      id: categories[1].id,
+      name: categories[1].name,
+      dabbles: categories[1].dabbles,
+      randomDabbleNum: randomizer(categories[1].dabbles.length)
+    },
+    {
+      id: categories[2].id,
+      name: categories[2].name,
+      dabbles: categories[2].dabbles,
+      randomDabbleNum: randomizer(categories[2].dabbles.length)
+    }
+  ]
+
   //        homeState = pass to Categories as props
   //     homeDispatch = onClick change component based on length
   //      homeReducer = change state. Random num based on dabble.length
   // initialHomeState = holds each categories length
-  // console.log(initialHomeState)
 
   const homeReducer = (state, action) => {
     switch (action.type) {
@@ -204,7 +215,7 @@ export default function Home({ categories }) {
           </Slide>
         )}
       </Transition>
-      {categories.map(category => (
+      {initialHomeState.map(category => (
         <Category
           key={category.id}
           category={category}

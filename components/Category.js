@@ -9,22 +9,20 @@ import { DabbleButton } from "../styles/Buttons.styled"
 const Category = ({ category, homeState, homeDispatch }) => {
   const { width } = useContext(LayoutContext)
   const theme = useTheme()
+  const { id, name, dabbles, randomDabbleNum } = category
+  console.log(dabbles, randomDabbleNum)
 
   return (
-    <StyledCategory
-      bgColor={
-        category.dabbles[homeState[category.name].randomizeDabbleNum].color
-      }
-    >
+    <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <SectionGrid>
-        <span>{category.name}</span>
-        <h1>{category.dabbles[homeState.name.randomizeDabbleNum].name}</h1>
+        <span>{name}</span>
+        <h1>{dabbles[randomDabbleNum].name}</h1>
         <LockIcon src="/images/lock-open.svg" />
-        {category.name === "Medium" && width >= 1366 && (
+        {name === "Medium" && width >= 1366 && (
           <DabbleButton
             clrPrimary={theme.colors.black}
             clrSecondary={theme.colors.white}
-            onClick={() => homeDispatch({ type: [category.name] })}
+            // onClick={() => homeDispatch({ type: [name] })}
           >
             <span>LET'S DABBLE</span>
           </DabbleButton>
