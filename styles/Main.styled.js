@@ -21,6 +21,10 @@ const Main = styled.main`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     flex-direction: row;
+
+    section {
+      flex-basis: 100%;
+    }
   }
 `
 

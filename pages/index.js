@@ -73,8 +73,7 @@ export async function getStaticProps() {
 
 export default function Home({ categories }) {
   const [homeState, setHomeState] = useState({
-    trigger: false,
-    isLocked: false
+    trigger: false
   })
   const { width, isOverlayOpen } = useContext(LayoutContext)
   const theme = useTheme()
