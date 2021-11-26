@@ -8,23 +8,32 @@ export const StyledCategory = styled.section`
 
   & > * {
     flex-basis: 100%;
-    /* min-width: 30%; */
   }
 
   span {
     font-size: 12px;
+    opacity: 0;
+    transform: translateX(-50%);
+    opacity: ${({ state }) =>
+      state === "entering" || (state === "entered" && "1")};
+    transform: ${({ state }) =>
+      state === "entering" || (state === "entered" && "translateX(0)")};
+    transition: transform 400ms ease-out, opacity 250ms ease-out;
   }
-  /* Mobile = border | Desktop = no border */
+
   h1 {
     font-size: 55px;
     border-bottom: 2px solid ${({ theme }) => theme.colors.black};
     line-height: 1;
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: ${({ bgColor }) => bgColor}; */
-  }
-
-  button {
-    font-size: 14px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
+    opacity: 0;
+    transform: translateX(-50%);
+    opacity: ${({ state }) =>
+      state === "entering" || (state === "entered" && "1")};
+    transform: ${({ state }) =>
+      state === "entering" || (state === "entered" && "translateX(0)")};
+    transition: transform 400ms ease-out, opacity 250ms ease-out;
   }
 
   /* Mobile XS - Landscape */
@@ -43,15 +52,21 @@ export const StyledCategory = styled.section`
     h1 {
       font-size: 80px;
     }
-
-    button {
-      font-size: 16px;
-    }
   }
 
   /* Tablet - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     padding: 0 3em;
+  }
+
+  /* Desktop */
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    padding: 0 3em;
+
+    h1 {
+      -webkit-text-stroke-width: 0px;
+      -webkit-text-stroke-color: none;
+    }
   }
 `
 
@@ -62,12 +77,6 @@ export const LockIcon = styled.img`
   cursor: pointer;
   opacity: 1;
   transition: opacity 300ms ease;
-  &:hover {
-    opacity: 0.5;
-  }
-  /* &:active {
-
-  } */
 
   /* Tablet - Portrait */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {

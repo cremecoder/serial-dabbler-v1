@@ -20,7 +20,7 @@ const Slide = styled.div`
       : width >= 1366
       ? "translate(-100%, 0)"
       : "translate(0, -100%)"};
-  transition: transform 300ms ease;
+  transition: transform 400ms ease;
 
   h1 {
     letter-spacing: 0.5px;
