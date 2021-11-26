@@ -18,7 +18,7 @@ const Category = ({ category: { name, dabbles }, homeState: { trigger } }) => {
   }
 
   useEffect(() => {
-    if (isLocked === false) {
+    if (!isLocked) {
       let ranNum = Math.floor(Math.random() * dabbles.length)
       setCategoryState(prev => ({
         ...prev,

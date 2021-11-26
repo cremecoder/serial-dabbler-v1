@@ -181,3 +181,12 @@ export default function Home({ categories }) {
     </Main>
   )
 }
+
+/* 
+3D - Illustration
+Minimal - Illustration
+Elegant - Handmade
+Techy - Handmade
+Retro- 3D
+Moody - Handmade
+*/

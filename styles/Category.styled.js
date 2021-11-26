@@ -8,7 +8,7 @@ export const StyledCategory = styled.section`
 
   & > * {
     flex-basis: 100%;
-    min-width: 30%;
+    /* min-width: 30%; */
   }
 
   span {
