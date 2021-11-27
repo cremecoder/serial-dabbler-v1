@@ -75,10 +75,12 @@ export default function Home({ categories }) {
   const [homeState, setHomeState] = useState({
     trigger: false
   })
+  console.log(categories)
   const {
     size: { width },
     isOverlayOpen
   } = useContext(LayoutContext)
+
   const theme = useTheme()
 
   const handleState = () => {
@@ -90,7 +92,7 @@ export default function Home({ categories }) {
 
   return (
     <Main>
-      <Transition in={isOverlayOpen}>
+      <Transition in={isOverlayOpen} timeout={400}>
         {state => (
           <Slide width={width} state={state}>
             <h1>DABBLE IN IN THINGS</h1>

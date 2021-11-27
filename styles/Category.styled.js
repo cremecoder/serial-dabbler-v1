@@ -12,13 +12,6 @@ export const StyledCategory = styled.section`
 
   span {
     font-size: 12px;
-    opacity: 0;
-    transform: translateX(-50%);
-    opacity: ${({ state }) =>
-      state === "entering" || (state === "entered" && "1")};
-    transform: ${({ state }) =>
-      state === "entering" || (state === "entered" && "translateX(0)")};
-    transition: transform 400ms ease-out, opacity 250ms ease-out;
   }
 
   h1 {
@@ -27,13 +20,12 @@ export const StyledCategory = styled.section`
     line-height: 1;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
-    opacity: 0;
-    transform: translateX(-50%);
-    opacity: ${({ state }) =>
-      state === "entering" || (state === "entered" && "1")};
+    /* opacity: ${({ state }) =>
+      state === "entering" || (state === "entered" ? 1 : 0)};
     transform: ${({ state }) =>
-      state === "entering" || (state === "entered" && "translateX(0)")};
-    transition: transform 400ms ease-out, opacity 250ms ease-out;
+      state === "entering" ||
+      (state === "entered" ? "translateX(0)" : "translateX(-50%)")};
+    transition: transform 300ms ease-in, opacity 300ms ease-in; */
   }
 
   /* Mobile XS - Landscape */
