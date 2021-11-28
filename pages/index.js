@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { useContext, useState, useReducer } from "react"
+import { createContext, useContext, useState, useReducer } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -72,25 +72,31 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ categories }) {
-  const [homeState, setHomeState] = useState({
+export const HomeContext = createContext()
+
+const homeReducer = (state, action) => {
+  switch (action.type) {
+    case "TRIGGER":
+      return {
+        ...state,
+        trigger: !state.trigger
+      }
+  }
+}
+
+function Home({ categories }) {
+  const initialHomeState = {
     trigger: false
-  })
+  }
 
   const {
     size: { width },
     isOverlayOpen
   } = useContext(LayoutContext)
-
   const theme = useTheme()
+  const [homeState, homeDispatch] = useReducer(homeReducer, initialHomeState)
 
-  const handleState = () => {
-    setHomeState(prev => ({
-      ...prev,
-      trigger: !homeState.trigger
-    }))
-  }
-
+  // console.log(homeState.trigger)
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={400}>
@@ -171,19 +177,23 @@ export default function Home({ categories }) {
           </Slide>
         )}
       </Transition>
-      {categories.map(category => (
-        <Category key={category.id} category={category} homeState={homeState} />
-      ))}
-      {width >= 1366 && (
-        <DabbleButton
-          clrPrimary={theme.colors.black}
-          clrSecondary={theme.colors.white}
-          onClick={handleState}
-        >
-          <span>LET'S DABBLE</span>
-        </DabbleButton>
-      )}
-      <DabbleBar handleState={handleState} />
+      <HomeContext.Provider value={{ homeState, homeDispatch }}>
+        {categories.map(category => (
+          <Category key={category.id} category={category} />
+        ))}
+        {width >= 1366 && (
+          <DabbleButton
+            clrPrimary={theme.colors.black}
+            clrSecondary={theme.colors.white}
+            onClick={() => homeDispatch({ type: "TOGGLE" })}
+          >
+            <span>LET'S DABBLE</span>
+          </DabbleButton>
+        )}
+        <DabbleBar />
+      </HomeContext.Provider>
     </Main>
   )
 }
+
+export default Home

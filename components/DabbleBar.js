@@ -1,9 +1,12 @@
-import { useTheme } from "styled-components"
+import { useContext } from "react"
+import { HomeContext } from "../pages/index"
 
+import { useTheme } from "styled-components"
 import { StyledDabbleBar, FlexDabbleBar } from "../styles/DabbleBar.styled"
 import { DabbleButton } from "../styles/Buttons.styled"
 
-const DabbleBar = ({ handleState }) => {
+const DabbleBar = () => {
+  const { homeDispatch } = useContext(HomeContext)
   const theme = useTheme()
 
   return (
@@ -12,7 +15,7 @@ const DabbleBar = ({ handleState }) => {
         <DabbleButton
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
-          onClick={() => handleState()}
+          onClick={() => homeDispatch({ type: "TOGGLE" })}
         >
           <span>LET'S DABBLE</span>
         </DabbleButton>

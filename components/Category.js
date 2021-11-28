@@ -1,15 +1,20 @@
 import { useState, useEffect, useContext } from "react"
 
+import { HomeContext } from "../pages/index"
+
 import { StyledCategory, LockIcon } from "../styles/Category.styled"
 import SectionGrid from "../styles/SectionGrid.styled"
 
-const Category = ({ category: { name, dabbles }, homeState: { trigger } }) => {
+const Category = ({ category: { name, dabbles } }) => {
+  const {
+    homeState: { trigger }
+  } = useContext(HomeContext)
+
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
-    isLocked: false,
-    animate: false
+    isLocked: false
   })
-  const { randomDabbleNum, isLocked, animate } = categoryState
+  const { randomDabbleNum, isLocked } = categoryState
 
   const handleLock = () => {
     setCategoryState(prev => ({
@@ -18,25 +23,16 @@ const Category = ({ category: { name, dabbles }, homeState: { trigger } }) => {
     }))
   }
 
-  useEffect(() => {
-    if (!animate) {
-      setCategoryState(prev => ({
-        ...prev,
-        animate: true
-      }))
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!isLocked) {
-      let ranNum = Math.floor(Math.random() * dabbles.length)
-      setCategoryState(prev => ({
-        ...prev,
-        randomDabbleNum: ranNum
-      }))
-    }
-  }, [trigger])
-
+  // useEffect(() => {
+  //   if (!isLocked) {
+  //     let ranNum = Math.floor(Math.random() * dabbles.length)
+  //     setCategoryState(prev => ({
+  //       ...prev,
+  //       randomDabbleNum: ranNum
+  //     }))
+  //   }
+  // }, [homeState.trigger])
+  console.log(trigger)
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <SectionGrid>
