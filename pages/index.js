@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { useContext, useState } from "react"
+import { useContext, useState, useReducer } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -28,7 +28,8 @@ export async function getStaticProps() {
       id: obj.id,
       name: obj.properties.Name.title[0].plain_text,
       color: obj.properties.Colour.rich_text[0].plain_text,
-      category: obj.properties.Status.select.name
+      category: obj.properties.Status.select.name,
+      hasRule: obj.properties.Rules.multi_select[0].name
     }
   })
 
@@ -75,7 +76,7 @@ export default function Home({ categories }) {
   const [homeState, setHomeState] = useState({
     trigger: false
   })
-  console.log(categories)
+
   const {
     size: { width },
     isOverlayOpen
@@ -186,12 +187,3 @@ export default function Home({ categories }) {
     </Main>
   )
 }
-
-/* 
-3D - Illustration
-Minimal - Illustration
-Elegant - Handmade
-Techy - Handmade
-Retro- 3D
-Moody - Handmade
-*/

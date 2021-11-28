@@ -1,7 +1,5 @@
 import { useState, useEffect, useContext } from "react"
 
-import { Transition } from "react-transition-group"
-
 import { StyledCategory, LockIcon } from "../styles/Category.styled"
 import SectionGrid from "../styles/SectionGrid.styled"
 
