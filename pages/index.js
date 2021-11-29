@@ -7,7 +7,6 @@ import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
 import Category from "../components/Category"
-import SlideContent from "../components/SlideContent"
 import Main from "../styles/Main.styled"
 import Slide from "../styles/Slide.styled"
 import DabbleBar from "../components/DabbleBar"
@@ -103,7 +102,7 @@ function Home({ categories }) {
       <Transition in={isOverlayOpen} timeout={400}>
         {state => (
           <Slide width={width} state={state}>
-            <SlideContent />
+            <p>Helo</p>
           </Slide>
         )}
       </Transition>
