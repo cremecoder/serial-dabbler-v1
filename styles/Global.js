@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: "DM Sans", "sans-serif";
   } 
 
-  h1,h2 {
+  h1,h2, h3 {
     font-family: "Bolden Regular";
   }
 

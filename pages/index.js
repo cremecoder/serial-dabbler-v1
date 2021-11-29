@@ -100,11 +100,7 @@ function Home({ categories }) {
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={400}>
-        {state => (
-          <StyledSlide width={width} state={state}>
-            <Slide />
-          </StyledSlide>
-        )}
+        {state => <Slide slideState={state} />}
       </Transition>
       <HomeContext.Provider value={{ homeState, homeDispatch }}>
         {categories.map(category => (
