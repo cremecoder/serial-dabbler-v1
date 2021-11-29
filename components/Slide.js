@@ -1,6 +1,30 @@
-const SlideContent = () => {
+import { useContext } from "react"
+import { useTheme } from "styled-components"
+
+import { LayoutContext } from "../components/Layout"
+
+import { OverlayButton } from "../styles/Buttons.styled"
+
+const Slide = () => {
+  const theme = useTheme()
+  const {
+    size: { width },
+    isOverlayOpen,
+    setIsOverlayOpen
+  } = useContext(LayoutContext)
+
   return (
     <>
+      {isOverlayOpen && width >= 1366 ? (
+        <OverlayButton
+          onClick={() => setIsOverlayOpen(!isOverlayOpen)}
+          clrPrimary={theme.colors.white}
+        >
+          <span>X</span>
+        </OverlayButton>
+      ) : (
+        ""
+      )}
       <h1>DABBLE IN NEW THINGS</h1>
       <h1>DABBLE IN OLD SKILLS</h1>
       <h1>DABBLE WITH FRESH IDEAS OR</h1>
@@ -27,4 +51,4 @@ const SlideContent = () => {
   )
 }
 
-export default SlideContent
+export default Slide

@@ -16,7 +16,7 @@ export const DabbleButton = styled.button`
   }
 `
 
-export const AboutButton = styled.button`
+export const OverlayButton = styled.button`
   background: transparent;
   color: ${props => props.clrPrimary};
   outline: none;

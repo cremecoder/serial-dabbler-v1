@@ -6,9 +6,10 @@ import { Transition } from "react-transition-group"
 import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
+import Slide from "../components/Slide"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
-import Slide from "../styles/Slide.styled"
+import { StyledSlide } from "../styles/Slide.styled"
 import DabbleBar from "../components/DabbleBar"
 import { DabbleButton } from "../styles/Buttons.styled"
 
@@ -21,8 +22,9 @@ export async function getStaticProps() {
     database_id: process.env.NOTION_DATABASE_ID
   })
   const { results } = getData
+  let modified = results.splice(1)
 
-  const formatObjects = results.map(obj => {
+  const formatObjects = modified.map(obj => {
     return {
       id: obj.id,
       name: obj.properties.Name.title[0].plain_text,
@@ -95,14 +97,13 @@ function Home({ categories }) {
   const theme = useTheme()
   const [homeState, homeDispatch] = useReducer(homeReducer, initialHomeState)
 
-  // console.log(homeState.trigger)
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={400}>
         {state => (
-          <Slide width={width} state={state}>
-            <p>Helo</p>
-          </Slide>
+          <StyledSlide width={width} state={state}>
+            <Slide />
+          </StyledSlide>
         )}
       </Transition>
       <HomeContext.Provider value={{ homeState, homeDispatch }}>

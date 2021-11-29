@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Slide = styled.div`
+export const StyledSlide = styled.div`
   overflow: scroll;
   position: absolute;
   inset: 0 0 0 0;
@@ -20,11 +20,17 @@ const Slide = styled.div`
     line-height: 1;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
+  }
 
-    /* :first-of-type {
-      padding-top: 0.5em;
-    } */
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
+    padding: 0.25em 2em;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
+    padding: 0.25em 3em;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    padding: 1em 0;
   }
 `
-
-export default Slide
