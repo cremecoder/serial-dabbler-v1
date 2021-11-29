@@ -20,7 +20,6 @@ export async function getStaticProps() {
   const getData = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID
   })
-
   const { results } = getData
 
   const formatObjects = results.map(obj => {
@@ -116,7 +115,7 @@ function Home({ categories }) {
             clrSecondary={theme.colors.white}
             onClick={() => homeDispatch({ type: "TOGGLE" })}
           >
-            <span>LET'S DABBLE</span>
+            <span>LET&apos;S DABBLE</span>
           </DabbleButton>
         )}
         <DabbleBar />

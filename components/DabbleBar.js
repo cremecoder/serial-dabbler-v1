@@ -17,7 +17,7 @@ const DabbleBar = () => {
           clrSecondary={theme.colors.black}
           onClick={() => homeDispatch({ type: "TOGGLE" })}
         >
-          <span>LET'S DABBLE</span>
+          <span>LET&apos;S DABBLE</span>
         </DabbleButton>
       </FlexDabbleBar>
     </StyledDabbleBar>

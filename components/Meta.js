@@ -10,7 +10,11 @@ const Meta = ({ title, keywords, description }) => {
       <link rel="icon" href="/favicon.ico" />
       <title>{title}</title>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="true"
+      />
       <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
         rel="stylesheet"
@@ -19,7 +23,7 @@ const Meta = ({ title, keywords, description }) => {
         rel="preload"
         href="/fonts/BoldenRegularRegular.woff"
         as="font"
-        crossOrigin=""
+        crossOrigin="true"
       />
     </Head>
   )
