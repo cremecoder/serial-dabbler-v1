@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledDabbleBar = styled.aside`
   background-color: ${({ theme }) => theme.colors.black};
-  padding: 0.5em 0;
+  padding: 0.5em;
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet}) {
     padding: 1em 0;

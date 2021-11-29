@@ -7,7 +7,11 @@ import { AboutButton } from "../styles/Buttons.styled"
 
 const Navbar = () => {
   const theme = useTheme()
-  const { isOverlayOpen, setIsOverlayOpen } = useContext(LayoutContext)
+  const {
+    size: { width },
+    isOverlayOpen,
+    setIsOverlayOpen
+  } = useContext(LayoutContext)
 
   return (
     <StyledNav>
@@ -20,9 +24,10 @@ const Navbar = () => {
           onClick={() => setIsOverlayOpen(!isOverlayOpen)}
           clrPrimary={theme.colors.white}
         >
-          <span>ABOUT</span>
+          <span>{isOverlayOpen ? "X" : "ABOUT"}</span>
         </AboutButton>
       </FlexNav>
+      {isOverlayOpen && width <= 1366 && <hr />}
     </StyledNav>
   )
 }

@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
-  padding: 0.25em 1.25em;
+  padding: 0.5em 1em;
 
   h1 {
     font-size: 24px;

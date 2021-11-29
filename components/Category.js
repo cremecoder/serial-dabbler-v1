@@ -32,7 +32,7 @@ const Category = ({ category: { name, dabbles } }) => {
   //     }))
   //   }
   // }, [homeState.trigger])
-  console.log(trigger)
+  // console.log(trigger)
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <SectionGrid>

@@ -2,16 +2,9 @@ import styled from "styled-components"
 
 const Slide = styled.div`
   overflow: scroll;
-  padding: 0.25em 1.25em;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  padding: 1.25em;
+  inset: 0 0 0 0;
+  padding: 0 1em;
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
   transform: ${({ state, width }) =>
@@ -24,8 +17,13 @@ const Slide = styled.div`
 
   h1 {
     letter-spacing: 0.5px;
+    line-height: 1;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
+
+    /* :first-of-type {
+      padding-top: 0.5em;
+    } */
   }
 `
 

@@ -7,6 +7,7 @@ import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
 import Category from "../components/Category"
+import SlideContent from "../components/SlideContent"
 import Main from "../styles/Main.styled"
 import Slide from "../styles/Slide.styled"
 import DabbleBar from "../components/DabbleBar"
@@ -102,78 +103,7 @@ function Home({ categories }) {
       <Transition in={isOverlayOpen} timeout={400}>
         {state => (
           <Slide width={width} state={state}>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
-            <h1>DABBLE IN IN THINGS</h1>
-            <h1>DABBLE IN OLD SKILLS</h1>
-            <h1>DABBLE WITH FRESH IDEAS OR</h1>
-            <h1>SWIPE THE DUST OFF OLD ONES</h1>
-            <h1>DABBLE EVERYDAY</h1>
-            <h1>OR DABBLE EVERY WEEK</h1>
-            <h1>DABBLE TILL THE SUN COMES UP</h1>
-            <h1>OR DABBLE FOR A BIT.</h1>
+            <SlideContent />
           </Slide>
         )}
       </Transition>
