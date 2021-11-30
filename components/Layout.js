@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
     }))
   }
 
-  console.log("Layout rendered")
+  // console.log("Layout rendered")
 
   return (
     <LayoutContext.Provider

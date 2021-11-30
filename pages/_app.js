@@ -8,7 +8,7 @@ import { ThemeProvider } from "styled-components"
 import GlobalStyles from "../styles/Global"
 
 function MyApp({ Component, pageProps }) {
-  console.log("Appjs loaded")
+  // console.log("Appjs loaded")
   return (
     <>
       <Head>

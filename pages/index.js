@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { createContext, useContext, useReducer, useRef } from "react"
+import { useContext, useState, useRef } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -71,14 +71,12 @@ export async function getStaticProps() {
   }
 }
 
-export const HomeContext = createContext()
-
 const homeReducer = (state, action) => {
   switch (action.type) {
     case "TRIGGER":
       return {
         ...state,
-        trigger: !state.trigger
+        trigger: action.value
       }
   }
 }
@@ -88,35 +86,39 @@ function Home({ categories }) {
   const nodeRef = useRef(null)
   const { width, isOverlayOpen } = useContext(LayoutContext)
 
-  const initialHomeState = {
+  const [homeState, setHomeState] = useState({
     trigger: false
+  })
+  const handleDabble = () => {
+    setHomeState(prev => ({
+      ...prev,
+      trigger: !homeState.trigger
+    }))
   }
 
-  const [homeState, homeDispatch] = useReducer(homeReducer, initialHomeState)
-
-  // useMemo = return value of a funcyion
-  // useCallback = the function itself
-  console.log("index rendered")
+  // console.log("index rendered")
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={400} nodeRef={nodeRef}>
         {state => <Slide slideState={state} />}
       </Transition>
-      <HomeContext.Provider value={{ homeState, homeDispatch }}>
-        {categories.map(category => (
-          <Category key={category.id} category={category} />
-        ))}
-        {width >= 1366 && (
-          <DabbleButton
-            clrPrimary={theme.colors.black}
-            clrSecondary={theme.colors.white}
-            onClick={() => homeDispatch({ type: "TOGGLE" })}
-          >
-            <span>LET&apos;S DABBLE</span>
-          </DabbleButton>
-        )}
-        <DabbleBar />
-      </HomeContext.Provider>
+      {categories.map(category => (
+        <Category
+          key={category.id}
+          category={category}
+          trigger={homeState.trigger}
+        />
+      ))}
+      {width >= 1366 && (
+        <DabbleButton
+          clrPrimary={theme.colors.black}
+          clrSecondary={theme.colors.white}
+          onClick={handleDabble}
+        >
+          <span>LET&apos;S DABBLE</span>
+        </DabbleButton>
+      )}
+      <DabbleBar handleDabble={handleDabble} />
     </Main>
   )
 }

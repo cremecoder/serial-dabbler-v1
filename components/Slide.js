@@ -16,7 +16,7 @@ const Slide = ({ slideState }) => {
     LayoutContext
   )
 
-  console.log("Slide rendered")
+  // console.log("Slide rendered")
   return (
     <StyledSlide width={width} slideState={slideState}>
       <div className="section">

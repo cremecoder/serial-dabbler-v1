@@ -10,7 +10,7 @@ const Navbar = () => {
   const { width, isOverlayOpen, handleOverlayToggle } = useContext(
     LayoutContext
   )
-  console.log("Navbar rendered")
+  // console.log("Navbar rendered")
   return (
     <StyledNav>
       <FlexNav>
