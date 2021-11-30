@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { useContext } from "react"
 import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
@@ -14,10 +15,12 @@ const Navbar = () => {
   return (
     <StyledNav>
       <FlexNav>
-        <h1>
-          SERIAL
-          <br /> DABBLER
-        </h1>
+        <Image
+          src="/images/logo.svg"
+          alt="Serial Dabbler"
+          width={75}
+          height={50}
+        />
         {isOverlayOpen && width >= 1366 ? (
           ""
         ) : (
