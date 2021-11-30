@@ -7,11 +7,9 @@ export const StyledSlide = styled.div`
   padding: 0 1em;
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
-  transform: ${({ slideState, width }) =>
+  transform: ${({ slideState }) =>
     slideState === "entering" || slideState === "entered"
       ? "translate(0, 0)"
-      : width >= 1366
-      ? "translate(-100%, 0)"
       : "translate(0, -100%)"};
   transition: transform 400ms ease;
 
