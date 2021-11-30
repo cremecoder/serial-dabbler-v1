@@ -85,7 +85,7 @@ function Home({ categories }) {
       trigger: !homeState.trigger
     }))
   }
-
+  console.log("Index")
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={400} nodeRef={nodeRef}>
