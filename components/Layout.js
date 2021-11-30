@@ -7,26 +7,40 @@ import Wrapper from "../styles/Wrapper.styled"
 export const LayoutContext = createContext()
 
 const Layout = ({ children }) => {
-  const [size, setSize] = useState({
+  const [layoutState, setLayoutState] = useState({
     width: window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
+    isOverlayOpen: false
   })
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false)
+
+  const { width, height, isOverlayOpen } = layoutState
+
+  const handleResize = () => {
+    setLayoutState(prev => ({
+      ...prev,
+      width: window.innerWidth,
+      height: window.innerHeight
+    }))
+  }
 
   useEffect(() => {
-    const handleResize = () => {
-      setSize(prev => ({
-        ...prev,
-        width: window.innerWidth,
-        height: window.innerHeight
-      }))
-    }
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  const handleOverlayToggle = () => {
+    setLayoutState(prev => ({
+      ...prev,
+      isOverlayOpen: !isOverlayOpen
+    }))
+  }
+
+  console.log("Layout rendered")
+
   return (
-    <LayoutContext.Provider value={{ size, isOverlayOpen, setIsOverlayOpen }}>
+    <LayoutContext.Provider
+      value={{ width, height, isOverlayOpen, handleOverlayToggle }}
+    >
       <Wrapper>
         <Navbar />
         {children}

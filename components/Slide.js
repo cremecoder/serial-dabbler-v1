@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, memo } from "react"
 import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
@@ -12,19 +12,18 @@ import { OverlayButton } from "../styles/Buttons.styled"
 
 const Slide = ({ slideState }) => {
   const theme = useTheme()
-  const {
-    size: { width },
-    isOverlayOpen,
-    setIsOverlayOpen
-  } = useContext(LayoutContext)
+  const { width, isOverlayOpen, handleOverlayToggle } = useContext(
+    LayoutContext
+  )
 
+  console.log("Slide rendered")
   return (
     <StyledSlide width={width} slideState={slideState}>
       <div className="section">
         <StyledBlockText>
           {isOverlayOpen && width >= 1366 ? (
             <OverlayButton
-              onClick={() => setIsOverlayOpen(!isOverlayOpen)}
+              onClick={() => handleOverlayToggle()}
               clrPrimary={theme.colors.white}
             >
               <span>X</span>

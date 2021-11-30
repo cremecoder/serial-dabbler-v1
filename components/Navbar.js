@@ -7,12 +7,10 @@ import { OverlayButton } from "../styles/Buttons.styled"
 
 const Navbar = () => {
   const theme = useTheme()
-  const {
-    size: { width },
-    isOverlayOpen,
-    setIsOverlayOpen
-  } = useContext(LayoutContext)
-
+  const { width, isOverlayOpen, handleOverlayToggle } = useContext(
+    LayoutContext
+  )
+  console.log("Navbar rendered")
   return (
     <StyledNav>
       <FlexNav>
@@ -24,7 +22,7 @@ const Navbar = () => {
           ""
         ) : (
           <OverlayButton
-            onClick={() => setIsOverlayOpen(!isOverlayOpen)}
+            onClick={() => handleOverlayToggle()}
             clrPrimary={theme.colors.white}
           >
             <span>{isOverlayOpen ? "X" : "ABOUT"}</span>

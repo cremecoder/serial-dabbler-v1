@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext, memo } from "react"
 
 import { HomeContext } from "../pages/index"
 
@@ -22,7 +22,7 @@ const Category = ({ category: { name, dabbles } }) => {
       isLocked: !isLocked
     }))
   }
-
+  console.log("Category rendered")
   // useEffect(() => {
   //   if (!isLocked) {
   //     let ranNum = Math.floor(Math.random() * dabbles.length)
@@ -33,6 +33,7 @@ const Category = ({ category: { name, dabbles } }) => {
   //   }
   // }, [homeState.trigger])
   // console.log(trigger)
+
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <SectionGrid>
@@ -47,4 +48,4 @@ const Category = ({ category: { name, dabbles } }) => {
   )
 }
 
-export default Category
+export default memo(Category)

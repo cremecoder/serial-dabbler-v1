@@ -8,7 +8,7 @@ import { DabbleButton } from "../styles/Buttons.styled"
 const DabbleBar = () => {
   const { homeDispatch } = useContext(HomeContext)
   const theme = useTheme()
-
+  console.log("Dabblebar rendered")
   return (
     <StyledDabbleBar>
       <FlexDabbleBar>

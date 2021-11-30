@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { createContext, useContext, useReducer } from "react"
+import { createContext, useContext, useReducer, useRef } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -84,20 +84,22 @@ const homeReducer = (state, action) => {
 }
 
 function Home({ categories }) {
+  const theme = useTheme()
+  const nodeRef = useRef(null)
+  const { width, isOverlayOpen } = useContext(LayoutContext)
+
   const initialHomeState = {
     trigger: false
   }
 
-  const {
-    size: { width },
-    isOverlayOpen
-  } = useContext(LayoutContext)
-  const theme = useTheme()
   const [homeState, homeDispatch] = useReducer(homeReducer, initialHomeState)
 
+  // useMemo = return value of a funcyion
+  // useCallback = the function itself
+  console.log("index rendered")
   return (
     <Main>
-      <Transition in={isOverlayOpen} timeout={400}>
+      <Transition in={isOverlayOpen} timeout={400} nodeRef={nodeRef}>
         {state => <Slide slideState={state} />}
       </Transition>
       <HomeContext.Provider value={{ homeState, homeDispatch }}>
