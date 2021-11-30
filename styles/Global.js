@@ -1,34 +1,34 @@
-import { createGlobalStyle } from "styled-components"
+// import { createGlobalStyle } from "styled-components"
 
-const GlobalStyles = createGlobalStyle`
+// const GlobalStyles = createGlobalStyle`
 
-@font-face {
-  font-family: "Bolden Regular";
-  src: url("/fonts/BoldenRegularRegular.woff") format("woff");
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Bolden Regular";
+//   src: url("/fonts/BoldenRegularRegular.woff") format("woff");
+//   font-style: normal;
+//   font-weight: bold;
+//   font-display: swap;
+// }
 
-  *,
-  *::before,
-  *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+//   *,
+//   *::before,
+//   *::after {
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+//   }
 
-  body {
-    font-family: "DM Sans", "sans-serif";
-  } 
+//   body {
+//     font-family: "DM Sans", "sans-serif";
+//   }
 
-  h1,h2, h3 {
-    font-family: "Bolden Regular";
-  }
+//   h1,h2, h3 {
+//     font-family: "Bolden Regular";
+//   }
 
-`
+// `
 
-export default GlobalStyles
+// export default GlobalStyles
 
 // Mobile - 375px
 

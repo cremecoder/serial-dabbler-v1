@@ -14,18 +14,18 @@ const Layout = ({ children }) => {
 
   const { width, height, isOverlayOpen } = layoutState
 
-  // const handleResize = () => {
-  //   setLayoutState(prev => ({
-  //     ...prev,
-  //     width: window.innerWidth,
-  //     height: window.innerHeight
-  //   }))
-  // }
+  const handleResize = () => {
+    setLayoutState(prev => ({
+      ...prev,
+      width: window.innerWidth,
+      height: window.innerHeight
+    }))
+  }
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleResize)
-  //   return () => window.removeEventListener("resize", handleResize)
-  // }, [])
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const handleOverlayToggle = () => {
     setLayoutState(prev => ({

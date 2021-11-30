@@ -5,7 +5,8 @@ const Layout = dynamic(() => import("../components/Layout"), { ssr: false })
 
 import Theme from "../styles/Theme"
 import { ThemeProvider } from "styled-components"
-import GlobalStyles from "../styles/Global"
+// import GlobalStyles from "../styles/Global"
+import "../styles/global.css"
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         <title>Serial Dabbler - V1</title>
       </Head>
       <ThemeProvider theme={Theme}>
-        <GlobalStyles />
+        {/* <GlobalStyles /> */}
         <Layout>
           <Component {...pageProps} />
         </Layout>
