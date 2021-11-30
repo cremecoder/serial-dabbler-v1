@@ -3,7 +3,6 @@ import { createContext, useState, useEffect } from "react"
 import Navbar from "./Navbar"
 import Wrapper from "../styles/Wrapper.styled"
 
-// Create Layout context?
 export const LayoutContext = createContext()
 
 const Layout = ({ children }) => {
@@ -34,8 +33,6 @@ const Layout = ({ children }) => {
       isOverlayOpen: !isOverlayOpen
     }))
   }
-
-  // console.log("Layout rendered")
 
   return (
     <LayoutContext.Provider

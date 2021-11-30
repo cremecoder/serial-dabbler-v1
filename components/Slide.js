@@ -1,4 +1,4 @@
-import { useContext, memo } from "react"
+import { useContext } from "react"
 import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
@@ -16,7 +16,6 @@ const Slide = ({ slideState }) => {
     LayoutContext
   )
 
-  // console.log("Slide rendered")
   return (
     <StyledSlide width={width} slideState={slideState}>
       <div className="section">

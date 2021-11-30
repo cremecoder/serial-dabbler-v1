@@ -71,16 +71,6 @@ export async function getStaticProps() {
   }
 }
 
-const homeReducer = (state, action) => {
-  switch (action.type) {
-    case "TRIGGER":
-      return {
-        ...state,
-        trigger: action.value
-      }
-  }
-}
-
 function Home({ categories }) {
   const theme = useTheme()
   const nodeRef = useRef(null)
@@ -96,7 +86,6 @@ function Home({ categories }) {
     }))
   }
 
-  // console.log("index rendered")
   return (
     <Main>
       <Transition in={isOverlayOpen} timeout={400} nodeRef={nodeRef}>

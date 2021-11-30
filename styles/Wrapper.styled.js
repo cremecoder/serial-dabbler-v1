@@ -8,11 +8,7 @@ const Wrapper = styled.div`
 
   main {
     flex-grow: 1;
-    /* height: 100%; */
   }
-  /* aside {
-    margin-top: auto;
-  } */
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     flex-direction: row;

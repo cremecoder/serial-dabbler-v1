@@ -1,8 +1,6 @@
 import styled from "styled-components"
 
 export const StyledSlide = styled.div`
-  /* display: flex;
-  flex-direction: column; */
   overflow: scroll;
   position: absolute;
   inset: 0 0 0 0;

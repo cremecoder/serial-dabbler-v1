@@ -4,7 +4,7 @@ import { DabbleButton } from "../styles/Buttons.styled"
 
 const DabbleBar = ({ handleDabble }) => {
   const theme = useTheme()
-  // console.log("Dabblebar rendered")
+
   return (
     <StyledDabbleBar>
       <FlexDabbleBar>

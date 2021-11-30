@@ -16,7 +16,7 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
       isLocked: !isLocked
     }))
   }
-  // console.log("Category rendered")
+
   useEffect(() => {
     if (!isLocked) {
       let ranNum = Math.floor(Math.random() * dabbles.length)
