@@ -66,7 +66,7 @@ const Slide = ({ slideState }) => {
           <h1>DROP US A MESSAGE</h1>
           <p>
             If you have any questions or feedback, or just want to say hi,
-            please drop us a message - we'd love to hear from you.
+            please drop us a message - we&apos;d love to hear from you.
           </p>
         </div>
         <form>

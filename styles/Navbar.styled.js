@@ -8,6 +8,8 @@ export const StyledNav = styled.nav`
   h1 {
     font-size: 24px;
     line-height: 1;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
   }
 
   button {

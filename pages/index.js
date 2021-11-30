@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { createContext, useContext, useState, useReducer } from "react"
+import { createContext, useContext, useReducer } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -9,7 +9,6 @@ import { LayoutContext } from "../components/Layout"
 import Slide from "../components/Slide"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
-import { StyledSlide } from "../styles/Slide.styled"
 import DabbleBar from "../components/DabbleBar"
 import { DabbleButton } from "../styles/Buttons.styled"
 
@@ -22,9 +21,8 @@ export async function getStaticProps() {
     database_id: process.env.NOTION_DATABASE_ID
   })
   const { results } = getData
-  let modified = results.splice(1)
 
-  const formatObjects = modified.map(obj => {
+  const formatObjects = results.map(obj => {
     return {
       id: obj.id,
       name: obj.properties.Name.title[0].plain_text,

@@ -1,6 +1,5 @@
+import Head from "next/head"
 import dynamic from "next/dynamic"
-
-import Meta from "../components/Meta"
 
 const Layout = dynamic(() => import("../components/Layout"), { ssr: false })
 
@@ -11,7 +10,9 @@ import GlobalStyles from "../styles/Global"
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Meta />
+      <Head>
+        <title>Serial Dabbler - V1</title>
+      </Head>
       <ThemeProvider theme={Theme}>
         <GlobalStyles />
         <Layout>
