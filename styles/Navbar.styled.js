@@ -47,3 +47,11 @@ export const FlexNav = styled.div`
     height: 100%;
   }
 `
+
+export const OverlayButton = styled.button`
+  background: transparent;
+  color: ${props => props.clrPrimary};
+  outline: none;
+  border: none;
+  cursor: pointer;
+`

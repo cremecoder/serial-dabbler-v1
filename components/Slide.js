@@ -6,27 +6,26 @@ import { LayoutContext } from "../components/Layout"
 import {
   StyledSlide,
   StyledBlockText,
-  StyledParaText
+  StyledParaText,
+  CloseButton
 } from "../styles/Slide.styled"
-import { OverlayButton } from "../styles/Buttons.styled"
 
 const Slide = ({ slideState }) => {
   const theme = useTheme()
-  const { width, isOverlayOpen, handleOverlayToggle } = useContext(
-    LayoutContext
-  )
+  const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
 
+  console.log("Slide")
   return (
-    <StyledSlide width={width} slideState={slideState}>
+    <StyledSlide slideState={slideState}>
       <div className="section">
         <StyledBlockText>
-          {isOverlayOpen && width >= 1366 ? (
-            <OverlayButton
+          {isOverlayOpen ? (
+            <CloseButton
               onClick={() => handleOverlayToggle()}
               clrPrimary={theme.colors.white}
             >
               <span>X</span>
-            </OverlayButton>
+            </CloseButton>
           ) : (
             ""
           )}

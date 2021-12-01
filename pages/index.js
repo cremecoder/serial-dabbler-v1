@@ -10,7 +10,7 @@ import Slide from "../components/Slide"
 import Category from "../components/Category"
 import Main from "../styles/Main.styled"
 import DabbleBar from "../components/DabbleBar"
-import { DabbleButton } from "../styles/Buttons.styled"
+import DabbleButton from "../styles/DabbleButton.styled"
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN
@@ -74,7 +74,7 @@ export async function getStaticProps() {
 function Home({ categories }) {
   const theme = useTheme()
   const nodeRef = useRef(null)
-  const { width, isOverlayOpen } = useContext(LayoutContext)
+  const { isOverlayOpen } = useContext(LayoutContext)
 
   const [homeState, setHomeState] = useState({
     trigger: false
@@ -98,7 +98,7 @@ function Home({ categories }) {
           trigger={homeState.trigger}
         />
       ))}
-      {width >= 1366 && (
+      {!isOverlayOpen && (
         <DabbleButton
           clrPrimary={theme.colors.black}
           clrSecondary={theme.colors.white}

@@ -1,17 +1,31 @@
 import Image from "next/image"
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
-import { StyledNav, FlexNav } from "../styles/Navbar.styled"
-import { OverlayButton } from "../styles/Buttons.styled"
+import { StyledNav, FlexNav, OverlayButton } from "../styles/Navbar.styled"
 
 const Navbar = () => {
   const theme = useTheme()
-  const { width, isOverlayOpen, handleOverlayToggle } = useContext(
-    LayoutContext
-  )
+  const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
 
+  const [navState, setNavState] = useState({
+    width: window.innerWidth
+  })
+
+  const handleResize = () => {
+    setNavState(prev => ({
+      ...prev,
+      width: window.innerWidth
+    }))
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  console.log("Navbar")
   return (
     <StyledNav>
       <FlexNav>
@@ -21,7 +35,7 @@ const Navbar = () => {
           width={75}
           height={50}
         />
-        {isOverlayOpen && width >= 1366 ? (
+        {isOverlayOpen && navState.width >= 1366 ? (
           ""
         ) : (
           <OverlayButton
@@ -32,7 +46,7 @@ const Navbar = () => {
           </OverlayButton>
         )}
       </FlexNav>
-      {isOverlayOpen && width <= 1366 && <hr />}
+      {isOverlayOpen && navState.width < 1366 && <hr />}
     </StyledNav>
   )
 }

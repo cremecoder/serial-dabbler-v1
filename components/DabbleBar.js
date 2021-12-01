@@ -1,10 +1,11 @@
 import { useTheme } from "styled-components"
 import { StyledDabbleBar, FlexDabbleBar } from "../styles/DabbleBar.styled"
-import { DabbleButton } from "../styles/Buttons.styled"
+import DabbleButton from "../styles/DabbleButton.styled"
 
 const DabbleBar = ({ handleDabble }) => {
   const theme = useTheme()
 
+  console.log("DabbleBar")
   return (
     <StyledDabbleBar>
       <FlexDabbleBar>

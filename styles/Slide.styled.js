@@ -26,6 +26,19 @@ export const StyledSlide = styled.div`
   }
 `
 
+export const CloseButton = styled.button`
+  display: none;
+  background: transparent;
+  color: ${props => props.clrPrimary};
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    display: initial;
+  }
+`
+
 export const StyledBlockText = styled.div`
   border: 1px solid white;
 

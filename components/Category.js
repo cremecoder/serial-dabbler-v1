@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 
 import { StyledCategory, LockIcon } from "../styles/Category.styled"
 import SectionGrid from "../styles/SectionGrid.styled"
@@ -27,6 +27,7 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }
   }, [trigger])
 
+  console.log("Category")
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <SectionGrid>

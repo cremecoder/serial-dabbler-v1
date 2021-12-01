@@ -12,10 +12,7 @@ const Main = styled.main`
   }
 
   & > button {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: none;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
@@ -23,6 +20,14 @@ const Main = styled.main`
 
     section {
       flex-basis: 100%;
+    }
+
+    & > button {
+      display: initial;
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 `

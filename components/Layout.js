@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState } from "react"
 
 import Navbar from "./Navbar"
 import Wrapper from "../styles/Wrapper.styled"
@@ -7,25 +7,10 @@ export const LayoutContext = createContext()
 
 const Layout = ({ children }) => {
   const [layoutState, setLayoutState] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
     isOverlayOpen: false
   })
 
-  const { width, height, isOverlayOpen } = layoutState
-
-  const handleResize = () => {
-    setLayoutState(prev => ({
-      ...prev,
-      width: window.innerWidth,
-      height: window.innerHeight
-    }))
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+  const { isOverlayOpen } = layoutState
 
   const handleOverlayToggle = () => {
     setLayoutState(prev => ({
@@ -33,11 +18,10 @@ const Layout = ({ children }) => {
       isOverlayOpen: !isOverlayOpen
     }))
   }
+
   console.log("Layout")
   return (
-    <LayoutContext.Provider
-      value={{ width, height, isOverlayOpen, handleOverlayToggle }}
-    >
+    <LayoutContext.Provider value={{ isOverlayOpen, handleOverlayToggle }}>
       <Wrapper>
         <Navbar />
         {children}
