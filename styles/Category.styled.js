@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const StyledCategory = styled.section`
-  /* Mobile XS - Portrait */
   background-color: ${({ bgColor }) => bgColor};
   padding: 1em 1.25em;
   display: flex;
@@ -10,7 +9,7 @@ export const StyledCategory = styled.section`
     flex-basis: 100%;
   }
 
-  span {
+  p {
     font-size: 12px;
   }
 
@@ -20,24 +19,20 @@ export const StyledCategory = styled.section`
     line-height: 1;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
-    /* opacity: ${({ state }) =>
-      state === "entering" || (state === "entered" ? 1 : 0)};
-    transform: ${({ state }) =>
-      state === "entering" ||
-      (state === "entered" ? "translateX(0)" : "translateX(-50%)")};
-    transition: transform 300ms ease-in, opacity 300ms ease-in; */
   }
 
-  /* Mobile XS - Landscape */
+  span {
+    cursor: pointer;
+  }
+
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
     padding: 0em 1.25em;
   }
 
-  /* Tablet - Portrait */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     padding: 0em 2em;
 
-    span {
+    p {
       font-size: 16px;
     }
 
@@ -46,12 +41,10 @@ export const StyledCategory = styled.section`
     }
   }
 
-  /* Tablet - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     padding: 0 3em;
   }
 
-  /* Desktop */
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     padding: 0 3em;
 
@@ -59,20 +52,5 @@ export const StyledCategory = styled.section`
       -webkit-text-stroke-width: 0px;
       -webkit-text-stroke-color: none;
     }
-  }
-`
-
-export const LockIcon = styled.img`
-  /* Mobile XS - Portrait */
-  height: 28px;
-  width: 28px;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity 300ms ease;
-
-  /* Tablet - Portrait */
-  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
-    height: 40px;
-    width: 40px;
   }
 `

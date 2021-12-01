@@ -1,6 +1,7 @@
+import Image from "next/image"
 import { useState, useEffect } from "react"
 
-import { StyledCategory, LockIcon } from "../styles/Category.styled"
+import { StyledCategory } from "../styles/Category.styled"
 import SectionGrid from "../styles/SectionGrid.styled"
 
 const Category = ({ category: { name, dabbles }, trigger }) => {
@@ -31,10 +32,12 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <SectionGrid>
-        <span>{name}</span>
+        <p>{name}</p>
         <h1>{dabbles[randomDabbleNum].name}</h1>
-        <LockIcon
+        <Image
           src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
+          width={28}
+          height={28}
           onClick={handleLock}
         />
       </SectionGrid>

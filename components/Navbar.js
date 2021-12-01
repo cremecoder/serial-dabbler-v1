@@ -4,6 +4,7 @@ import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
 import { StyledNav, FlexNav, OverlayButton } from "../styles/Navbar.styled"
+import CloseButton from "../styles/CloseButton"
 
 const Navbar = () => {
   const theme = useTheme()
@@ -42,7 +43,7 @@ const Navbar = () => {
             onClick={() => handleOverlayToggle()}
             clrPrimary={theme.colors.white}
           >
-            <span>{isOverlayOpen ? "X" : "ABOUT"}</span>
+            {isOverlayOpen ? <CloseButton /> : <span>ABOUT</span>}
           </OverlayButton>
         )}
       </FlexNav>

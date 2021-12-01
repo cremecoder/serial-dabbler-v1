@@ -13,6 +13,10 @@ export const StyledSlide = styled.div`
       : "translate(0, -100%)"};
   transition: transform 400ms ease;
 
+  svg {
+    display: none;
+  }
+
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     padding: 0.25em 2em;
   }
@@ -23,6 +27,10 @@ export const StyledSlide = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     padding: 1em 0;
+
+    svg {
+      display: initial;
+    }
   }
 `
 

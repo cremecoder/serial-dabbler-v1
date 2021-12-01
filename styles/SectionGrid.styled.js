@@ -6,7 +6,7 @@ const SectionGrid = styled.div`
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
 
-  span {
+  p {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
@@ -16,7 +16,7 @@ const SectionGrid = styled.div`
     grid-row: 2 / 3;
   }
 
-  img {
+  span {
     place-self: center end;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -26,7 +26,7 @@ const SectionGrid = styled.div`
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
     grid-template-columns: repeat(3, 1fr);
 
-    span {
+    p {
       place-self: center start;
       grid-column: 1 / 2;
       grid-row: 1 / 2;
@@ -40,7 +40,7 @@ const SectionGrid = styled.div`
       grid-row: 1 / 2;
     }
 
-    img {
+    span {
       place-self: center end;
       grid-column: 3 / 4;
       grid-row: 1 / 2;
@@ -49,7 +49,7 @@ const SectionGrid = styled.div`
 
   /* Mobile SM - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape.sm}) {
-    span {
+    p {
       grid-row: 2 / 3;
     }
 
@@ -57,7 +57,7 @@ const SectionGrid = styled.div`
       grid-row: 2 / 3;
     }
 
-    img {
+    span {
       grid-row: 2 / 3;
     }
   }
@@ -67,7 +67,7 @@ const SectionGrid = styled.div`
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(3, 1fr);
 
-    span {
+    p {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
     }
@@ -78,7 +78,7 @@ const SectionGrid = styled.div`
       grid-row: 2 / 3;
     }
 
-    img {
+    span {
       place-self: center end;
       grid-column: 2 / 3;
       grid-row: 2 / 3;
@@ -89,7 +89,7 @@ const SectionGrid = styled.div`
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-template-columns: repeat(3, 1fr);
 
-    span {
+    p {
       grid-column: 1 / 2;
       grid-row: 2 / 3;
     }
@@ -100,7 +100,7 @@ const SectionGrid = styled.div`
       grid-row: 2 / 3;
     }
 
-    img {
+    span {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
     }
@@ -108,7 +108,7 @@ const SectionGrid = styled.div`
 
   /* Desktop */
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    span {
+    p {
       place-self: center;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
@@ -119,7 +119,7 @@ const SectionGrid = styled.div`
       grid-row: 2 / 3;
     }
 
-    img {
+    span {
       place-self: start center;
       grid-column: 2 / 3;
       grid-row: 3 / 4;

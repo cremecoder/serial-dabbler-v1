@@ -1,6 +1,8 @@
+import dynamic from "next/dynamic"
 import { createContext, useState } from "react"
 
-import Navbar from "./Navbar"
+const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false })
+
 import Wrapper from "../styles/Wrapper.styled"
 
 export const LayoutContext = createContext()

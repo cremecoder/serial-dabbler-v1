@@ -6,9 +6,9 @@ import { LayoutContext } from "../components/Layout"
 import {
   StyledSlide,
   StyledBlockText,
-  StyledParaText,
-  CloseButton
+  StyledParaText
 } from "../styles/Slide.styled"
+import CloseButton from "../styles/CloseButton"
 
 const Slide = ({ slideState }) => {
   const theme = useTheme()
@@ -20,12 +20,7 @@ const Slide = ({ slideState }) => {
       <div className="section">
         <StyledBlockText>
           {isOverlayOpen ? (
-            <CloseButton
-              onClick={() => handleOverlayToggle()}
-              clrPrimary={theme.colors.white}
-            >
-              <span>X</span>
-            </CloseButton>
+            <CloseButton onClick={() => handleOverlayToggle()} />
           ) : (
             ""
           )}
