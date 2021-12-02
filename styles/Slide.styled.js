@@ -5,7 +5,6 @@ export const StyledSlide = styled.div`
   position: absolute;
   inset: 0 0 0 0;
   z-index: 10;
-  padding: 0 1em;
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
   opacity: ${({ slideState }) =>
@@ -26,6 +25,10 @@ export const StyledSlide = styled.div`
     display: none;
   } */
 
+  & > * {
+    padding: 1em;
+  }
+
   h1,
   h2 {
     letter-spacing: 0.5px;
@@ -41,20 +44,24 @@ export const StyledSlide = styled.div`
   }
 
   hr {
-    margin: 1em 0;
+    padding: 0;
+    margin: 1em;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
-    padding: 0.25em 2em;
+    padding: 0 1em;
+
+    & > :first-child {
+      width: 50%;
+    }
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
-    padding: 0.25em 3em;
+    padding: 0 2em;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    padding: 1em 0;
-
+    padding: 1em;
     transform: ${({ slideState }) =>
       slideState === "entering" ||
       slideState === "entered" ||
@@ -66,12 +73,6 @@ export const StyledSlide = styled.div`
       display: initial;
     } */
   }
-`
-
-export const FlexSlide = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 `
 
 export const FlexSlideInner = styled.div`
@@ -98,13 +99,9 @@ export const CloseButton = styled.button`
   }
 `
 
-export const StyledBlockText = styled.div`
-  padding: 1em 0;
-`
+export const StyledBlockText = styled.div``
 
 export const StyledParaText = styled.div`
-  padding: 1em 0;
-
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
     width: 60%;
   }
@@ -120,15 +117,19 @@ export const SocialDiv = styled.div`
 `
 
 export const FormText = styled.div`
-  padding: 1em 0;
   h1 {
     padding-bottom: 0.5em;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+    align-self: flex-start;
   }
 `
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 
   label {
     padding: 1em 0 0.5em 0;
@@ -141,7 +142,9 @@ export const Form = styled.form`
     font-size: 1.5em;
     line-height: 1.5;
     outline: none;
-    border: none;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
   }
 
   button {

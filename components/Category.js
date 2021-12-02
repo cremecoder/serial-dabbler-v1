@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
-import { Transition } from "react-transition-group"
 import { useTheme } from "styled-components"
 
 import { StyledCategory } from "../styles/Category.styled"
@@ -35,25 +34,18 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
 
   console.log("Category")
   return (
-    <Transition
-      in={trigger}
-      timeout={theme.durations.categories}
-      nodeRef={nodeRef}
-    >
-      <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
-        <SectionGrid>
-          <p>{name}</p>
-          <h1>{dabbles[randomDabbleNum].name}</h1>
-
-          <Image
-            src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
-            width={28}
-            height={28}
-            onClick={handleLock}
-          />
-        </SectionGrid>
-      </StyledCategory>
-    </Transition>
+    <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
+      <SectionGrid>
+        <p>{name}</p>
+        <h1>{dabbles[randomDabbleNum].name}</h1>
+        <Image
+          src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
+          width={28}
+          height={28}
+          onClick={handleLock}
+        />
+      </SectionGrid>
+    </StyledCategory>
   )
 }
 
