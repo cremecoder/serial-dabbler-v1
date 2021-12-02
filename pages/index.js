@@ -88,7 +88,11 @@ function Home({ categories }) {
   console.log("Index")
   return (
     <Main>
-      <Transition in={isOverlayOpen} timeout={400} nodeRef={nodeRef}>
+      <Transition
+        in={isOverlayOpen}
+        timeout={theme.durations.slide}
+        nodeRef={nodeRef}
+      >
         {state => <Slide slideState={state} />}
       </Transition>
       {categories.map(category => (

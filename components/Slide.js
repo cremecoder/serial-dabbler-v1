@@ -14,7 +14,6 @@ import {
 } from "../styles/Slide.styled"
 import CloseButton from "../styles/CloseButton"
 import InstaIcon from "../styles/InstaIcon"
-import dabbleButton from "../styles/DabbleButton.styled"
 import DabbleButton from "../styles/DabbleButton.styled"
 
 const Slide = ({ slideState }) => {

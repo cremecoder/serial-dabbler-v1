@@ -19,6 +19,19 @@ export const StyledCategory = styled.section`
     line-height: 1;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
+    display: ${({ slideState }) =>
+      slideState === "entering" ||
+      slideState === "entered" ||
+      slideState === "exiting"
+        ? "none"
+        : "block"};
+    opacity: ${({ slideState }) =>
+      slideState === "entering" ||
+      slideState === "exiting" ||
+      slideState === "exited"
+        ? "0"
+        : "1"};
+    transition: all 1000ms ease;
   }
 
   span {

@@ -8,11 +8,19 @@ export const StyledSlide = styled.div`
   padding: 0 1em;
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
+  opacity: ${({ slideState }) =>
+    slideState === "entering" ||
+    slideState === "entered" ||
+    slideState === "exiting"
+      ? "1"
+      : "0"};
   transform: ${({ slideState }) =>
-    slideState === "entering" || slideState === "entered"
+    slideState === "entering" ||
+    slideState === "entered" ||
+    slideState === "exiting"
       ? "translate(0, 0)"
       : "translate(0, -100%)"};
-  transition: transform 400ms ease;
+  transition: opacity 400ms ease, transform 400ms ease;
 
   /* svg:first-child {
     display: none;
@@ -46,6 +54,13 @@ export const StyledSlide = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     padding: 1em 0;
+
+    transform: ${({ slideState }) =>
+      slideState === "entering" ||
+      slideState === "entered" ||
+      slideState === "exiting"
+        ? "translate(0, 0)"
+        : "translate(-100%, 0)"};
 
     /* svg:first-child {
       display: initial;

@@ -23,6 +23,10 @@ const Theme = {
       landscape: "1024px"
     },
     desktop: "1366px"
+  },
+  durations: {
+    slide: 400,
+    categories: 300
   }
 }
 
