@@ -2,19 +2,19 @@ import { useContext } from "react"
 import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
+import Form from "./Form"
+
 import StyledSlide from "../styles/Slide.S/Slide.styled"
 import {
   SlideGrid,
   StyledBlockText,
   StyledParaText,
   SocialDiv,
+  Rule,
   FormText,
-  Form
+  Copy
 } from "../styles/Slide.S/SlideGrid.styled"
-import {
-  DabbleButton,
-  CloseButton
-} from "../styles/CallToAction.S/Buttons.styled"
+// import { CloseButton } from "../styles/CallToAction.S/Buttons.styled"
 import { InstaIcon } from "../styles/CallToAction.S/Icons.styled"
 
 const Slide = ({ slideState }) => {
@@ -26,11 +26,11 @@ const Slide = ({ slideState }) => {
     <StyledSlide slideState={slideState}>
       <SlideGrid>
         <StyledBlockText>
-          {isOverlayOpen ? (
+          {/* {isOverlayOpen ? (
             <CloseButton onClick={() => handleOverlayToggle()} />
           ) : (
             ""
-          )}
+          )} */}
           <h1>DABBLE IN NEW THINGS</h1>
           <h1>DABBLE IN OLD SKILLS</h1>
           <h1>DABBLE WITH FRESH IDEAS OR</h1>
@@ -60,31 +60,22 @@ const Slide = ({ slideState }) => {
           <InstaIcon />
           <h2>#SERIALDABBLER</h2>
         </SocialDiv>
-        <hr />
-        <FormText>
-          <h1>DROP US A MESSAGE</h1>
-          <p>
-            If you have any questions or feedback, or just want to say hi,
-            please drop us a message - we&apos;d love to hear from you.
-          </p>
-          <span>Code by Sean Martin</span>
-          <span>Design by Tim Tim</span>
-        </FormText>
-        <Form>
-          <label>Name</label>
-          <input type="text" />
-          <label>Email</label>
-          <input type="email" />
-          <label>Message</label>
-          <textarea rows="5" cols="33"></textarea>
-          <DabbleButton
-            clrPrimary={theme.colors.white}
-            clrSecondary={theme.colors.black}
-          >
-            SUBMIT
-          </DabbleButton>
-        </Form>
       </SlideGrid>
+      <Rule />
+      {/* <SlideGrid> */}
+      <FormText>
+        <h2>DROP US A MESSAGE</h2>
+        <p>
+          If you have any questions or feedback, or just want to say hi, please
+          drop us a message - we&apos;d love to hear from you.
+        </p>
+      </FormText>
+      <Form />
+      <Copy>
+        <span>Code by Sean Martin</span>
+        <span>Design by Tim Tim</span>
+      </Copy>
+      {/* </SlideGrid> */}
     </StyledSlide>
   )
 }

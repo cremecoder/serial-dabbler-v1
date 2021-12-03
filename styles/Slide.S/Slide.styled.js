@@ -36,17 +36,16 @@ const StyledSlide = styled.div`
     line-height: 1.5;
   }
 
-  hr {
-    padding: 0;
-    margin: 1em;
-  }
-
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     padding: 0 2em;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     padding: 0 3em;
+
+    h1 {
+      font-size: 3em;
+    }
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {

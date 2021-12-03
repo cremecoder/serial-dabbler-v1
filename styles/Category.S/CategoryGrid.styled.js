@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 const SectionGrid = styled.div`
-  /* Mobile XS - Portrait */
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
@@ -22,7 +21,6 @@ const SectionGrid = styled.div`
     grid-row: 2 / 3;
   }
 
-  /* Mobile XS - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
     grid-template-columns: repeat(3, 1fr);
 
@@ -47,7 +45,6 @@ const SectionGrid = styled.div`
     }
   }
 
-  /* Mobile SM - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape.sm}) {
     p {
       grid-row: 2 / 3;
@@ -62,7 +59,6 @@ const SectionGrid = styled.div`
     }
   }
 
-  /* Tablet - Portrait */
   /* @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(3, 1fr);
@@ -85,7 +81,6 @@ const SectionGrid = styled.div`
     }
   } */
 
-  /* Tablet - Landscape */
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-template-columns: repeat(3, 1fr);
 
@@ -106,7 +101,6 @@ const SectionGrid = styled.div`
     }
   }
 
-  /* Desktop */
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     p {
       place-self: center;
