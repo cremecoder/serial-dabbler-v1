@@ -7,9 +7,9 @@ export const SlideGrid = styled.div`
   /* grid-auto-columns: 1fr; */
   grid-template-columns: repeat(3, 1fr);
 
-  & > * {
+  /* & > * {
     border: 1px solid red;
-  }
+  } */
 `
 // ====================================================================
 export const StyledBlockText = styled.div`
@@ -39,6 +39,9 @@ export const StyledParaText = styled.div`
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 0.5em 0;
   }
 `
 // ====================================================================
