@@ -3,7 +3,7 @@ import { createContext, useState } from "react"
 
 const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false })
 
-import Wrapper from "../styles/Wrapper.styled"
+import Wrapper from "../styles/Wrapper.S/Wrapper.styled"
 
 export const LayoutContext = createContext()
 

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const StyledDabbleBar = styled.aside`
+export const StyledDabblebar = styled.aside`
   background-color: ${({ theme }) => theme.colors.black};
   padding: 0.5em;
 
@@ -21,7 +21,7 @@ export const StyledDabbleBar = styled.aside`
   }
 `
 
-export const FlexDabbleBar = styled.div`
+export const FlexDabblebar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

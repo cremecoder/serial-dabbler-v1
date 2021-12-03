@@ -8,9 +8,10 @@ import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 import Slide from "../components/Slide"
 import Category from "../components/Category"
-import Main from "../styles/Main.styled"
-import DabbleBar from "../components/DabbleBar"
-import DabbleButton from "../styles/DabbleButton.styled"
+import Dabblebar from "../components/Dabblebar"
+
+import Main from "../styles/Main.S/Main.styled"
+import DabbleButton from "../styles/CallToAction.S/DabbleButton.styled"
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN
@@ -111,7 +112,7 @@ function Home({ categories }) {
           <span>LET&apos;S DABBLE</span>
         </DabbleButton>
       )}
-      <DabbleBar handleDabble={handleDabble} />
+      <Dabblebar handleDabble={handleDabble} />
     </Main>
   )
 }

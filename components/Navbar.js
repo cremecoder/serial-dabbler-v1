@@ -1,10 +1,12 @@
 import Image from "next/image"
 import { useContext, useState, useEffect } from "react"
 import { useTheme } from "styled-components"
+
 import { LayoutContext } from "../components/Layout"
 
-import { StyledNav, FlexNav, OverlayButton } from "../styles/Navbar.styled"
-import CloseButton from "../styles/CloseButton"
+import { StyledNav, FlexNav } from "../styles/Navbar.S/Navbar.styled"
+import OverlayButton from "../styles/CallToAction.S/OverlayButton.styled"
+import CloseButton from "../styles/CallToAction.S/CloseButton.styled"
 
 const Navbar = () => {
   const theme = useTheme()

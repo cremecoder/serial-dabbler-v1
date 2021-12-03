@@ -1,14 +1,17 @@
 import { useTheme } from "styled-components"
-import { StyledDabbleBar, FlexDabbleBar } from "../styles/DabbleBar.styled"
-import DabbleButton from "../styles/DabbleButton.styled"
+import {
+  StyledDabblebar,
+  FlexDabblebar
+} from "../styles/Dabblebar.S/Dabblebar.styled"
+import DabbleButton from "../styles/CallToAction.S/DabbleButton.styled"
 
-const DabbleBar = ({ handleDabble }) => {
+const Dabblebar = ({ handleDabble }) => {
   const theme = useTheme()
 
-  console.log("DabbleBar")
+  console.log("Dabblebar")
   return (
-    <StyledDabbleBar>
-      <FlexDabbleBar>
+    <StyledDabblebar>
+      <FlexDabblebar>
         <DabbleButton
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
@@ -16,9 +19,9 @@ const DabbleBar = ({ handleDabble }) => {
         >
           <span>LET&apos;S DABBLE</span>
         </DabbleButton>
-      </FlexDabbleBar>
-    </StyledDabbleBar>
+      </FlexDabblebar>
+    </StyledDabblebar>
   )
 }
 
-export default DabbleBar
+export default Dabblebar

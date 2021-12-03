@@ -1,8 +1,8 @@
 import Head from "next/head"
+import { ThemeProvider } from "styled-components"
 
 import Layout from "../components/Layout"
 import Theme from "../styles/Theme"
-import { ThemeProvider } from "styled-components"
 
 import "../styles/global.css"
 

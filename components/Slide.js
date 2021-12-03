@@ -2,18 +2,18 @@ import { useContext } from "react"
 import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
+import StyledSlide from "../styles/Slide.S/Slide.styled"
 import {
-  StyledSlide,
-  FlexSlideInner,
+  SlideGrid,
   StyledBlockText,
   StyledParaText,
   SocialDiv,
   FormText,
   Form
-} from "../styles/Slide.styled"
-import CloseButton from "../styles/CloseButton"
-import InstaIcon from "../styles/InstaIcon"
-import DabbleButton from "../styles/DabbleButton.styled"
+} from "../styles/Slide.S/SlideGrid.styled"
+import CloseButton from "../styles/CallToAction.S/CloseButton.styled"
+import InstaIcon from "../styles/CallToAction.S/InstaIcon.styled"
+import DabbleButton from "../styles/CallToAction.S/DabbleButton.styled"
 
 const Slide = ({ slideState }) => {
   const theme = useTheme()
@@ -22,22 +22,22 @@ const Slide = ({ slideState }) => {
   console.log("Slide")
   return (
     <StyledSlide slideState={slideState}>
-      <StyledBlockText>
-        {isOverlayOpen ? (
-          <CloseButton onClick={() => handleOverlayToggle()} />
-        ) : (
-          ""
-        )}
-        <h1>DABBLE IN NEW THINGS</h1>
-        <h1>DABBLE IN OLD SKILLS</h1>
-        <h1>DABBLE WITH FRESH IDEAS OR</h1>
-        <h1>SWIPE THE DUST OFF OLD ONES</h1>
-        <h1>DABBLE EVERYDAY</h1>
-        <h1>OR DABBLE EVERY WEEK</h1>
-        <h1>DABBLE TILL THE SUN COMES UP</h1>
-        <h1>OR DABBLE FOR A BIT.</h1>
-      </StyledBlockText>
-      <FlexSlideInner>
+      <SlideGrid>
+        <StyledBlockText>
+          {isOverlayOpen ? (
+            <CloseButton onClick={() => handleOverlayToggle()} />
+          ) : (
+            ""
+          )}
+          <h1>DABBLE IN NEW THINGS</h1>
+          <h1>DABBLE IN OLD SKILLS</h1>
+          <h1>DABBLE WITH FRESH IDEAS OR</h1>
+          <h1>SWIPE THE DUST OFF OLD ONES</h1>
+          <h1>DABBLE EVERYDAY</h1>
+          <h1>OR DABBLE EVERY WEEK</h1>
+          <h1>DABBLE TILL THE SUN COMES UP</h1>
+          <h1>OR DABBLE FOR A BIT.</h1>
+        </StyledBlockText>
         <StyledParaText>
           <p>
             Too many choices, too many ideas, not enough ideas what tools, what
@@ -58,9 +58,7 @@ const Slide = ({ slideState }) => {
           <InstaIcon />
           <h2>#SERIALDABBLER</h2>
         </SocialDiv>
-      </FlexSlideInner>
-      <hr />
-      <FlexSlideInner>
+        <hr />
         <FormText>
           <h1>DROP US A MESSAGE</h1>
           <p>
@@ -84,7 +82,7 @@ const Slide = ({ slideState }) => {
             SUBMIT
           </DabbleButton>
         </Form>
-      </FlexSlideInner>
+      </SlideGrid>
     </StyledSlide>
   )
 }

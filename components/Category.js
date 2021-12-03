@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react"
 
 import { useTheme } from "styled-components"
 
-import { StyledCategory } from "../styles/Category.styled"
-import SectionGrid from "../styles/SectionGrid.styled"
+import { StyledCategory } from "../styles/Category.S/Category.styled"
+import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
 const Category = ({ category: { name, dabbles }, trigger }) => {
   const theme = useTheme()
@@ -35,7 +35,7 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
   console.log("Category")
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
-      <SectionGrid>
+      <CategoryGrid>
         <p>{name}</p>
         <h1>{dabbles[randomDabbleNum].name}</h1>
         <Image
@@ -44,7 +44,7 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
           height={28}
           onClick={handleLock}
         />
-      </SectionGrid>
+      </CategoryGrid>
     </StyledCategory>
   )
 }
