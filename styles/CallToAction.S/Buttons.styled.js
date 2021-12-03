@@ -1,6 +1,13 @@
 import styled from "styled-components"
+import { GrClose } from "react-icons/gr"
 
-const DabbleButton = styled.button`
+export const CloseButton = styled(GrClose)`
+  background-color: white;
+  font-size: 2em;
+  cursor: pointer;
+`
+
+export const DabbleButton = styled.button`
   background: transparent;
   color: ${props => props.clrPrimary};
   outline: none;
@@ -16,4 +23,10 @@ const DabbleButton = styled.button`
   }
 `
 
-export default DabbleButton
+export const OverlayButton = styled.button`
+  background: transparent;
+  color: ${props => props.clrPrimary};
+  outline: none;
+  border: none;
+  cursor: pointer;
+`

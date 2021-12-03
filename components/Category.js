@@ -1,14 +1,10 @@
 import Image from "next/image"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
-import { useTheme } from "styled-components"
-
-import { StyledCategory } from "../styles/Category.S/Category.styled"
+import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
 const Category = ({ category: { name, dabbles }, trigger }) => {
-  const theme = useTheme()
-  const nodeRef = useRef(null)
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
     isLocked: false

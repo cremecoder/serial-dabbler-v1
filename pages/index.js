@@ -11,7 +11,7 @@ import Category from "../components/Category"
 import Dabblebar from "../components/Dabblebar"
 
 import Main from "../styles/Main.S/Main.styled"
-import DabbleButton from "../styles/CallToAction.S/DabbleButton.styled"
+import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN

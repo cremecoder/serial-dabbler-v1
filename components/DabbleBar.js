@@ -3,7 +3,7 @@ import {
   StyledDabblebar,
   FlexDabblebar
 } from "../styles/Dabblebar.S/Dabblebar.styled"
-import DabbleButton from "../styles/CallToAction.S/DabbleButton.styled"
+import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
 
 const Dabblebar = ({ handleDabble }) => {
   const theme = useTheme()

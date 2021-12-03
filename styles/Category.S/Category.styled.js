@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const StyledCategory = styled.section`
+const StyledCategory = styled.section`
   background-color: ${({ bgColor }) => bgColor};
   padding: 1em 1.25em;
   display: flex;
@@ -54,3 +54,5 @@ export const StyledCategory = styled.section`
     }
   }
 `
+
+export default StyledCategory

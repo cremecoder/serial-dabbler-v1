@@ -11,9 +11,11 @@ import {
   FormText,
   Form
 } from "../styles/Slide.S/SlideGrid.styled"
-import CloseButton from "../styles/CallToAction.S/CloseButton.styled"
-import InstaIcon from "../styles/CallToAction.S/InstaIcon.styled"
-import DabbleButton from "../styles/CallToAction.S/DabbleButton.styled"
+import {
+  DabbleButton,
+  CloseButton
+} from "../styles/CallToAction.S/Buttons.styled"
+import { InstaIcon } from "../styles/CallToAction.S/Icons.styled"
 
 const Slide = ({ slideState }) => {
   const theme = useTheme()
