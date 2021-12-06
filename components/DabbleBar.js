@@ -8,7 +8,6 @@ import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
 const Dabblebar = ({ handleDabble }) => {
   const theme = useTheme()
 
-  console.log("Dabblebar")
   return (
     <StyledDabblebar>
       <FlexDabblebar>

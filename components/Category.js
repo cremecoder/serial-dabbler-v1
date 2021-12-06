@@ -28,7 +28,6 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }
   }, [trigger])
 
-  console.log("Category")
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>
@@ -36,6 +35,7 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
         <h1>{dabbles[randomDabbleNum].name}</h1>
         <Image
           src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
+          alt={"lock-icon"}
           width={28}
           height={28}
           onClick={handleLock}

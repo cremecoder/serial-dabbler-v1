@@ -76,7 +76,6 @@ function Home({ categories }) {
   const theme = useTheme()
   const nodeRef = useRef(null)
   const { isOverlayOpen } = useContext(LayoutStateContext)
-  const { handleOverlayToggle } = useContext(SetLayoutStateContext)
 
   const [homeState, setHomeState] = useState({
     trigger: false
@@ -87,7 +86,7 @@ function Home({ categories }) {
       trigger: !homeState.trigger
     }))
   }
-  console.log("Index")
+
   return (
     <Main>
       <Transition

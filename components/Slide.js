@@ -26,7 +26,6 @@ const Slide = ({ slideState }) => {
   const { isOverlayOpen } = useContext(LayoutStateContext)
   const { handleOverlayToggle } = useContext(SetLayoutStateContext)
 
-  console.log("Slide")
   return (
     <StyledSlide slideState={slideState}>
       {isOverlayOpen ? (

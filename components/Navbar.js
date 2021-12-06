@@ -31,7 +31,6 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  console.log("Navbar")
   return (
     <StyledNav>
       <FlexNav>

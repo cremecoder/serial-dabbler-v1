@@ -22,7 +22,6 @@ const Layout = ({ children }) => {
     }))
   }
 
-  console.log("Layout")
   return (
     <LayoutStateContext.Provider value={{ isOverlayOpen }}>
       <SetLayoutStateContext.Provider value={{ handleOverlayToggle }}>
