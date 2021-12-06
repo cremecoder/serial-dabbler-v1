@@ -41,7 +41,7 @@ const Navbar = () => {
           width={75}
           height={50}
         />
-        {isOverlayOpen && navState.width >= 1366 ? (
+        {isOverlayOpen ? (
           ""
         ) : (
           <OverlayButton

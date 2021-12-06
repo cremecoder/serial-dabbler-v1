@@ -5,6 +5,8 @@ export const CloseButton = styled(GrClose)`
   background-color: white;
   font-size: 2em;
   cursor: pointer;
+  float: right;
+  margin: 1em;
 `
 
 export const DabbleButton = styled.button`

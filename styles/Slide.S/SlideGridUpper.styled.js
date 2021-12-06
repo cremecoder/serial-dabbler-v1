@@ -60,6 +60,7 @@ export const StyledParaText = styled.div`
 
   p {
     font-size: 0.9em;
+    margin-bottom: 1em;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {

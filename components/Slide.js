@@ -29,11 +29,11 @@ const Slide = ({ slideState }) => {
   console.log("Slide")
   return (
     <StyledSlide slideState={slideState}>
-      {/* {isOverlayOpen ? (
+      {isOverlayOpen ? (
         <CloseButton onClick={() => handleOverlayToggle()} />
       ) : (
         ""
-      )} */}
+      )}
       <SlideGridUpper>
         <StyledBlockText>
           <h1>DABBLE IN NEW THINGS</h1>
@@ -49,7 +49,7 @@ const Slide = ({ slideState }) => {
           <p>
             Too many choices, too many ideas, not enough ideas what tools, what
             style, where to start, what to do... Too many decisions to be made
-            tends to turn into Meh, cant be bothered now.
+            tends to turn into <q>Meh, cant be bothered now.</q>
           </p>
           <p>
             Serial Dabbler is here to give you a jump-off point - something to
@@ -57,7 +57,7 @@ const Slide = ({ slideState }) => {
             momentum that you need to get started and get going.
           </p>
           <p>
-            If you make something tha youre chuffed with, tag it and weel
+            If you make something tha youre chuffed with, tag it and we&apos;ll
             re-share it so we can all be chuffed together.
           </p>
         </StyledParaText>
