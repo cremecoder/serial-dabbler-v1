@@ -5,7 +5,7 @@ import {
 } from "../styles/Dabblebar.S/Dabblebar.styled"
 import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
 
-export const Dabblebar = ({ handleDabble }) => {
+const Dabblebar = ({ handleDabble }) => {
   const theme = useTheme()
 
   return (
@@ -16,9 +16,10 @@ export const Dabblebar = ({ handleDabble }) => {
           clrSecondary={theme.colors.black}
           onClick={() => handleDabble()}
         >
-          <span>LET&apos;S DABBLE</span>
+          <span>LETS DABBLE</span>
         </DabbleButton>
       </FlexDabblebar>
     </StyledDabblebar>
   )
 }
+export default Dabblebar

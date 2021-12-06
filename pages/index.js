@@ -8,7 +8,7 @@ import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 import Slide from "../components/Slide"
 import Category from "../components/Category"
-import { Dabblebar } from "../components/Dabblebar"
+// import { Dabblebar } from "../components/Dabblebar"
 
 import Main from "../styles/Main.S/Main.styled"
 import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
@@ -113,7 +113,7 @@ function Home({ categories }) {
           <span>LET&apos;S DABBLE</span>
         </DabbleButton>
       )}
-      <Dabblebar handleDabble={handleDabble} />
+      {/* <Dabblebar handleDabble={handleDabble} /> */}
     </Main>
   )
 }
