@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { Transition } from "react-transition-group"
 
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
@@ -7,9 +8,10 @@ import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 const Category = ({ category: { name, dabbles }, trigger }) => {
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
-    isLocked: false
+    isLocked: false,
+    animate: false
   })
-  const { randomDabbleNum, isLocked } = categoryState
+  const { randomDabbleNum, isLocked, animate } = categoryState
 
   const handleLock = () => {
     setCategoryState(prev => ({
@@ -18,30 +20,46 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }))
   }
 
+  // const handleAnimation = () => {
+  //   setCategoryState(prev => ({
+  //     ...prev,
+  //     animate: !animate,
+  //   }))
+  // }
+
   useEffect(() => {
     if (!isLocked) {
       let ranNum = Math.floor(Math.random() * dabbles.length)
       setCategoryState(prev => ({
         ...prev,
-        randomDabbleNum: ranNum
+        randomDabbleNum: ranNum,
+        animate: !animate
       }))
     }
   }, [trigger])
 
+  console.log(animate)
   return (
-    <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
-      <CategoryGrid>
-        <p>{name}</p>
-        <h1>{dabbles[randomDabbleNum].name}</h1>
-        <Image
-          src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
-          alt={"lock-icon"}
-          width={28}
-          height={28}
-          onClick={handleLock}
-        />
-      </CategoryGrid>
-    </StyledCategory>
+    <Transition in={animate} timeout={300}>
+      {state => (
+        <StyledCategory
+          bgColor={dabbles[randomDabbleNum].color}
+          aniState={state}
+        >
+          <CategoryGrid>
+            <p>{name}</p>
+            <h1>{dabbles[randomDabbleNum].name}</h1>
+            <Image
+              src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
+              alt={"lock-icon"}
+              width={28}
+              height={28}
+              onClick={handleLock}
+            />
+          </CategoryGrid>
+        </StyledCategory>
+      )}
+    </Transition>
   )
 }
 
