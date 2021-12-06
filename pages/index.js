@@ -5,7 +5,7 @@ import uuid from "react-uuid"
 import { Transition } from "react-transition-group"
 import { useTheme } from "styled-components"
 
-import { LayoutStateContext, SetLayoutStateContext } from "../components/Layout"
+import { LayoutStateContext } from "../components/Layout"
 import Slide from "../components/Slide"
 import Category from "../components/Category"
 import Dabblebar from "../components/Dabblebar"
@@ -80,6 +80,7 @@ function Home({ categories }) {
   const [homeState, setHomeState] = useState({
     trigger: false
   })
+
   const handleDabble = () => {
     setHomeState(prev => ({
       ...prev,
