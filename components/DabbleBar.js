@@ -5,7 +5,7 @@ import {
 } from "../styles/Dabblebar.S/Dabblebar.styled"
 import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
 
-const Dabblebar = ({ handleDabble }) => {
+export const Dabblebar = ({ handleDabble }) => {
   const theme = useTheme()
 
   return (
@@ -22,5 +22,3 @@ const Dabblebar = ({ handleDabble }) => {
     </StyledDabblebar>
   )
 }
-
-export default Dabblebar

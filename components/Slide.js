@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { useTheme } from "styled-components"
-import { LayoutStateContext, SetLayoutStateContext } from "../components/Layout"
+import { LayoutContext } from "../components/Layout"
 
 import StyledSlide from "../styles/Slide.S/Slide.styled"
 import {
@@ -23,8 +23,7 @@ import { InstaIcon } from "../styles/CallToAction.S/Icons.styled"
 
 const Slide = ({ slideState }) => {
   const theme = useTheme()
-  const { isOverlayOpen } = useContext(LayoutStateContext)
-  const { handleOverlayToggle } = useContext(SetLayoutStateContext)
+  const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
 
   return (
     <StyledSlide slideState={slideState}>

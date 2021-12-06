@@ -5,10 +5,10 @@ import uuid from "react-uuid"
 import { Transition } from "react-transition-group"
 import { useTheme } from "styled-components"
 
-import { LayoutStateContext } from "../components/Layout"
+import { LayoutContext } from "../components/Layout"
 import Slide from "../components/Slide"
 import Category from "../components/Category"
-import Dabblebar from "../components/Dabblebar"
+import { Dabblebar } from "../components/Dabblebar"
 
 import Main from "../styles/Main.S/Main.styled"
 import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
@@ -75,7 +75,7 @@ export async function getStaticProps() {
 function Home({ categories }) {
   const theme = useTheme()
   const nodeRef = useRef(null)
-  const { isOverlayOpen } = useContext(LayoutStateContext)
+  const { isOverlayOpen } = useContext(LayoutContext)
 
   const [homeState, setHomeState] = useState({
     trigger: false

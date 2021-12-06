@@ -5,8 +5,7 @@ const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false })
 
 import Wrapper from "../styles/Wrapper.S/Wrapper.styled"
 
-export const LayoutStateContext = createContext()
-export const SetLayoutStateContext = createContext()
+export const LayoutContext = createContext()
 
 const Layout = ({ children }) => {
   const [layoutState, setLayoutState] = useState({
@@ -23,14 +22,12 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <LayoutStateContext.Provider value={{ isOverlayOpen }}>
-      <SetLayoutStateContext.Provider value={{ handleOverlayToggle }}>
-        <Wrapper>
-          <Navbar />
-          {children}
-        </Wrapper>
-      </SetLayoutStateContext.Provider>
-    </LayoutStateContext.Provider>
+    <LayoutContext.Provider value={{ isOverlayOpen, handleOverlayToggle }}>
+      <Wrapper>
+        <Navbar />
+        {children}
+      </Wrapper>
+    </LayoutContext.Provider>
   )
 }
 
