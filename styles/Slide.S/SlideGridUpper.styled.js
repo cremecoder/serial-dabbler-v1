@@ -51,9 +51,6 @@ export const StyledBlockText = styled.div`
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     grid-column: 1 / 4;
     grid-row: 1 / 3;
-    /* h1 {
-      font-size: 4.25em;
-    } */
   }
 `
 // ====================================================================

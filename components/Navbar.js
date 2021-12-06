@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useContext, useState, useEffect } from "react"
 import { useTheme } from "styled-components"
 
-import { LayoutContext } from "../components/Layout"
+import { LayoutStateContext, SetLayoutStateContext } from "../components/Layout"
 
 import { StyledNav, FlexNav } from "../styles/Navbar.S/Navbar.styled"
 import {
@@ -12,7 +12,8 @@ import {
 
 const Navbar = () => {
   const theme = useTheme()
-  const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
+  const { isOverlayOpen } = useContext(LayoutStateContext)
+  const { handleOverlayToggle } = useContext(SetLayoutStateContext)
 
   const [navState, setNavState] = useState({
     width: window.innerWidth
