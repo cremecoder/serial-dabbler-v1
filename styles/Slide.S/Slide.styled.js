@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 const StyledSlide = styled.div`
-  padding: 0 1em;
   overflow: scroll;
   position: absolute;
   inset: 0 0 0 0;
@@ -32,20 +31,12 @@ const StyledSlide = styled.div`
 
   p {
     letter-spacing: 0.5px;
-    font-size: 1rem;
     line-height: 1.5;
   }
 
-  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
-    padding: 0 2em;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
-    padding: 0 3em;
-
-    h1 {
-      font-size: 3em;
-    }
+  hr {
+    padding: 0;
+    margin: 0.5em 1em;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {

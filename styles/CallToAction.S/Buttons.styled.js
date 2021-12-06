@@ -9,6 +9,7 @@ export const CloseButton = styled(GrClose)`
 
 export const DabbleButton = styled.button`
   background: transparent;
+  width: ${({ width }) => width || "auto"};
   color: ${props => props.clrPrimary};
   outline: none;
   border: 2px solid ${props => props.clrPrimary};

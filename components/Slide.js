@@ -2,19 +2,23 @@ import { useContext } from "react"
 import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
-import Form from "./Form"
-
 import StyledSlide from "../styles/Slide.S/Slide.styled"
 import {
-  SlideGrid,
+  SlideGridUpper,
   StyledBlockText,
   StyledParaText,
-  SocialDiv,
-  Rule,
+  SocialDiv
+} from "../styles/Slide.S/SlideGridUpper.styled"
+import {
+  SlideGridLower,
   FormText,
+  Form,
   Copy
-} from "../styles/Slide.S/SlideGrid.styled"
-// import { CloseButton } from "../styles/CallToAction.S/Buttons.styled"
+} from "../styles/Slide.S/SlideGridLower.styled"
+import {
+  DabbleButton,
+  CloseButton
+} from "../styles/CallToAction.S/Buttons.styled"
 import { InstaIcon } from "../styles/CallToAction.S/Icons.styled"
 
 const Slide = ({ slideState }) => {
@@ -24,13 +28,13 @@ const Slide = ({ slideState }) => {
   console.log("Slide")
   return (
     <StyledSlide slideState={slideState}>
-      <SlideGrid>
+      {/* {isOverlayOpen ? (
+        <CloseButton onClick={() => handleOverlayToggle()} />
+      ) : (
+        ""
+      )} */}
+      <SlideGridUpper>
         <StyledBlockText>
-          {/* {isOverlayOpen ? (
-            <CloseButton onClick={() => handleOverlayToggle()} />
-          ) : (
-            ""
-          )} */}
           <h1>DABBLE IN NEW THINGS</h1>
           <h1>DABBLE IN OLD SKILLS</h1>
           <h1>DABBLE WITH FRESH IDEAS OR</h1>
@@ -60,22 +64,36 @@ const Slide = ({ slideState }) => {
           <InstaIcon />
           <h2>#SERIALDABBLER</h2>
         </SocialDiv>
-      </SlideGrid>
-      <Rule />
-      {/* <SlideGrid> */}
-      <FormText>
-        <h2>DROP US A MESSAGE</h2>
-        <p>
-          If you have any questions or feedback, or just want to say hi, please
-          drop us a message - we&apos;d love to hear from you.
-        </p>
-      </FormText>
-      <Form />
-      <Copy>
-        <span>Code by Sean Martin</span>
-        <span>Design by Tim Tim</span>
-      </Copy>
-      {/* </SlideGrid> */}
+      </SlideGridUpper>
+      <hr />
+      <SlideGridLower>
+        <FormText>
+          <h2>DROP US A MESSAGE</h2>
+          <p>
+            If you have any questions or feedback, or just want to say hi,
+            please drop us a message - we&apos;d love to hear from you.
+          </p>
+        </FormText>
+        <Form>
+          <label>Name</label>
+          <input type="text" />
+          <label>Email</label>
+          <input type="email" />
+          <label>Message</label>
+          <textarea rows="5" cols="33"></textarea>
+          <DabbleButton
+            clrPrimary={theme.colors.white}
+            clrSecondary={theme.colors.black}
+            width={"50%"}
+          >
+            SUBMIT
+          </DabbleButton>
+        </Form>
+        <Copy>
+          <span>Code by Sean Martin</span>
+          <span>Design by Tim Tim</span>
+        </Copy>
+      </SlideGridLower>
     </StyledSlide>
   )
 }
