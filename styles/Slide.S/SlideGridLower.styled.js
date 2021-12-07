@@ -53,8 +53,6 @@ export const FormText = styled.div`
 export const StyledForm = styled.form`
   grid-column: 1 / 5;
   grid-row: 2 / 3;
-  display: flex;
-  flex-direction: column;
 
   label {
     padding: 1em 0 0.5em 0;
@@ -67,9 +65,18 @@ export const StyledForm = styled.form`
     font-size: 1em;
     line-height: 1.5;
     outline: none;
-    border: 1px solid white;
+    border: 1px solid ${({ clrSecondary }) => clrSecondary};
     background-color: transparent;
-    color: white;
+    color: ${({ clrSecondary }) => clrSecondary};
+    transition: border-color 200ms, box-shadow 200ms, background-color 200ms,
+      color 200ms;
+
+    :focus {
+      border-color: ${({ clrSecondary }) => clrSecondary};
+      box-shadow: 0 0 10px ${({ clrSecondary }) => clrSecondary};
+      background-color: ${({ clrSecondary }) => clrSecondary};
+      color: ${({ clrPrimary }) => clrPrimary};
+    }
   }
 
   button {
