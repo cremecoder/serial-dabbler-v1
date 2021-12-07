@@ -50,7 +50,7 @@ export const FormText = styled.div`
   }
 `
 
-export const Form = styled.form`
+export const StyledForm = styled.form`
   grid-column: 1 / 5;
   grid-row: 2 / 3;
   display: flex;
@@ -62,9 +62,9 @@ export const Form = styled.form`
 
   input,
   textarea {
-    padding: 0.25em;
+    padding: 0.5em;
     letter-spacing: 0.5px;
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.5;
     outline: none;
     border: 1px solid white;

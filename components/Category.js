@@ -1,11 +1,12 @@
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Transition } from "react-transition-group"
 
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
 const Category = ({ category: { name, dabbles }, trigger }) => {
+  // const nodeRef = useRef(null)
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
     isLocked: false,
@@ -20,12 +21,14 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }))
   }
 
-  // const handleAnimation = () => {
-  //   setCategoryState(prev => ({
-  //     ...prev,
-  //     animate: !animate,
-  //   }))
-  // }
+  // useEffect(() => {
+  //   if (animate === true) {
+  //     setCategoryState(prev => ({
+  //       ...prev,
+  //       animate: false
+  //     }))
+  //   }
+  // }, [])
 
   useEffect(() => {
     if (!isLocked) {
@@ -38,7 +41,6 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }
   }, [trigger])
 
-  console.log(animate)
   return (
     <Transition in={animate} timeout={300}>
       {state => (
