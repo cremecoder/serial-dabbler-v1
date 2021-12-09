@@ -5,10 +5,7 @@ import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
 import { StyledNav, FlexNav } from "../styles/Navbar.S/Navbar.styled"
-import {
-  CloseButton,
-  OverlayButton
-} from "../styles/CallToAction.S/Buttons.styled"
+import { OverlayButton } from "../styles/CallToAction.S/Buttons.styled"
 
 const Navbar = () => {
   const theme = useTheme()
@@ -39,14 +36,23 @@ const Navbar = () => {
           width={75}
           height={50}
         />
-        {isOverlayOpen ? (
+        {navState.width >= 1366 && isOverlayOpen ? (
           ""
         ) : (
           <OverlayButton
             onClick={() => handleOverlayToggle()}
             clrPrimary={theme.colors.white}
           >
-            {isOverlayOpen ? <CloseButton /> : <span>ABOUT</span>}
+            {isOverlayOpen ? (
+              <Image
+                src={`/images/close.svg`}
+                alt={"close"}
+                width={28}
+                height={28}
+              />
+            ) : (
+              <span>ABOUT</span>
+            )}
           </OverlayButton>
         )}
       </FlexNav>

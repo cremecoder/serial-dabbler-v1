@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const SlideGrid = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.breaks.desktop};
   margin: 0 auto;
   padding: 1em;
   display: grid;
@@ -55,10 +55,6 @@ export const StyledBlockText = styled.div`
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-column: 1 / 4;
     grid-row: 1 / 3;
-
-    h1 {
-      font-size: 3.5em;
-    }
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
@@ -104,17 +100,19 @@ export const StyledParaText = styled.div`
 `
 // ====================================================================
 export const SocialDiv = styled.div`
-  grid-column: 1 / 5;
+  /* background-color: red; */
+  grid-column: 1 / 4;
   grid-row: 3 / 4;
   display: flex;
   align-items: center;
 
-  svg {
-    margin-right: 0.5em;
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.portrait}) {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-    grid-column: 4 / 5;
+    grid-column: 3 / 5;
     grid-row: 2 / 3;
     margin-top: 0;
     place-self: end;
@@ -125,6 +123,8 @@ export const SocialDiv = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
     place-self: start;
   }
 `

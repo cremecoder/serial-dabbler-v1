@@ -1,4 +1,6 @@
+import Image from "next/image"
 import { useContext } from "react"
+import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
 import Form from "../components/Form"
@@ -13,19 +15,20 @@ import {
   FormText,
   Copy
 } from "../styles/Slide.S/SlideGrid.styled"
-import { CloseButton } from "../styles/CallToAction.S/Buttons.styled"
-import { InstaIcon } from "../styles/CallToAction.S/Icons.styled"
+import { OverlayButton } from "../styles/CallToAction.S/Buttons.styled"
 
 const Slide = ({ slideState }) => {
+  const theme = useTheme()
   const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
 
   return (
     <StyledSlide slideState={slideState}>
-      {/* {isOverlayOpen ? (
-        <CloseButton onClick={() => handleOverlayToggle()} />
-      ) : (
-        ""
-      )} */}
+      <OverlayButton
+        onClick={() => handleOverlayToggle()}
+        clrPrimary={theme.colors.white}
+      >
+        <Image src={`/images/close.svg`} alt={"close"} width={28} height={28} />
+      </OverlayButton>
       <SlideGrid>
         <StyledBlockText>
           <h1>
@@ -63,7 +66,12 @@ const Slide = ({ slideState }) => {
           </p>
         </StyledParaText>
         <SocialDiv>
-          <InstaIcon />
+          <Image
+            src={`/images/instagram.svg`}
+            alt={"instagram"}
+            width={28}
+            height={28}
+          />
           <h2>#SERIALDABBLER</h2>
         </SocialDiv>
         <Rule />
