@@ -1,36 +1,32 @@
 import { useContext } from "react"
-import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
 import Form from "../components/Form"
 
 import StyledSlide from "../styles/Slide.S/Slide.styled"
 import {
-  SlideGridUpper,
+  SlideGrid,
   StyledBlockText,
   StyledParaText,
-  SocialDiv
-} from "../styles/Slide.S/SlideGridUpper.styled"
-import {
-  SlideGridLower,
+  SocialDiv,
+  Rule,
   FormText,
   Copy
-} from "../styles/Slide.S/SlideGridLower.styled"
+} from "../styles/Slide.S/SlideGrid.styled"
 import { CloseButton } from "../styles/CallToAction.S/Buttons.styled"
 import { InstaIcon } from "../styles/CallToAction.S/Icons.styled"
 
 const Slide = ({ slideState }) => {
-  const theme = useTheme()
   const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
 
   return (
     <StyledSlide slideState={slideState}>
-      {isOverlayOpen ? (
+      {/* {isOverlayOpen ? (
         <CloseButton onClick={() => handleOverlayToggle()} />
       ) : (
         ""
-      )}
-      <SlideGridUpper>
+      )} */}
+      <SlideGrid>
         <StyledBlockText>
           <h1>
             DABBLE IN NEW THINGS
@@ -70,9 +66,7 @@ const Slide = ({ slideState }) => {
           <InstaIcon />
           <h2>#SERIALDABBLER</h2>
         </SocialDiv>
-      </SlideGridUpper>
-      <hr />
-      <SlideGridLower>
+        <Rule />
         <FormText>
           <h2>DROP US A MESSAGE</h2>
           <p>
@@ -85,7 +79,7 @@ const Slide = ({ slideState }) => {
           <span>Code by Sean Martin</span>
           <span>Design by Tim Tim</span>
         </Copy>
-      </SlideGridLower>
+      </SlideGrid>
     </StyledSlide>
   )
 }

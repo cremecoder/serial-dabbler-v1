@@ -21,25 +21,10 @@ const StyledSlide = styled.div`
       : "translate(0, -100%)"};
   transition: opacity 400ms ease, transform 400ms ease;
 
-  h1,
-  h2 {
-    letter-spacing: 0.5px;
-    line-height: 1;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: black;
-  }
-
-  p {
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-  }
-
-  hr {
-    padding: 0;
-    margin: 0.5em 1em;
-  }
-
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1em;
     transform: ${({ slideState }) =>
       slideState === "entering" ||

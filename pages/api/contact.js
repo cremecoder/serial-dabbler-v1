@@ -12,9 +12,9 @@ export default async (req, res) => {
   })
 
   try {
-    const formEmail = await transporter.sendMail({
-      from: email,
-      to: "sean.cremecoder@gmail.com",
+    const emailRes = await transporter.sendMail({
+      from: process.env.EMAIL,
+      to: "sean.cremecoder@gmail.com", // timis inbox
       subject: `Contact form submission from ${name}`,
       html: `
         <p>You have a contact form new contact form submission</p>
@@ -27,7 +27,7 @@ export default async (req, res) => {
       `
     })
 
-    console.log("Message Sent", email.messageId)
+    console.log("Message Sent", emailRes.messageId)
   } catch (err) {
     console.error(err)
   }

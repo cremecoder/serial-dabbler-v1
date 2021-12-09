@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { useTheme } from "styled-components"
 
 import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
-import { StyledForm } from "../styles/Slide.S/SlideGridLower.styled"
+import { StyledForm } from "../styles/Slide.S/SlideGrid.styled"
 
 const StyledField = styled.div`
   display: flex;
