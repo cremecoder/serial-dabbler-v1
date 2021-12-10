@@ -6,7 +6,7 @@ import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
 const Category = ({ category: { name, dabbles }, trigger }) => {
-  // const nodeRef = useRef(null)
+  const nodeRef = useRef(null)
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
     isLocked: false,
@@ -21,15 +21,6 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }))
   }
 
-  // useEffect(() => {
-  //   if (animate === true) {
-  //     setCategoryState(prev => ({
-  //       ...prev,
-  //       animate: false
-  //     }))
-  //   }
-  // }, [])
-
   useEffect(() => {
     if (!isLocked) {
       let ranNum = Math.floor(Math.random() * dabbles.length)
@@ -42,7 +33,7 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
   }, [trigger])
 
   return (
-    <Transition in={animate} timeout={300}>
+    <Transition in={animate} timeout={300} nodeRef={nodeRef}>
       {state => (
         <StyledCategory
           bgColor={dabbles[randomDabbleNum].color}

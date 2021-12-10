@@ -31,7 +31,20 @@ export const SlideGrid = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    padding: 4em 0;
+    padding: 4em;
+  }
+`
+// ====================================================================
+export const CloseButton = styled.span`
+  cursor: pointer;
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    display: initial;
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    place-self: end;
+    padding-bottom: 10%;
   }
 `
 // ====================================================================
@@ -59,7 +72,7 @@ export const StyledBlockText = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     grid-column: 1 / 4;
-    grid-row: 1 / 3;
+    grid-row: 2 / 4;
   }
 `
 // ====================================================================
@@ -93,6 +106,8 @@ export const StyledParaText = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    grid-column: 4 / 6;
+    grid-row: 2 / 3;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
     padding-top: 1.75em;
@@ -127,6 +142,12 @@ export const SocialDiv = styled.div`
     grid-row: 2 / 3;
     place-self: start;
   }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    grid-column: 5 / 6;
+    grid-row: 3 / 4;
+    place-self: end;
+  }
 `
 // ====================================================================
 export const Rule = styled.hr`
@@ -137,6 +158,11 @@ export const Rule = styled.hr`
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-column: 1 / 6;
     grid-row: 4 / 5;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    grid-column: 1 / 6;
+    grid-row: 5 / 6;
   }
 `
 // ====================================================================
@@ -166,6 +192,11 @@ export const FormText = styled.div`
     p {
       font-size: 1.1em;
     }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
   }
 `
 // ====================================================================
@@ -211,6 +242,11 @@ export const StyledForm = styled.form`
     grid-column: 4 / 6;
     grid-row: 5 / 6;
   }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    grid-column: 4 / 6;
+    grid-row: 6 / 7;
+  }
 `
 // ====================================================================
 export const Copy = styled.div`
@@ -236,5 +272,10 @@ export const Copy = styled.div`
     span:first-of-type {
       padding: 0.5em 0;
     }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
   }
 `

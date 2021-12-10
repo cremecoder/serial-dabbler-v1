@@ -22,9 +22,6 @@ const StyledSlide = styled.div`
   transition: opacity 400ms ease, transform 400ms ease;
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 1em;
     transform: ${({ slideState }) =>
       slideState === "entering" ||

@@ -8,6 +8,7 @@ import Form from "../components/Form"
 import StyledSlide from "../styles/Slide.S/Slide.styled"
 import {
   SlideGrid,
+  CloseButton,
   StyledBlockText,
   StyledParaText,
   SocialDiv,
@@ -15,7 +16,6 @@ import {
   FormText,
   Copy
 } from "../styles/Slide.S/SlideGrid.styled"
-import { OverlayButton } from "../styles/CallToAction.S/Buttons.styled"
 
 const Slide = ({ slideState }) => {
   const theme = useTheme()
@@ -23,13 +23,15 @@ const Slide = ({ slideState }) => {
 
   return (
     <StyledSlide slideState={slideState}>
-      <OverlayButton
-        onClick={() => handleOverlayToggle()}
-        clrPrimary={theme.colors.white}
-      >
-        <Image src={`/images/close.svg`} alt={"close"} width={28} height={28} />
-      </OverlayButton>
       <SlideGrid>
+        <CloseButton onClick={() => handleOverlayToggle()}>
+          <Image
+            src={`/images/close.svg`}
+            alt={"close"}
+            width={28}
+            height={28}
+          />
+        </CloseButton>
         <StyledBlockText>
           <h1>
             DABBLE IN NEW THINGS
