@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form"
-import axios from "axios"
 import styled from "styled-components"
 import { useTheme } from "styled-components"
 
@@ -25,24 +24,7 @@ const Form = () => {
   } = useForm()
 
   const onSubmitForm = async values => {
-    let config = {
-      method: "post",
-      url: "http://localhost:3000/api/contact",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      data: values
-    }
-
-    try {
-      const res = await axios(config)
-      console.log(res)
-      if (res.status === 200) {
-        console.log("Success")
-      }
-    } catch (err) {
-      console.error(err)
-    }
+    console.log(values)
   }
 
   return (
@@ -101,8 +83,8 @@ const Form = () => {
           {...register("message", {
             required: true,
             minLength: {
-              value: 20,
-              message: "Message must be at least 20 characters long"
+              value: 50,
+              message: "Message must be at least 50 characters long"
             },
             maxLength: {
               value: 1000,
