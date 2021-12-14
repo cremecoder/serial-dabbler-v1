@@ -25,6 +25,19 @@ const StyledCategory = styled.section`
     cursor: pointer;
   }
 
+  @keyframes rollout {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: none;
+    }
+  }
+
+  .roll-out {
+    animation: rollout 0.4s;
+  }
+
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
     padding: 0em 1.25em;
   }

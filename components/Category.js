@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
-import Fade from "./Fade"
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
@@ -20,15 +19,6 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }))
   }
 
-  // useEffect(() => {
-  //   if (animate === true) {
-  //     setCategoryState(prev => ({
-  //       ...prev,
-  //       animate: false
-  //     }))
-  //   }
-  // }, [])
-
   useEffect(() => {
     if (!isLocked) {
       let ranNum = Math.floor(Math.random() * dabbles.length)
@@ -43,7 +33,9 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>
         <p>{name}</p>
-        <Fade name={dabbles[randomDabbleNum].name} trigger={trigger} />
+        <h1 className="roll-out" key={dabbles[randomDabbleNum].name}>
+          {dabbles[randomDabbleNum].name}
+        </h1>
         <Image
           src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
           alt={"lock-icon"}
