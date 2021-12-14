@@ -19,13 +19,6 @@ const StyledCategory = styled.section`
     line-height: 1;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
-    opacity: ${({ aniState }) =>
-      aniState === "entering" || aniState === "entering" ? 0 : 1};
-    transform: ${({ aniState }) =>
-      aniState === "entering" || aniState === "entering"
-        ? "translate(0, -100%)"
-        : "translate(0, 0)"};
-    transition: all 300ms ease;
   }
 
   span {
