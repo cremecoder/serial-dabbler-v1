@@ -12,6 +12,12 @@ export const StyledNav = styled.nav`
     -webkit-text-stroke-color: black;
   }
 
+  hr {
+    @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+      display: none;
+    }
+  }
+
   button {
     font-size: 14px;
   }

@@ -18,9 +18,16 @@ export const DabbleButton = styled.button`
 `
 
 export const OverlayButton = styled.button`
+  display: block;
   background: transparent;
   color: ${props => props.clrPrimary};
   outline: none;
   border: none;
   cursor: pointer;
+
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    img {
+      display: none !important;
+    }
+  }
 `

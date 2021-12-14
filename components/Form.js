@@ -9,11 +9,6 @@ const StyledField = styled.div`
   flex-direction: column;
 `
 
-const Error = styled.span`
-  margin-top: 0.5em;
-  color: white;
-`
-
 const Form = () => {
   const theme = useTheme()
 
@@ -33,15 +28,26 @@ const Form = () => {
       </div>
       <StyledField>
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" autoComplete="off" />
+        <input type="text" name="name" id="name" autoComplete="off" required />
       </StyledField>
       <StyledField>
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" autoComplete="off" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          autoComplete="off"
+          required
+        />
       </StyledField>
       <StyledField>
         <label htmlFor="message">Message</label>
-        <textarea name="message" id="message" autoComplete="off"></textarea>
+        <textarea
+          name="message"
+          id="message"
+          autoComplete="off"
+          required
+        ></textarea>
       </StyledField>
       <StyledField>
         <DabbleButton

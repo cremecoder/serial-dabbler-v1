@@ -11,22 +11,6 @@ const Navbar = () => {
   const theme = useTheme()
   const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
 
-  const [navState, setNavState] = useState({
-    width: window.innerWidth
-  })
-
-  const handleResize = () => {
-    setNavState(prev => ({
-      ...prev,
-      width: window.innerWidth
-    }))
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
   return (
     <StyledNav>
       <FlexNav>
@@ -36,27 +20,23 @@ const Navbar = () => {
           width={75}
           height={50}
         />
-        {navState.width >= 1366 && isOverlayOpen ? (
-          ""
-        ) : (
-          <OverlayButton
-            onClick={() => handleOverlayToggle()}
-            clrPrimary={theme.colors.white}
-          >
-            {isOverlayOpen ? (
-              <Image
-                src={`/images/close.svg`}
-                alt={"close"}
-                width={28}
-                height={28}
-              />
-            ) : (
-              <span>ABOUT</span>
-            )}
-          </OverlayButton>
-        )}
+        <OverlayButton
+          onClick={() => handleOverlayToggle()}
+          clrPrimary={theme.colors.white}
+        >
+          {isOverlayOpen ? (
+            <Image
+              src={`/images/close.svg`}
+              alt={"close"}
+              width={28}
+              height={28}
+            />
+          ) : (
+            <span>ABOUT</span>
+          )}
+        </OverlayButton>
       </FlexNav>
-      {isOverlayOpen && navState.width < 1366 && <hr />}
+      {isOverlayOpen && <hr />}
     </StyledNav>
   )
 }
