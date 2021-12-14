@@ -1,4 +1,3 @@
-import { useForm } from "react-hook-form"
 import styled from "styled-components"
 import { useTheme } from "styled-components"
 
@@ -17,88 +16,32 @@ const Error = styled.span`
 
 const Form = () => {
   const theme = useTheme()
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm()
-
-  const onSubmitForm = async values => {
-    console.log(values)
-  }
 
   return (
     <StyledForm
-      onSubmit={handleSubmit(onSubmitForm)}
+      name="serial contact v1"
+      method="post"
+      data-netlify="true"
+      onSubmit="submit"
       clrPrimary={theme.colors.black}
       clrSecondary={theme.colors.white}
     >
+      <input type="hidden" name="form-name" value="serial contact v1" />
       <StyledField>
         <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          {...register("name", {
-            required: true,
-            minLength: {
-              value: 2,
-              message: "Name must be at least 2 characters long"
-            },
-            maxLength: {
-              value: 30,
-              message: "Name cannot exceed 30 characters"
-            },
-            pattern: {
-              value: /^[A-Za-z]+$/i,
-              message: "No numbers or special characters"
-            }
-          })}
-          autoComplete="off"
-          id="formName"
-        />
-        {errors.name && <Error>{errors.name.message}</Error>}
+        <input type="text" name="name" id="name" autoComplete="off" />
       </StyledField>
       <StyledField>
         <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          {...register("email", {
-            required: true,
-            minLength: {
-              value: 6,
-              message: "Email address must be at least 6 characters long"
-            },
-            maxLength: {
-              value: 60,
-              message: "Email address must not exceed 60 characters"
-            }
-          })}
-          autoComplete="off"
-          id="formEmail"
-        />
-        {errors.email && <Error>{errors.email.message}</Error>}
+        <input type="email" name="email" id="email" autoComplete="off" />
       </StyledField>
       <StyledField>
         <label htmlFor="message">Message</label>
-        <textarea
-          {...register("message", {
-            required: true,
-            minLength: {
-              value: 50,
-              message: "Message must be at least 50 characters long"
-            },
-            maxLength: {
-              value: 1000,
-              message: "Message must not exceed 1000 characters"
-            }
-          })}
-          autoComplete="off"
-          id="formMessage"
-          rows="5"
-        ></textarea>
-        {errors.message && <Error>{errors.message.message}</Error>}
+        <textarea autoComplete="off"></textarea>
       </StyledField>
       <StyledField>
         <DabbleButton
+          type="submit"
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
           width={"40%"}
