@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Serial Dabbler - V1</title>
+        <title>Serial Dabbler</title>
       </Head>
       <ThemeProvider theme={Theme}>
         <Layout>
