@@ -23,10 +23,14 @@ const Form = () => {
       method="post"
       data-netlify="true"
       onSubmit="submit"
+      data-netlify-honeypot="bot-field"
       clrPrimary={theme.colors.black}
       clrSecondary={theme.colors.white}
     >
       <input type="hidden" name="form-name" value="serial contact v1" />
+      <div hidden>
+        <input name="bot-field" />
+      </div>
       <StyledField>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" autoComplete="off" />
@@ -37,7 +41,7 @@ const Form = () => {
       </StyledField>
       <StyledField>
         <label htmlFor="message">Message</label>
-        <textarea autoComplete="off"></textarea>
+        <textarea name="message" id="message" autoComplete="off"></textarea>
       </StyledField>
       <StyledField>
         <DabbleButton
