@@ -13,18 +13,6 @@ const StyledCategory = styled.section`
     font-size: 12px;
   }
 
-  h1 {
-    font-size: 55px;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.black};
-    line-height: 1;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
-  }
-
-  span {
-    cursor: pointer;
-  }
-
   @keyframes rollout {
     0% {
       transform: translateY(-100px);
@@ -34,8 +22,24 @@ const StyledCategory = styled.section`
     }
   }
 
-  .roll-out {
+  h1 {
+    position: relative;
+    font-size: 55px;
+    line-height: 1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
+    /* border-bottom: 3px solid ${({ clrPrimary }) => clrPrimary}; */
     animation: rollout 0.4s;
+  }
+
+  hr {
+    /* color: black;
+    background-color: black; */
+    border: 1px solid black;
+  }
+
+  span {
+    cursor: pointer;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {

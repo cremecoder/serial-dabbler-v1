@@ -12,6 +12,24 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
   })
   const { randomDabbleNum, isLocked } = categoryState
 
+  useEffect(() => {
+    if (!isLocked) {
+      let ranNum = Math.floor(Math.random() * dabbles.length)
+      setCategoryState(prev => ({
+        ...prev,
+        randomDabbleNum: handlePrevNumRepeat(randomDabbleNum, ranNum)
+      }))
+    }
+  }, [trigger])
+
+  const handlePrevNumRepeat = (prev, current) => {
+    if (prev === current) {
+      let newNum = Math.floor(Math.random() * dabbles.length)
+      return handlePrevNumRepeat(current, newNum)
+    }
+    return current
+  }
+
   const handleLock = () => {
     setCategoryState(prev => ({
       ...prev,
@@ -19,23 +37,14 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     }))
   }
 
-  useEffect(() => {
-    if (!isLocked) {
-      let ranNum = Math.floor(Math.random() * dabbles.length)
-      setCategoryState(prev => ({
-        ...prev,
-        randomDabbleNum: ranNum
-      }))
-    }
-  }, [trigger])
-
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>
         <p>{name}</p>
-        <h1 className="roll-out" key={dabbles[randomDabbleNum].name}>
+        <h1 key={dabbles[randomDabbleNum].name}>
           {dabbles[randomDabbleNum].name}
         </h1>
+        <hr />
         <Image
           src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
           alt={"lock-icon"}
@@ -49,3 +58,7 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
 }
 
 export default Category
+
+// always dabble: ranNum = prevNum ? dabble again
+// transition bold txt, not border bottom
+// stagger animations

@@ -15,6 +15,12 @@ const SectionGrid = styled.div`
     grid-row: 2 / 3;
   }
 
+  hr {
+    align-self: end;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
   span {
     place-self: center end;
     grid-column: 2 / 3;
@@ -36,6 +42,11 @@ const SectionGrid = styled.div`
       place-self: center;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
+    }
+
+    hr {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
     }
 
     span {
@@ -95,6 +106,11 @@ const SectionGrid = styled.div`
       grid-row: 2 / 3;
     }
 
+    hr {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
     span {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
@@ -111,6 +127,13 @@ const SectionGrid = styled.div`
     h1 {
       grid-column: 1 / 4;
       grid-row: 2 / 3;
+    }
+
+    hr {
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+      margin: 0 auto 20%;
+      width: 75%;
     }
 
     span {
