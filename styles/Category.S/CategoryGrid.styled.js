@@ -70,28 +70,6 @@ const SectionGrid = styled.div`
     }
   }
 
-  /* @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-
-    p {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-    }
-
-    h1 {
-      text-align: left;
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-    }
-
-    span {
-      place-self: center end;
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-    }
-  } */
-
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-template-columns: repeat(3, 1fr);
 

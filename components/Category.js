@@ -1,16 +1,18 @@
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
+import Fade from "../styles/Category.S/Fade"
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
-const Category = ({ category: { name, dabbles }, trigger }) => {
+const Category = ({ category: { name, dabbles }, trigger, index }) => {
   const nodeRef = useRef(null)
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
-    isLocked: false
+    isLocked: false,
+    fadeDelay: index * 100 + "ms"
   })
-  const { randomDabbleNum, isLocked } = categoryState
+  const { randomDabbleNum, isLocked, fadeDelay } = categoryState
 
   useEffect(() => {
     if (!isLocked) {
@@ -41,9 +43,9 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>
         <p>{name}</p>
-        <h1 key={dabbles[randomDabbleNum].name}>
+        <Fade key={dabbles[randomDabbleNum].name} delay={fadeDelay}>
           {dabbles[randomDabbleNum].name}
-        </h1>
+        </Fade>
         <hr />
         <Image
           src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
@@ -58,7 +60,3 @@ const Category = ({ category: { name, dabbles }, trigger }) => {
 }
 
 export default Category
-
-// always dabble: ranNum = prevNum ? dabble again
-// transition bold txt, not border bottom
-// stagger animations

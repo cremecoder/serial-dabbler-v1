@@ -97,11 +97,12 @@ function Home({ categories }) {
       >
         {state => <Slide slideState={state} />}
       </Transition>
-      {categories.map(category => (
+      {categories.map((category, index) => (
         <Category
           key={category.id}
           category={category}
           trigger={homeState.trigger}
+          index={index}
         />
       ))}
       {!isOverlayOpen && (
