@@ -13,6 +13,7 @@ const fade = keyframes`
 `
 
 const StyledFade = styled.h1`
+  visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
   animation: ${fade} 1000ms ease;
   animation-delay: ${({ fadeDelay }) => fadeDelay + "ms"};
 `
@@ -29,7 +30,9 @@ const Fade = ({ name, index }) => {
   }, [])
 
   return (
-    <StyledFade fadeDelay={fadeDelay}>{isVisible && <>{name}</>}</StyledFade>
+    <StyledFade fadeDelay={fadeDelay} isVisible={isVisible}>
+      <>{name}</>
+    </StyledFade>
   )
 }
 

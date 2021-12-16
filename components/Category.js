@@ -1,16 +1,14 @@
 import Image from "next/image"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
 import Fade from "../styles/Category.S/Fade.styled"
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
 const Category = ({ category: { name, dabbles }, trigger, index }) => {
-  const nodeRef = useRef(null)
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
     isLocked: false
-    // fadeDelay: index * 100 + "ms"
   })
   const { randomDabbleNum, isLocked, fadeDelay, show } = categoryState
 
@@ -23,10 +21,6 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
       }))
     }
   }, [trigger])
-
-  useEffect(() => {
-    console.log("render")
-  }, [])
 
   const handlePrevNumRepeat = (prev, current) => {
     if (prev === current) {
@@ -50,7 +44,6 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
         <Fade
           key={dabbles[randomDabbleNum].name}
           name={dabbles[randomDabbleNum].name}
-          // delay={fadeDelay}
           index={index}
         />
         <hr />
