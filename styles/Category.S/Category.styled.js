@@ -16,6 +16,8 @@ const StyledCategory = styled.section`
   h1 {
     font-size: 55px;
     line-height: 1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
   }
 
   hr {
@@ -48,6 +50,11 @@ const StyledCategory = styled.section`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     padding: 0 3em;
+
+    h1 {
+      -webkit-text-stroke-width: 0px;
+      -webkit-text-stroke-color: none;
+    }
   }
 `
 

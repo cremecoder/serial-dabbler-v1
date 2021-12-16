@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
-import Fade from "../styles/Category.S/Fade"
+import Fade from "../styles/Category.S/Fade.styled"
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 
@@ -9,10 +9,10 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
   const nodeRef = useRef(null)
   const [categoryState, setCategoryState] = useState({
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
-    isLocked: false,
-    fadeDelay: index * 100 + "ms"
+    isLocked: false
+    // fadeDelay: index * 100 + "ms"
   })
-  const { randomDabbleNum, isLocked, fadeDelay } = categoryState
+  const { randomDabbleNum, isLocked, fadeDelay, show } = categoryState
 
   useEffect(() => {
     if (!isLocked) {
@@ -23,6 +23,10 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
       }))
     }
   }, [trigger])
+
+  useEffect(() => {
+    console.log("render")
+  }, [])
 
   const handlePrevNumRepeat = (prev, current) => {
     if (prev === current) {
@@ -43,9 +47,12 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>
         <p>{name}</p>
-        <Fade key={dabbles[randomDabbleNum].name} delay={fadeDelay}>
-          {dabbles[randomDabbleNum].name}
-        </Fade>
+        <Fade
+          key={dabbles[randomDabbleNum].name}
+          name={dabbles[randomDabbleNum].name}
+          // delay={fadeDelay}
+          index={index}
+        />
         <hr />
         <Image
           src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
