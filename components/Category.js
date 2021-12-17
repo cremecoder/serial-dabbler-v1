@@ -10,7 +10,7 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
     randomDabbleNum: Math.floor(Math.random() * dabbles.length),
     isLocked: false
   })
-  const { randomDabbleNum, isLocked, fadeDelay, show } = categoryState
+  const { randomDabbleNum, isLocked } = categoryState
 
   useEffect(() => {
     if (!isLocked) {
@@ -36,7 +36,7 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
       isLocked: !isLocked
     }))
   }
-
+  console.log("category")
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>

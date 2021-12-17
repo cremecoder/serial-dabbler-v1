@@ -1,6 +1,5 @@
 import Image from "next/image"
 import { useContext } from "react"
-import { useTheme } from "styled-components"
 import { LayoutContext } from "../components/Layout"
 
 import Form from "../components/Form"
@@ -18,8 +17,7 @@ import {
 } from "../styles/Slide.S/SlideGrid.styled"
 
 const Slide = ({ slideState }) => {
-  const theme = useTheme()
-  const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
+  const { handleOverlayToggle } = useContext(LayoutContext)
 
   return (
     <StyledSlide slideState={slideState}>

@@ -77,15 +77,10 @@ function Home({ categories }) {
   const nodeRef = useRef(null)
   const { isOverlayOpen } = useContext(LayoutContext)
 
-  const [homeState, setHomeState] = useState({
-    trigger: false
-  })
+  const [trigger, setTrigger] = useState(false)
 
   const handleDabble = () => {
-    setHomeState(prev => ({
-      ...prev,
-      trigger: !homeState.trigger
-    }))
+    setTrigger(prev => !prev)
   }
 
   return (
@@ -101,7 +96,7 @@ function Home({ categories }) {
         <Category
           key={category.id}
           category={category}
-          trigger={homeState.trigger}
+          trigger={trigger}
           index={index}
         />
       ))}
