@@ -11,7 +11,7 @@ import Category from "../components/Category"
 import Dabblebar from "../components/Dabblebar"
 
 import Main from "../styles/Main.S/Main.styled"
-import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
+import DabbleButton from "../components/DabbleButton"
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN
@@ -102,14 +102,12 @@ function Home({ categories }) {
       ))}
       {!isOverlayOpen && (
         <DabbleButton
+          text="LET'S DABBLE"
           clrPrimary={theme.colors.black}
           clrSecondary={theme.colors.white}
-          onClick={handleDabble}
-        >
-          <span>LET&apos;S DABBLE</span>
-        </DabbleButton>
+        />
       )}
-      <Dabblebar handleDabble={handleDabble} />
+      <Dabblebar />
     </Main>
   )
 }

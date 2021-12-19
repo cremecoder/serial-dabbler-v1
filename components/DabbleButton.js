@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const DabbleButton = styled.button`
+const StyledDabbleButton = styled.button`
   background: transparent;
   width: ${({ width }) => width || "auto"};
   color: ${props => props.clrPrimary};
@@ -17,17 +17,16 @@ export const DabbleButton = styled.button`
   }
 `
 
-export const OverlayButton = styled.button`
-  display: block;
-  background: transparent;
-  color: ${props => props.clrPrimary};
-  outline: none;
-  border: none;
-  cursor: pointer;
+const DabbleButton = ({ text, clrPrimary, clrSecondary, width }) => {
+  return (
+    <StyledDabbleButton
+      clrPrimary={clrPrimary}
+      clrSecondary={clrSecondary}
+      width={width}
+    >
+      <span>{text}</span>
+    </StyledDabbleButton>
+  )
+}
 
-  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    img {
-      display: none !important;
-    }
-  }
-`
+export default DabbleButton

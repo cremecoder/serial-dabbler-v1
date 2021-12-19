@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
 
-import Fade from "../styles/Category.S/Fade.styled"
+import Fade from "./Fade"
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
 

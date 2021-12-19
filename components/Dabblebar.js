@@ -1,23 +1,22 @@
 import { useTheme } from "styled-components"
+
+import DabbleButton from "./DabbleButton"
 import {
   StyledDabblebar,
   FlexDabblebar
 } from "../styles/Dabblebar.S/Dabblebar.styled"
-import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
 
-const Dabblebar = ({ handleDabble }) => {
+const Dabblebar = () => {
   const theme = useTheme()
 
   return (
     <StyledDabblebar>
       <FlexDabblebar>
         <DabbleButton
+          text="LET'S DABBLE"
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
-          onClick={() => handleDabble()}
-        >
-          <span>LETS DABBLE</span>
-        </DabbleButton>
+        />
       </FlexDabblebar>
     </StyledDabblebar>
   )

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { useTheme } from "styled-components"
 
-import { DabbleButton } from "../styles/CallToAction.S/Buttons.styled"
+import DabbleButton from "./DabbleButton"
 import { StyledForm } from "../styles/Slide.S/SlideGrid.styled"
 
 const StyledField = styled.div`
@@ -52,12 +52,11 @@ const Form = () => {
       <StyledField>
         <DabbleButton
           type="submit"
+          text="SUBMIT"
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
           width={"40%"}
-        >
-          SUBMIT
-        </DabbleButton>
+        />
       </StyledField>
     </StyledForm>
   )

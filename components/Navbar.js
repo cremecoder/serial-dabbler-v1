@@ -4,8 +4,11 @@ import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"
 
-import { StyledNav, FlexNav } from "../styles/Navbar.S/Navbar.styled"
-import { OverlayButton } from "../styles/CallToAction.S/Buttons.styled"
+import {
+  StyledNav,
+  FlexNav,
+  OverlayButton
+} from "../styles/Navbar.S/Navbar.styled"
 
 const Navbar = () => {
   const theme = useTheme()
