@@ -17,12 +17,19 @@ const StyledDabbleButton = styled.button`
   }
 `
 
-const DabbleButton = ({ text, clrPrimary, clrSecondary, width }) => {
+const DabbleButton = ({
+  text,
+  clrPrimary,
+  clrSecondary,
+  width,
+  handleDabble
+}) => {
   return (
     <StyledDabbleButton
       clrPrimary={clrPrimary}
       clrSecondary={clrSecondary}
       width={width}
+      onClick={handleDabble}
     >
       <span>{text}</span>
     </StyledDabbleButton>

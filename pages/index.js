@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { useContext, useState, useRef } from "react"
+import { useContext, useState, useRef, useCallback } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -74,21 +74,21 @@ export async function getStaticProps() {
 
 function Home({ categories }) {
   const theme = useTheme()
-  const nodeRef = useRef(null)
+  const slideRef = useRef(null)
   const { isOverlayOpen } = useContext(LayoutContext)
 
   const [trigger, setTrigger] = useState(false)
 
-  const handleDabble = () => {
+  const handleDabble = useCallback(() => {
     setTrigger(prev => !prev)
-  }
+  }, [])
 
   return (
     <Main>
       <Transition
         in={isOverlayOpen}
         timeout={theme.durations.slide}
-        nodeRef={nodeRef}
+        slideRef={slideRef}
       >
         {state => <Slide slideState={state} />}
       </Transition>
@@ -96,8 +96,8 @@ function Home({ categories }) {
         <Category
           key={category.id}
           category={category}
-          trigger={trigger}
           index={index}
+          trigger={trigger}
         />
       ))}
       {!isOverlayOpen && (
@@ -105,9 +105,10 @@ function Home({ categories }) {
           text="LET'S DABBLE"
           clrPrimary={theme.colors.black}
           clrSecondary={theme.colors.white}
+          handleDabble={handleDabble}
         />
       )}
-      <Dabblebar />
+      <Dabblebar handleDabble={handleDabble} />
     </Main>
   )
 }

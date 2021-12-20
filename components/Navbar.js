@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { useContext, useState, useEffect } from "react"
+import { useContext } from "react"
 import { useTheme } from "styled-components"
 
 import { LayoutContext } from "../components/Layout"

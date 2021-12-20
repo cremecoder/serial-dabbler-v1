@@ -6,7 +6,7 @@ import {
   FlexDabblebar
 } from "../styles/Dabblebar.S/Dabblebar.styled"
 
-const Dabblebar = () => {
+const Dabblebar = ({ handleDabble }) => {
   const theme = useTheme()
 
   return (
@@ -16,6 +16,7 @@ const Dabblebar = () => {
           text="LET'S DABBLE"
           clrPrimary={theme.colors.white}
           clrSecondary={theme.colors.black}
+          handleDabble={handleDabble}
         />
       </FlexDabblebar>
     </StyledDabblebar>

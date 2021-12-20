@@ -14,11 +14,14 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
 
   useEffect(() => {
     if (!isLocked) {
-      let ranNum = Math.floor(Math.random() * dabbles.length)
-      setCategoryState(prev => ({
-        ...prev,
-        randomDabbleNum: handlePrevNumRepeat(randomDabbleNum, ranNum)
-      }))
+      let timeout = setTimeout(() => {
+        let ranNum = Math.floor(Math.random() * dabbles.length)
+        setCategoryState(prev => ({
+          ...prev,
+          randomDabbleNum: handlePrevNumRepeat(randomDabbleNum, ranNum)
+        }))
+      }, 100)
+      return () => clearTimeout(timeout)
     }
   }, [trigger])
 
@@ -36,7 +39,7 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
       isLocked: !isLocked
     }))
   }
-  console.log("category")
+
   return (
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>
