@@ -1,40 +1,29 @@
-import Image from "next/image"
 import { useState, useEffect } from "react"
 
-import Fade from "./Fade"
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
+import Fade from "./Fade"
+import Lock from "./Lock"
+
+import { handlePrevNumRepeat } from "../utils/functions"
 
 const Category = ({ category: { name, dabbles }, trigger, index }) => {
-  const [categoryState, setCategoryState] = useState({
-    randomDabbleNum: Math.floor(Math.random() * dabbles.length),
-    isLocked: false
-  })
-  const { randomDabbleNum, isLocked } = categoryState
+  const [randomDabbleNum, setRandomDabbleNum] = useState(
+    Math.floor(Math.random() * dabbles.length)
+  )
+  const [isLocked, setIsLocked] = useState(false)
 
   useEffect(() => {
     if (!isLocked) {
       let ranNum = Math.floor(Math.random() * dabbles.length)
-      setCategoryState(prev => ({
-        ...prev,
-        randomDabbleNum: handlePrevNumRepeat(randomDabbleNum, ranNum)
-      }))
+      setRandomDabbleNum(
+        handlePrevNumRepeat(randomDabbleNum, ranNum, dabbles.length)
+      )
     }
   }, [trigger])
 
-  const handlePrevNumRepeat = (prev, current) => {
-    if (prev === current) {
-      let newNum = Math.floor(Math.random() * dabbles.length)
-      return handlePrevNumRepeat(current, newNum)
-    }
-    return current
-  }
-
   const handleLock = () => {
-    setCategoryState(prev => ({
-      ...prev,
-      isLocked: !isLocked
-    }))
+    setIsLocked(prev => !prev)
   }
 
   return (
@@ -47,13 +36,7 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
           index={index}
         />
         <hr />
-        <Image
-          src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
-          alt={"lock-icon"}
-          width={28}
-          height={28}
-          onClick={handleLock}
-        />
+        <Lock isLocked={isLocked} handleLock={handleLock} />
       </CategoryGrid>
     </StyledCategory>
   )

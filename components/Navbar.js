@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useContext } from "react"
 import { useTheme } from "styled-components"
 
-import { LayoutContext } from "../components/Layout"
+import { LayoutStateContext, LayoutHandleContext } from "../components/Layout"
 
 import {
   StyledNav,
@@ -12,7 +12,8 @@ import {
 
 const Navbar = () => {
   const theme = useTheme()
-  const { isOverlayOpen, handleOverlayToggle } = useContext(LayoutContext)
+  const { isOverlayOpen } = useContext(LayoutStateContext)
+  const { handleOverlayToggle } = useContext(LayoutHandleContext)
 
   return (
     <StyledNav>

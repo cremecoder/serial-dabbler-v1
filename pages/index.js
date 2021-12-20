@@ -1,11 +1,10 @@
 import { Client } from "@notionhq/client"
-import { useContext, useState, useRef } from "react"
+import { useContext, useState, useCallback } from "react"
 import uuid from "react-uuid"
 
-import { Transition } from "react-transition-group"
 import { useTheme } from "styled-components"
 
-import { LayoutContext } from "../components/Layout"
+import { LayoutStateContext } from "../components/Layout"
 import Slide from "../components/Slide"
 import Category from "../components/Category"
 import Dabblebar from "../components/Dabblebar"
@@ -74,24 +73,17 @@ export async function getStaticProps() {
 
 function Home({ categories }) {
   const theme = useTheme()
-  const slideRef = useRef(null)
-  const { isOverlayOpen } = useContext(LayoutContext)
+  const { isOverlayOpen } = useContext(LayoutStateContext)
 
   const [trigger, setTrigger] = useState(false)
 
-  const handleDabble = () => {
+  const handleDabble = useCallback(() => {
     setTrigger(prev => !prev)
-  }
+  }, [])
 
   return (
     <Main>
-      <Transition
-        in={isOverlayOpen}
-        timeout={theme.durations.slide}
-        slideRef={slideRef}
-      >
-        {state => <Slide slideState={state} />}
-      </Transition>
+      <Slide />
       {categories.map((category, index) => (
         <Category
           key={category.id}
