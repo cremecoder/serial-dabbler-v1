@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, memo } from "react"
 import styled, { keyframes } from "styled-components"
 
 const fade = keyframes`
@@ -36,4 +36,4 @@ const Fade = ({ name, index }) => {
   )
 }
 
-export default Fade
+export default memo(Fade)

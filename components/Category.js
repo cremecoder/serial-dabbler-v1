@@ -14,14 +14,11 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
 
   useEffect(() => {
     if (!isLocked) {
-      let timeout = setTimeout(() => {
-        let ranNum = Math.floor(Math.random() * dabbles.length)
-        setCategoryState(prev => ({
-          ...prev,
-          randomDabbleNum: handlePrevNumRepeat(randomDabbleNum, ranNum)
-        }))
-      }, 100)
-      return () => clearTimeout(timeout)
+      let ranNum = Math.floor(Math.random() * dabbles.length)
+      setCategoryState(prev => ({
+        ...prev,
+        randomDabbleNum: handlePrevNumRepeat(randomDabbleNum, ranNum)
+      }))
     }
   }, [trigger])
 

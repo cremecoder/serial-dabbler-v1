@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client"
-import { useContext, useState, useRef, useCallback } from "react"
+import { useContext, useState, useRef } from "react"
 import uuid from "react-uuid"
 
 import { Transition } from "react-transition-group"
@@ -79,9 +79,9 @@ function Home({ categories }) {
 
   const [trigger, setTrigger] = useState(false)
 
-  const handleDabble = useCallback(() => {
+  const handleDabble = () => {
     setTrigger(prev => !prev)
-  }, [])
+  }
 
   return (
     <Main>
