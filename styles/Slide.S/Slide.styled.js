@@ -3,7 +3,10 @@ import styled from "styled-components"
 const StyledSlide = styled.div`
   overflow: scroll;
   position: absolute;
-  inset: 0 0 0 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 10;
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};

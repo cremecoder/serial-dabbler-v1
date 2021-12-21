@@ -20,7 +20,7 @@ const StyledFade = styled.h1`
 
 const Fade = ({ name, index }) => {
   const [isVisible, setIsVisible] = useState(false)
-  const fadeDelay = index * 100
+  const fadeDelay = index * 200
 
   useEffect(() => {
     let timeout = setTimeout(() => {
