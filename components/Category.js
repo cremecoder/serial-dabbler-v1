@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import StyledCategory from "../styles/Category.S/Category.styled"
 import CategoryGrid from "../styles/Category.S/CategoryGrid.styled"
-import Fade from "./Fade"
+import Fader from "./Fade"
 import Lock from "./Lock"
 
 import { handlePrevNumRepeat } from "../utils/functions"
@@ -30,7 +30,7 @@ const Category = ({ category: { name, dabbles }, trigger, index }) => {
     <StyledCategory bgColor={dabbles[randomDabbleNum].color}>
       <CategoryGrid>
         <p>{name}</p>
-        <Fade
+        <Fader
           key={dabbles[randomDabbleNum].name}
           name={dabbles[randomDabbleNum].name}
           index={index}
