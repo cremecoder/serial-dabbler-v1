@@ -14,10 +14,10 @@ const Navbar = ({ isOverlayOpen, handleOverlayToggle }) => {
     <StyledNav>
       <FlexNav>
         <Image
-          src="/images/logo.svg"
+          src="/images/SD_Logo_white-01-03.svg"
           alt="Serial Dabbler"
           width={75}
-          height={50}
+          height={75}
         />
         <OverlayButton
           onClick={() => handleOverlayToggle()}
