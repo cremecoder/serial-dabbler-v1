@@ -39,7 +39,7 @@ export const StyledNav = styled.nav`
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    padding: 1em;
+    padding: 1em 1.5em;
   }
 `
 

@@ -1,8 +1,7 @@
 import Image from "next/image"
-import { useContext, useRef, memo } from "react"
+import { useRef, memo } from "react"
 import { useTheme } from "styled-components"
 import { Transition } from "react-transition-group"
-import { LayoutStateContext, LayoutHandleContext } from "../components/Layout"
 
 import Form from "../components/Form"
 
@@ -18,11 +17,9 @@ import {
   Copy
 } from "../styles/Slide.S/SlideGrid.styled"
 
-const Slide = () => {
+const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
   const theme = useTheme()
   const slideRef = useRef(null)
-  const { isOverlayOpen } = useContext(LayoutStateContext)
-  const { handleOverlayToggle } = useContext(LayoutHandleContext)
 
   return (
     <Transition

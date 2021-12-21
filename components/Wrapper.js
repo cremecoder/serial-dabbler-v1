@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,5 +13,9 @@ const Wrapper = styled.div`
     flex-direction: row;
   }
 `
+
+const Wrapper = ({ children }) => {
+  return <StyledWrapper>{children}</StyledWrapper>
+}
 
 export default Wrapper

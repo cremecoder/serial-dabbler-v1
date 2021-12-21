@@ -1,16 +1,12 @@
 import { Client } from "@notionhq/client"
-import { useContext, useState, useCallback } from "react"
+import { useState } from "react"
 import uuid from "react-uuid"
 
-import { useTheme } from "styled-components"
-
-import { LayoutStateContext } from "../components/Layout"
+import Navbar from "../components/Navbar"
 import Slide from "../components/Slide"
-import Category from "../components/Category"
-import Dabblebar from "../components/Dabblebar"
+import Categories from "../components/Categories"
 
 import Main from "../styles/Main.S/Main.styled"
-import DabbleButton from "../components/DabbleButton"
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN
@@ -72,36 +68,26 @@ export async function getStaticProps() {
 }
 
 function Home({ categories }) {
-  const theme = useTheme()
-  const { isOverlayOpen } = useContext(LayoutStateContext)
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false)
 
-  const [trigger, setTrigger] = useState(false)
-
-  const handleDabble = useCallback(() => {
-    setTrigger(prev => !prev)
-  }, [])
+  const handleOverlayToggle = () => {
+    setIsOverlayOpen(prev => !prev)
+  }
 
   return (
-    <Main>
-      <Slide />
-      {categories.map((category, index) => (
-        <Category
-          key={category.id}
-          category={category}
-          index={index}
-          trigger={trigger}
+    <>
+      <Navbar
+        isOverlayOpen={isOverlayOpen}
+        handleOverlayToggle={handleOverlayToggle}
+      />
+      <Main>
+        <Slide
+          isOverlayOpen={isOverlayOpen}
+          handleOverlayToggle={handleOverlayToggle}
         />
-      ))}
-      {!isOverlayOpen && (
-        <DabbleButton
-          text="LET'S DABBLE"
-          clrPrimary={theme.colors.black}
-          clrSecondary={theme.colors.white}
-          handleDabble={handleDabble}
-        />
-      )}
-      <Dabblebar handleDabble={handleDabble} />
-    </Main>
+        <Categories categories={categories} />
+      </Main>
+    </>
   )
 }
 

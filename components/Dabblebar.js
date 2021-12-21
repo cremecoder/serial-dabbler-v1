@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { useTheme } from "styled-components"
 
 import DabbleButton from "./DabbleButton"
@@ -22,4 +23,4 @@ const Dabblebar = ({ handleDabble }) => {
     </StyledDabblebar>
   )
 }
-export default Dabblebar
+export default memo(Dabblebar)

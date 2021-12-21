@@ -1,8 +1,8 @@
 import Head from "next/head"
 import { ThemeProvider } from "styled-components"
 
-import Layout from "../components/Layout"
 import Theme from "../styles/Theme"
+import Wrapper from "../components/Wrapper"
 
 import "../styles/global.css"
 
@@ -13,9 +13,9 @@ function MyApp({ Component, pageProps }) {
         <title>Serial Dabbler</title>
       </Head>
       <ThemeProvider theme={Theme}>
-        <Layout>
+        <Wrapper>
           <Component {...pageProps} />
-        </Layout>
+        </Wrapper>
       </ThemeProvider>
     </>
   )

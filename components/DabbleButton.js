@@ -1,3 +1,4 @@
+import { memo } from "react"
 import styled from "styled-components"
 
 const StyledDabbleButton = styled.button`
@@ -36,4 +37,4 @@ const DabbleButton = ({
   )
 }
 
-export default DabbleButton
+export default memo(DabbleButton)

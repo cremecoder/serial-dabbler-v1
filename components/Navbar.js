@@ -1,19 +1,14 @@
 import Image from "next/image"
-import { useContext } from "react"
+import { memo } from "react"
 import { useTheme } from "styled-components"
-
-import { LayoutStateContext, LayoutHandleContext } from "../components/Layout"
-
 import {
   StyledNav,
   FlexNav,
   OverlayButton
 } from "../styles/Navbar.S/Navbar.styled"
 
-const Navbar = () => {
+const Navbar = ({ isOverlayOpen, handleOverlayToggle }) => {
   const theme = useTheme()
-  const { isOverlayOpen } = useContext(LayoutStateContext)
-  const { handleOverlayToggle } = useContext(LayoutHandleContext)
 
   return (
     <StyledNav>
@@ -45,4 +40,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default memo(Navbar)
