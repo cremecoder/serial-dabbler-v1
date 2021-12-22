@@ -74,15 +74,6 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
                 we&apos;ll reshare it so we can all be chuffed together.
               </p>
             </StyledParaText>
-            {/* <SocialDiv>
-              <Image
-                src={`/images/instagram.svg`}
-                alt={"instagram"}
-                width={32}
-                height={32}
-              />
-              <h2>#SERIALDABBLER</h2>
-            </SocialDiv> */}
             <StyledInstacon>
               <Instacon />
             </StyledInstacon>

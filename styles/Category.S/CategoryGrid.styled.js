@@ -87,6 +87,7 @@ const SectionGrid = styled.div`
     hr {
       grid-column: 2 / 3;
       grid-row: 2 / 3;
+      margin-bottom: 0.25em;
     }
 
     span {
@@ -110,7 +111,7 @@ const SectionGrid = styled.div`
     hr {
       grid-column: 1 / 4;
       grid-row: 2 / 3;
-      margin: 0 auto 20%;
+      margin: 0 auto 3.5em;
       width: 75%;
     }
 

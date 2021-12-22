@@ -45,10 +45,6 @@ export const CloseButton = styled.span`
     top: 3%;
     right: 3%;
     padding: 0.5em;
-    /* grid-column: 5 / 6;
-    grid-row: 1 / 2;
-    place-self: end;
-    padding-bottom: 10%; */
   }
 `
 // ====================================================================
@@ -57,7 +53,7 @@ export const StyledBlockText = styled.div`
   grid-row: 1 / 2;
 
   h1 {
-    font-size: 1.75em;
+    font-size: 2em;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
@@ -127,49 +123,16 @@ export const StyledParaText = styled.div`
   }
 `
 // ====================================================================
-// export const SocialDiv = styled.div`
-//   grid-column: 1 / 4;
-//   grid-row: 3 / 4;
-//   display: flex;
-//   align-items: end;
-
-//   @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.portrait}) {
-//     grid-column: 1 / 4;
-//     grid-row: 3 / 4;
-//   }
-
-//   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-//     grid-column: 3 / 5;
-//     grid-row: 2 / 3;
-//     margin-top: 0;
-//     place-self: end;
-
-//     h2 {
-//       font-size: 1.75em;
-//     }
-//   }
-
-//   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
-//     grid-column: 5 / 6;
-//     grid-row: 2 / 3;
-//     place-self: start;
-//   }
-
-// @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-//   grid-column: 5 / 6;
-//   grid-row: 3 / 4;
-//   place-self: end;
-// }
-// `
-// ====================================================================
 export const StyledInstacon = styled.div`
   grid-column: 1 / 2;
   grid-row: 3 / 4;
+
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-column: 4 / 5;
     grid-row: 2 / 3;
     place-self: end start;
   }
+
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     grid-column: 4 / 5;
     grid-row: 3 / 4;
@@ -179,22 +142,25 @@ export const StyledInstacon = styled.div`
 export const HashBlock = styled.div`
   grid-column: 1 / 2;
   grid-row: 3 / 4;
-  /* margin-left: 50px; */
   margin-left: 60%;
   place-self: center;
   padding-bottom: 2px;
+
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     margin-left: 40%;
   }
+
   @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape.lg}) {
     margin-left: 30px;
   }
+
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-column: 4 / 5;
     grid-row: 2 / 3;
     place-self: end center;
     padding-bottom: 6px;
   }
+
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     grid-column: 4 / 5;
     grid-row: 3 / 4;
@@ -291,6 +257,7 @@ export const StyledForm = styled.form`
 
   button {
     margin: 2em 0 3em 0;
+    padding: 1em;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
@@ -327,7 +294,7 @@ export const Copy = styled.div`
     grid-column: 1 / 3;
     grid-row: 5 / 6;
     place-self: center start;
-    margin-bottom: 25%;
+    margin-bottom: -25%;
 
     span:first-of-type {
       padding: 0.5em 0;
