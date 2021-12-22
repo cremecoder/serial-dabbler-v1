@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledDabblebar = styled.aside`
   background-color: ${({ theme }) => theme.colors.black};
-  padding: 0.5em;
+  padding: 1em 0.5em;
 
   button {
     display: initial;

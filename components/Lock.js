@@ -2,13 +2,25 @@ import Image from "next/image"
 
 const Lock = ({ isLocked, handleLock }) => {
   return (
-    <Image
-      src={`/images/lock-${isLocked ? "closed" : "open"}.svg`}
-      alt={"lock-icon"}
-      width={28}
-      height={28}
-      onClick={() => handleLock()}
-    />
+    <>
+      {isLocked ? (
+        <Image
+          src={`/images/lock-closed.svg`}
+          alt={"lock-icon"}
+          width={40}
+          height={40}
+          onClick={() => handleLock()}
+        />
+      ) : (
+        <Image
+          src={`/images/lock-open.svg`}
+          alt={"lock-icon"}
+          width={40}
+          height={40}
+          onClick={() => handleLock()}
+        />
+      )}
+    </>
   )
 }
 

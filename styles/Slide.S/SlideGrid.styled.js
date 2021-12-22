@@ -89,14 +89,22 @@ export const StyledParaText = styled.div`
     margin-bottom: 1em;
   }
 
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.portrait}) {
+    width: 100%;
+  }
+
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
     grid-column: 1 / 4;
     grid-row: 2 / 3;
-    width: 95%;
+    width: 100%;
 
     p {
       font-size: 1em;
     }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape.lg}) {
+    width: 80%;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
@@ -119,45 +127,84 @@ export const StyledParaText = styled.div`
   }
 `
 // ====================================================================
-export const SocialDiv = styled.div`
-  grid-column: 1 / 4;
+// export const SocialDiv = styled.div`
+//   grid-column: 1 / 4;
+//   grid-row: 3 / 4;
+//   display: flex;
+//   align-items: end;
+
+//   @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.portrait}) {
+//     grid-column: 1 / 4;
+//     grid-row: 3 / 4;
+//   }
+
+//   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
+//     grid-column: 3 / 5;
+//     grid-row: 2 / 3;
+//     margin-top: 0;
+//     place-self: end;
+
+//     h2 {
+//       font-size: 1.75em;
+//     }
+//   }
+
+//   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
+//     grid-column: 5 / 6;
+//     grid-row: 2 / 3;
+//     place-self: start;
+//   }
+
+// @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+//   grid-column: 5 / 6;
+//   grid-row: 3 / 4;
+//   place-self: end;
+// }
+// `
+// ====================================================================
+export const StyledInstacon = styled.div`
+  grid-column: 1 / 2;
   grid-row: 3 / 4;
-  display: flex;
-  align-items: end;
-
-  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.portrait}) {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
-    grid-column: 3 / 5;
-    grid-row: 2 / 3;
-    margin-top: 0;
-    place-self: end;
-
-    h2 {
-      font-size: 1.75em;
-    }
-  }
-
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
-    grid-column: 5 / 6;
+    grid-column: 4 / 5;
     grid-row: 2 / 3;
-    place-self: start;
+    place-self: end start;
   }
-
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    grid-column: 5 / 6;
+    grid-column: 4 / 5;
     grid-row: 3 / 4;
-    place-self: end;
+  }
+`
+// ====================================================================
+export const HashBlock = styled.div`
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  /* margin-left: 50px; */
+  margin-left: 60%;
+  place-self: center;
+  padding-bottom: 2px;
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
+    margin-left: 40%;
+  }
+  @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.landscape.lg}) {
+    margin-left: 30px;
+  }
+  @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    place-self: end center;
+    padding-bottom: 6px;
+  }
+  @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
   }
 `
 // ====================================================================
 export const Rule = styled.hr`
   grid-column: 1 / 5;
   grid-row: 4 / 5;
-  margin: 0.5em 0;
+  margin: 0.5em 0 2em;
 
   @media (min-width: ${({ theme }) => theme.breaks.tablet.landscape}) {
     grid-column: 1 / 6;
@@ -174,18 +221,24 @@ export const FormText = styled.div`
   grid-column: 1 / 5;
   grid-row: 5 / 6;
 
-  h2 {
+  h1 {
+    font-size: 1.75em;
     padding-bottom: 0.5em;
   }
 
   p {
     font-size: 0.9em;
+    width: 80%;
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.mobile_xs.landscape}) {
     grid-column: 1 / 3;
     grid-row: 5 / 6;
     width: 95%;
+
+    h1 {
+      font-size: 2.5em;
+    }
 
     p {
       font-size: 1em;
@@ -210,6 +263,9 @@ export const StyledForm = styled.form`
 
   label {
     padding: 1em 0 0.5em 0;
+  }
+  label[for="name"] {
+    padding: 0 0 0.5em 0;
   }
 
   input,

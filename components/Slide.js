@@ -11,11 +11,13 @@ import {
   CloseButton,
   StyledBlockText,
   StyledParaText,
-  SocialDiv,
+  StyledInstacon,
+  HashBlock,
   Rule,
   FormText,
   Copy
 } from "../styles/Slide.S/SlideGrid.styled"
+import Instacon from "./Instacon"
 
 const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
   const theme = useTheme()
@@ -72,7 +74,7 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
                 we&apos;ll reshare it so we can all be chuffed together.
               </p>
             </StyledParaText>
-            <SocialDiv>
+            {/* <SocialDiv>
               <Image
                 src={`/images/instagram.svg`}
                 alt={"instagram"}
@@ -80,10 +82,16 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
                 height={32}
               />
               <h2>#SERIALDABBLER</h2>
-            </SocialDiv>
+            </SocialDiv> */}
+            <StyledInstacon>
+              <Instacon />
+            </StyledInstacon>
+            <HashBlock>
+              <h2>#SERIALDABBLER</h2>
+            </HashBlock>
             <Rule />
             <FormText>
-              <h2>DROP US A MESSAGE</h2>
+              <h1>DROP US A MESSAGE</h1>
               <p>
                 If you have any questions or feedback, or just want to say hi,
                 please drop us a message - we&apos;d love to hear from you.

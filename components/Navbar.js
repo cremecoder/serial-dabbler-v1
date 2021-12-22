@@ -17,7 +17,7 @@ const Navbar = ({ isOverlayOpen, handleOverlayToggle }) => {
           src="/images/SD_Logo_white-01-03.svg"
           alt="Serial Dabbler"
           width={75}
-          height={75}
+          height={50}
         />
         <OverlayButton
           onClick={() => handleOverlayToggle()}
@@ -35,7 +35,6 @@ const Navbar = ({ isOverlayOpen, handleOverlayToggle }) => {
           )}
         </OverlayButton>
       </FlexNav>
-      {isOverlayOpen && <hr />}
     </StyledNav>
   )
 }

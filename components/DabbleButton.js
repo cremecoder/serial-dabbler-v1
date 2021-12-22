@@ -2,6 +2,7 @@ import { memo } from "react"
 import styled from "styled-components"
 
 const StyledDabbleButton = styled.button`
+  letter-spacing: 1px;
   background: transparent;
   width: ${({ width }) => width || "auto"};
   color: ${props => props.clrPrimary};
