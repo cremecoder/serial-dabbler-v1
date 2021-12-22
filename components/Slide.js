@@ -95,6 +95,7 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
                 <a
                   href="https://www.linkedin.com/in/sean-martin-cremecoder"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Sean Martin
                 </a>
@@ -104,6 +105,7 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
                 <a
                   href="https://www.instagram.com/tim.tim.tim.tim/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Tim Tim
                 </a>
