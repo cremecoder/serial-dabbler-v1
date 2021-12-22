@@ -31,30 +31,30 @@ export async function getStaticProps() {
   const categories = [
     {
       id: uuid(),
-      name: "Look & Feel",
+      name: "LOOK & FEEL",
       dabbles: []
     },
     {
       id: uuid(),
-      name: "Medium",
+      name: "MEDIUM",
       dabbles: []
     },
     {
       id: uuid(),
-      name: "Focus",
+      name: "FOCUS",
       dabbles: []
     }
   ]
 
   formatObjects.forEach(obj => {
     switch (obj.category) {
-      case "Look & Feel":
+      case "LOOK & FEEL":
         categories[0].dabbles.push(obj)
         break
-      case "Medium":
+      case "MEDIUM":
         categories[1].dabbles.push(obj)
         break
-      case "Focus":
+      case "FOCUS":
         categories[2].dabbles.push(obj)
         break
     }

@@ -90,8 +90,24 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
             </FormText>
             <Form />
             <Copy>
-              <span>Code by Sean Martin</span>
-              <span>Design by Tim Tim</span>
+              <span>
+                Code by{" "}
+                <a
+                  href="https://www.linkedin.com/in/sean-martin-cremecoder"
+                  target="_blank"
+                >
+                  Sean Martin
+                </a>
+              </span>
+              <span>
+                Design by{" "}
+                <a
+                  href="https://www.instagram.com/tim.tim.tim.tim/"
+                  target="_blank"
+                >
+                  Tim Tim
+                </a>
+              </span>
             </Copy>
           </SlideGrid>
         </StyledSlide>

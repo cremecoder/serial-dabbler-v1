@@ -282,7 +282,19 @@ export const Copy = styled.div`
   grid-row: 7 / 8;
 
   span {
+    color: ${({ theme }) => theme.colors.white};
     font-size: 12px;
+    transform: scale(0.97);
+    transition: transform 300ms ease;
+    :hover {
+      transform: scale(1);
+    }
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.white};
+    font-size: 12px;
+    cursor: pointer;
   }
 
   span:first-of-type {
