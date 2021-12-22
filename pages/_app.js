@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Serial Dabbler</title>
+        <link rel="icon" href="/images/favicon.jpg" />
       </Head>
       <ThemeProvider theme={Theme}>
         <Wrapper>

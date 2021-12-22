@@ -146,6 +146,11 @@ export const HashBlock = styled.div`
   place-self: center;
   padding-bottom: 2px;
 
+  a {
+    color: ${({ theme }) => theme.colors.white};
+    text-decoration: none;
+  }
+
   @media (min-width: ${({ theme }) => theme.breaks.tablet.portrait}) {
     margin-left: 40%;
   }

@@ -78,7 +78,13 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
               <Instacon />
             </StyledInstacon>
             <HashBlock>
-              <h2>#SERIALDABBLER</h2>
+              <a
+                href="https://www.instagram.com/serial.dabbler"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h2>#SERIALDABBLER</h2>
+              </a>
             </HashBlock>
             <Rule />
             <FormText>
