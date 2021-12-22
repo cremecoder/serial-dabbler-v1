@@ -31,7 +31,7 @@ export const SlideGrid = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
-    padding: 4em;
+    padding: 4em 12em 4em 4em;
   }
 `
 // ====================================================================
@@ -41,10 +41,14 @@ export const CloseButton = styled.span`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     display: initial;
-    grid-column: 5 / 6;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    padding: 0.5em;
+    /* grid-column: 5 / 6;
     grid-row: 1 / 2;
     place-self: end;
-    padding-bottom: 10%;
+    padding-bottom: 10%; */
   }
 `
 // ====================================================================
@@ -108,18 +112,18 @@ export const StyledParaText = styled.div`
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     grid-column: 4 / 6;
     grid-row: 2 / 3;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
-    padding-top: 1.75em;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-top: 1.25em;
+    padding-left: 0.3em;
   }
 `
 // ====================================================================
 export const SocialDiv = styled.div`
-  /* background-color: red; */
   grid-column: 1 / 4;
   grid-row: 3 / 4;
   display: flex;
-  align-items: center;
+  align-items: end;
 
   @media (min-width: ${({ theme }) => theme.breaks.mobile_sm.portrait}) {
     grid-column: 1 / 4;

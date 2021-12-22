@@ -27,8 +27,8 @@ const Navbar = ({ isOverlayOpen, handleOverlayToggle }) => {
             <Image
               src={`/images/close.svg`}
               alt={"close"}
-              width={28}
-              height={28}
+              width={16}
+              height={16}
             />
           ) : (
             <span>ABOUT</span>

@@ -29,15 +29,15 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
     >
       {state => (
         <StyledSlide state={state}>
+          <CloseButton onClick={() => handleOverlayToggle()}>
+            <Image
+              src={`/images/close.svg`}
+              alt={"close"}
+              width={16}
+              height={16}
+            />
+          </CloseButton>
           <SlideGrid>
-            <CloseButton onClick={() => handleOverlayToggle()}>
-              <Image
-                src={`/images/close.svg`}
-                alt={"close"}
-                width={28}
-                height={28}
-              />
-            </CloseButton>
             <StyledBlockText>
               <h1>
                 DABBLE IN NEW THINGS
@@ -60,26 +60,24 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
             <StyledParaText>
               <p>
                 Too many choices, too many ideas, not enough ideas, what tools,
-                what style, where to start, what to do. This big list of
-                decisions tends to turn into <q>Meh, not today</q>.
+                what style, where to start, what to do. Having to make all these
+                decisions sometimes turns into <q>Meh, not today</q>.
               </p>
               <p>
-                Serial Dabbler is here to give you a jump-off point - something
-                to challenge you, to get you excited, something you can latch
-                onto to get the momentum that you need to get started and get
-                going.
+                Serial Dabbler is here to give you a jumping off point to help
+                you get started and get going in all things creative.
               </p>
               <p>
                 If you make something that you&apos;re chuffed with, tag it and
-                we&apos;ll re-share it so we can all be chuffed together.
+                we&apos;ll reshare it so we can all be chuffed together.
               </p>
             </StyledParaText>
             <SocialDiv>
               <Image
                 src={`/images/instagram.svg`}
                 alt={"instagram"}
-                width={28}
-                height={28}
+                width={32}
+                height={32}
               />
               <h2>#SERIALDABBLER</h2>
             </SocialDiv>
