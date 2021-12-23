@@ -98,7 +98,8 @@ const SectionGrid = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     p {
-      place-self: center;
+      margin-top: 3em;
+      place-self: start center;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
     }
@@ -111,8 +112,8 @@ const SectionGrid = styled.div`
     hr {
       grid-column: 1 / 4;
       grid-row: 2 / 3;
-      margin: 0 auto 3.5em;
-      width: 75%;
+      margin: 0 auto 10vh;
+      min-width: 80%;
     }
 
     span {

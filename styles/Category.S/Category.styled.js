@@ -18,6 +18,7 @@ const StyledCategory = styled.section`
     line-height: 1;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ bgColor }) => bgColor};
+    white-space: nowrap;
   }
 
   hr {

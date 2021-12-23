@@ -41,7 +41,8 @@ export const CloseButton = styled.span`
 
   @media (min-width: ${({ theme }) => theme.breaks.desktop}) {
     display: initial;
-    position: absolute;
+    position: sticky;
+    float: right;
     top: 3%;
     right: 3%;
     padding: 0.5em;
