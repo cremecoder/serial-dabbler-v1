@@ -39,6 +39,7 @@ class MyDocument extends Document {
             name="description"
             content="A tool for creatives to expand their skills."
           />
+          <meta property="og:image" content="/images/serialdabbler-gif.gif" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
