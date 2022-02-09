@@ -99,7 +99,7 @@ const Slide = ({ isOverlayOpen, handleOverlayToggle }) => {
               <span>
                 Code by{" "}
                 <a
-                  href="https://www.linkedin.com/in/sean-martin-cremecoder"
+                  href="https://seanmartin.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
                 >
